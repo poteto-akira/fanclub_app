@@ -1,0 +1,72 @@
+<h3><%= @post.fc_name %></h3>
+<div class="show-fc-img parent">
+  <img class="card-img" src="<%= "/post_images/#{@post.id}.jpg" %>" alt="">
+  <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
+    <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
+      <span class="fa fa-heart like-btn-unlike heart-child">
+        <%= @likes_count %>
+      </span>
+      <%end%>
+  <% else %>
+    <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do%>
+    <span class="fa fa-heart like-btn heart-child">
+      <%= @likes_count %>
+    </span>
+    <% end%>
+  <% end %>
+
+</div>
+<!-- 会員数と月額費をテーブルで作る -->
+<table class="table-show-fc ">
+  <tr>
+    <th>会員数</th>
+    <th>月額費</th>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>¥300</td>
+  </tr>
+  <tr>
+    <th>管理者</th>
+    <th>作成日時</th>
+  </tr>
+  <tr>
+    <td><%= link_to(@user.name, "/home/profile/#{@user.id}") %></td>
+    <td><%= @post.created_at.strftime('%Y/%m/%d') %></td>
+  </tr>
+</table>
+
+<!-- ファンクラブ詳細を書く -->
+<p>このファンクラブについて</p>
+<p><%= @post.content %></p>
+
+
+<!-- いいねをボタンにしようと思う -->
+<!-- <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
+  <%= link_to("いいね！済み", "/likes/#{@post.id}/destroy", {method: "post"}) %>
+<% else %>
+  <%= link_to("いいね！", "/likes/#{@post.id}/create",{method:"post"}) %>
+<% end%>
+<%= @likes_count %> -->
+
+
+<% if @user.id == current_user.id %>
+<button class="btn btn-color-black btn-size-large">
+  <%= link_to "編集する" , "/#{@post.id}/edit_fc" %>
+</button>
+
+<!-- =====================================================
+削除ボタンはプロフィールページに表示して削除依頼という形式にする
+========================================================== -->
+ <button class="btn btn-color-danger btn-size-small">
+  <%= link_to("削除する", "/#{@post.id}/fc/destroy", {method: "post"}) %>
+</button>
+
+<% else %>
+
+  <button class="btn btn-light-green btn-size-large">
+    <%= link_to("ファンクラブに入会する" , "/pay") %>
+  </button>
+  <p class="text-caution pay-caution">このボタンをタップしてもまだ支払いは行われません</p>
+
+<% end %>

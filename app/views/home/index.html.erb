@@ -1,0 +1,44 @@
+<h3>お気に入りのファンクラブを探してね！</h3>
+
+    <% @posts.each do |post| %>
+      <section class="card">
+        <div class="card-img-parent">
+        <%= post.id %>
+            <img class="card-img" src="<%= "/post_images/#{post.id}.jpg" %>" alt="">
+
+          <li class="card-img-child"><%= link_to(post.user.name, "/home/profile/#{post.user_id}")%>
+
+
+            <div class="profile-image">
+              <% if post.user.image_name %>
+              <img src="<%= "/user_images/#{post.user.id}.jpg" %>">
+               <% else %>
+               <img src="<%= "/default_image.jpg" %>">
+              <% end %>
+            </div>
+          </li>
+
+          <!-- =========いいねを消そうとするとエラーが出るけどまだ手をつけてない ===========-->
+          <% if Like.where(user_id: current_user.id, posts_id: @posts.ids) %>
+            <%= link_to("/likes/#{@posts.ids}/destroy", {method: "post"}) do %>
+              <span class="fa fa-heart like-btn-unlike heart-child">
+                <%= @likes_count %>
+              </span>
+              <%end%>
+          <% else %>
+            <%= link_to("/likes/#{@posts.ids}/create", {method: "post"}) do%>
+            <span class="fa fa-heart like-btn heart-child">
+              <%= @likes_count %>
+            </span>
+            <% end%>
+          <% end %>
+          <!-- =========ここまで ======================================-->
+
+        </div>
+
+        <div class="card-content">
+          <h1 class="card-title"><%= link_to(post.fc_name, "/#{post.id}/show_fc") %></h1>
+          <p class="card-text"><%= post.content %></p>
+        </div>
+      </section>
+    <% end %>

@@ -1,0 +1,27 @@
+<!-- <div class="main user-show">
+  <div class="container">
+    <div class="user">
+      <h2><%= @user.name %></h2>
+
+    </div>
+
+    <ul class="user-tabs">
+      <li class="active"><%= link_to("#{@user.name}さんがいいねしたファンクラブ", "/home/#{@user.id}/likes") %></li>
+    </ul>
+
+    <% @likes.each do |like|%>
+      <% post = Post.find_by(id: like.post_id)%>
+
+      <div class="posts-index-item">
+
+        <div class="post-right">
+          <div class="post-user-name">
+            <%= link_to(@user.name, "/home/profile/#{@user.id}") %>
+          </div>
+          <%= link_to(@post.content, "/#{post.id}/show_fc") %>
+        </div>
+      </div>
+    <% end%>
+
+  </div>
+</div> -->
