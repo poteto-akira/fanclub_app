@@ -11,6 +11,21 @@ index.html.erb
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 0 4px 0;
+  position: relative;
+}
+
+.card-title {
+  z-index: 2;
+}
+
+.card .card-title a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-indent: -999px;
+  z-index: 1;
 }
 
 .card-img-parent {
@@ -29,6 +44,7 @@ index.html.erb
   bottom: 20px;
   left: 20px;
   font-size: 15px;
+  z-index: 3;
 }
 
 .card-content {

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-get "home/test" => "home#barbajs"
 
-
+  get ":post_id/show" => "home#show"
+  post "enter/:post_id/create" => "enters#create"
   get ":id/edit_profile" => "home#edit_profile"
   get "account/:id/edit" => "home#edit_account"
   post "user/:id/update" => "home#update_user"

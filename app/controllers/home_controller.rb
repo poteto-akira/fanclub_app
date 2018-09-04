@@ -15,7 +15,8 @@ class HomeController < ApplicationController
     @post = Post.find_by(id: params[:id])
     @post = Post.new(content: params[:content],
                      user_id: current_user.id,
-                     fc_name: params[:fc_name])
+                     fc_name: params[:fc_name],
+                     post_image: "default_post.jpg")
   if   @post.save
 
     # ここから画像保存処理してる
@@ -77,10 +78,10 @@ class HomeController < ApplicationController
       image = params[:image]
       File.binwrite("public/user_images/#{@user.id}.jpg",image.read)
     end
-    if @user.save
-      flash[:notice] = "ユーザー情報を編集しました"
-      redirect_to("/home/profile/#{@user.id}")
-    end
+    @user.save
+    flash[:notice] = "ユーザー情報を編集しました"
+    redirect_to("/home/profile/#{@user.id}")
+
   end
 
 
@@ -106,6 +107,8 @@ class HomeController < ApplicationController
   def edit_profile
   end
 
-  def barbajs
+  def show
+    @post = Post.find_by(id: params[:id])
+
   end
 end
