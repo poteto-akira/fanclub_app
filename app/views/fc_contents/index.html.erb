@@ -1,0 +1,16 @@
+<% @contents.each do |content| %>
+<li>
+  <%= content.content_title %>
+</li>
+<li>
+  <%= link_to(content.content_body, "/fc_content/#{content.id}") %>
+</li>
+<li>
+  <%= content.created_at %>
+</li><br>
+
+<% end %>
+<li>
+  <!-- リンクにファンクラブのidを入れる -->
+<%= link_to("コンテンツを投稿する", "/fc_contents/new/#{@post.id}") %>
+</li>

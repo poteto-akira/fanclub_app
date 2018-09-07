@@ -68,7 +68,7 @@
   <% if Enter.find_by(user_id: current_user.id , post_id: @post.id) %>
   <button class="btn btn-light-green btn-size-large">
     <!-- ここからは各ファンクラブ専用サイト。validatesで制限をかける。 -->
-    <%= link_to("このファンクラブの中を見る", "/#{@post.id}/show") %>
+    <%= link_to("このファンクラブの中を見る", "/fc_contents/index/#{@post.id}") %>
   </button>
 
   <% else %>

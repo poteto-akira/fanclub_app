@@ -5,8 +5,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :posts
-  has_many :fc_name
+  # has_many :posts
+  # has_many :fc_name
 
 
   def posts
