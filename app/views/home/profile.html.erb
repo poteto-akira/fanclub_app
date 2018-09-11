@@ -1,5 +1,4 @@
 <div class="main">
-<h2><%= @user.name %></h2>
 <div class="profile-image">
   <% if @user.image_name %>
   <img src="<%= "/user_images/#{@user.id}.jpg" %>">
@@ -7,6 +6,8 @@
    <img src="<%= "/user_images/default_image.jpg" %>">
   <% end %>
 </div>
+<h2 class="profile-name"><%= @user.name %></h2>
+
 <table>
   <tr>
     <th>ファンクラブ総会員数</th>

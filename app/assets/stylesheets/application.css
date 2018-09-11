@@ -21,16 +21,24 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+
+}
+
  ul, li {
    list-style-type: none;
    padding: 0;
    margin: 0;
+   font-size: 1.4rem;
  }
 
 
  a {
    text-decoration: none;
    color: #2d3133;
+   font-size: 1.4rem;
+
  }
 
  h1, h2, h3, h4, h5, h6, p {
@@ -42,7 +50,9 @@
   background-color: #fff;
   margin: 0;
   padding-bottom: 40px;
-  -webkit-overflow-scrolling: touch
+  -webkit-overflow-scrolling: touch;
+  font-size: 1.4rem;
+
 }
 
 .main {
@@ -59,7 +69,7 @@
 
 .text-caution {
   color: #767676;
-  font-size: 12px;
+  font-size: 1.2rem;
   text-align: center;
 }
 
@@ -83,19 +93,21 @@
 }
 
 .posts-show-item .fa {
-  font-size: 16px;
+  font-size: 1.6rem;
   margin-right: 3px;
 }
 
 table {
   color: #3C3C3C;
+  margin: 20px auto;
 }
 table tr {
   text-align: center;
 }
 
 table td {
-  font-size: 12px;
+  font-size: 1.4rem;
+  width: 50%;
 }
 
 .textbox {
@@ -148,10 +160,7 @@ header li {
   line-height: 40px;
 }
 
-.header-logo a{
-  color: red;
-  font-size: 22px;
-}
+
 
 .header-ul {
   float: right;
@@ -161,14 +170,14 @@ header li {
 .header-ul li {
   float: left;
   line-height: 40px;
-  font-size: 13px;
+  font-size: 1.6rem;
   color: black;
   padding-left: 15px;
 }
 
 .header-ul a {
   float: left;
-  font-size: 13px;
+  font-size: 1.6rem;
   color: black;
 }
 

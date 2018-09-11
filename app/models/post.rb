@@ -14,6 +14,10 @@ class Post < ApplicationRecord
   # def contents
   #   return FcContent.where(fc_id: self.id)
   # end
+
+  def contents
+    return FcContent.where(fc_id: self.id)
+  end
   # def like_user(user_id)
   #   likes.find_by(user_id: user_id)
   # end

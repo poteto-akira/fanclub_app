@@ -43,7 +43,6 @@ index.html.erb
   position: absolute;
   bottom: 20px;
   left: 20px;
-  font-size: 15px;
   z-index: 3;
 }
 
@@ -51,23 +50,30 @@ index.html.erb
   padding: 20px;
 }
 
-.card-name {
-  font-size: 20px;
-  margin-bottom: 20px;
-  text-align: left;
-  padding-left: 20px;
-  color: #333;
-}
+// .card-name {
+//   font-size: 20px;
+//   margin-bottom: 20px;
+//   text-align: left;
+//   padding-left: 20px;
+//   color: #333;
+// }
 
 .card-text {
   color: #777;
-  font-size: 14px;
   line-height: 1.5;
+  font-size: 1.4rem;
+}
+
+p {
+
 }
 
 /* ---------------------------
 show_fc.html.erb
 --------------------------- */
+table {
+  font-size: 1.4rem;
+}
 .show-fc-img {
   width: 80%;
   margin: 0 auto;
@@ -83,7 +89,7 @@ show_fc.html.erb
 }
 
 .table-show-fc td {
-  font-size: 30px;
+  width: 50%;
 }
 
 
@@ -126,7 +132,6 @@ show_fc.html.erb
 }
 
 .btn-size-large{
-	font-size: 16px;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	width: 60%;
@@ -137,7 +142,7 @@ show_fc.html.erb
 }
 
 .btn-size-small {
-  font-size: 14px;
+  font-size: 1.4rem;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	width: 30%;
@@ -156,7 +161,7 @@ profile.html.erb
 .profile-image {
   width: 45px;
   height: 45px;
-  margin: 0 auto;
+  margin: 2.0rem auto;
 }
 
 .profile-image img {
@@ -164,6 +169,10 @@ profile.html.erb
   height: 100%;
   border-radius: 50%;
   border: 2px solid #fff;
+}
+
+.profile-name {
+  text-align: center;
 }
 /* ---------------------------
 setting.html.erb

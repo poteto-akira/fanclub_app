@@ -8,30 +8,24 @@ class FcContentsController < ApplicationController
 
   def show
     @content = FcContent.find_by(id: params[:id])
+    @post = @content.post
   end
 
   def new
     @content = FcContent.find_by(id: params[:id])
-    
+    @post = Post.find_by(id: params[:id])
+
   end
 
   def create
-    # fc_idカラムも新しく入れる。fc_idは現在のpost.idにする
-    @enter = Enter.find_by(id: params[:id])
+    @post = Post.find_by(id: params[:id])
+    # form_tagに@post.idを含ませて現在のfc.idを取得している
     @content = FcContent.new(content_title: params[:content_title],
                              content_body: params[:content_body],
                              user_id: current_user.id,
                              fc_id: params[:id])
     @content.save
-    # リダイレクトの後にpost.idがついたurlに戻りたい
-    redirect_to(root_path)
+    # リダイレクトの後にpost.idがついたurlに戻る
+    redirect_to("/fc_contents/index/#{@post.id}")
   end
 end
-
-
-
-# t.text :content_title
-# t.text :content_body
-# t.integer :user_id
-# t.integer :fc_id
-# t.string :content_image

@@ -1,4 +1,4 @@
-<%= form_tag("/fc_content/create") do %>
+<%= form_tag("/fc_content/create/#{@post.id}") do %>
 
   <input name="content_title" placeholder="タイトル" type="text">
   <textarea name="content_body" placeholder="本文" type="text"></textarea>

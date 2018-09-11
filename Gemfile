@@ -69,10 +69,13 @@ gem 'carrierwave'
 
 gem 'payjp'
 
-group :development, :test do
-  gem 'sqlite3', '1.3.13'
-end
+# group :development, :test do
+#   gem 'sqlite3', '1.3.13'
+# end
+#
+# group :production do
+#   gem 'pg', '0.20.0'
+# end
 
-group :production do
-  gem 'pg', '0.20.0'
-end
+gem 'sqlite3', group: [:development, :test]
+gem 'pg', group: :production

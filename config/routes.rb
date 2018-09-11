@@ -1,20 +1,21 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+
   # ============fc_content.controller ==============
   get 'fc_contents/index/:id' => "fc_contents#index"
   get "fc_contents/new/:id" => "fc_contents#new"
   get "fc_content/:id" => "fc_contents#show"
-  post "fc_content/create" => "fc_contents#create"
+  post "fc_content/create/:id" => "fc_contents#create"
 
-
+  post "enter/:post_id/create" => "enters#create"
 
   get ":post_id/fcshow" => "home#show"
-  post "enter/:post_id/create" => "enters#create"
   get ":id/edit_profile" => "home#edit_profile"
   get "account/:id/edit" => "home#edit_account"
   post "user/:id/update" => "home#update_user"
   get 'pay/payment'
-  devise_for :users
+
   get "home/:id/likes" => "home#likes"
   post "likes/:post_id/create" => "likes#create"
   post "likes/:post_id/destroy" => "likes#destroy"
