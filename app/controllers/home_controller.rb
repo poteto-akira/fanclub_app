@@ -17,7 +17,7 @@ class HomeController < ApplicationController
                      user_id: current_user.id,
                      fc_name: params[:fc_name],
                      post_image: "default_post.jpg")
-  if   @post.save
+  if @post.save
 
     # ここから画像保存処理してる
     if params[:post_image]
