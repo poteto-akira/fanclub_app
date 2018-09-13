@@ -18,7 +18,7 @@
           </li>
 
           <!-- =========いいねを消そうとするとエラーが出るけどまだ手をつけてない ===========-->
-          <% if Like.where(user_id: current_user.id, posts_id: @posts.ids) %>
+          <!-- <% if Like.where(user_id: current_user.id, posts_id: @posts.ids) %>
             <%= link_to("/likes/#{@posts.ids}/destroy", {method: "post"}) do %>
               <span class="fa fa-heart like-btn-unlike heart-child">
                 <%= @likes_count %>
@@ -30,7 +30,7 @@
               <%= @likes_count %>
             </span>
             <% end%>
-          <% end %>
+          <% end %> -->
           <!-- =========ここまで ======================================-->
 
         </div>
