@@ -15,15 +15,16 @@ class HomeController < ApplicationController
     @post = Post.find_by(id: params[:id])
     @post = Post.new(content: params[:content],
                      user_id: current_user.id,
-                     fc_name: params[:fc_name])
+                     fc_name: params[:fc_name],
+                     post_image: "default_post.jpg")
   if @post.save
 
     # ここから画像保存処理してる
-    # if params[:post_image]
-    #   @post.post_image = "#{@post.id}.jpg"
-    #   image = params[:post_image]
-    #   File.binwrite("public/post_images/#{@post.post_image}",image.read )
-    # end
+    if params[:post_image]
+      @post.post_image = "#{@post.id}.jpg"
+      image = params[:post_image]
+      File.binwrite("public/post_images/#{@post.post_image}",image.read )
+    end
 
       redirect_to(root_path)
       flash[:notice] = "ファンクラブを作成しました！これから素晴らしいファンクラブにしていってくださいね♡"
