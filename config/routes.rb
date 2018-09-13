@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   post "likes/:post_id/create" => "likes#create"
   post "likes/:post_id/destroy" => "likes#destroy"
 
-  root 'home#index'
+  get "/" => 'home#index'
   get "home/new_fc" => "home#new_fc"
   post "home/create" => "home#create"
   get "home/profile/:id" => "home#profile"
