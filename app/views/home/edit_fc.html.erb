@@ -1,13 +1,14 @@
-<h3>ファンクラブを編集する</h3>
+<h3 class="title">ファンクラブを編集する</h3>
 <%= form_tag("/#{@post.id}/update_fc", {multipart: true}) do %>
   <% @post.errors.full_messages.each do |message| %>
     <p><%= message %></p>
   <% end %>
-  <p>ファンクラブ名</p>
-  <textarea name="fc_name" class="textbox"><%= @post.fc_name %></textarea>
-  <p>ファンクラブの説明</p>
+  <h4 class="about-fc">ファンクラブ名(必須)</h4>
+  <textarea name="fc_name" class="textbox-short textbox"><%= @post.fc_name %></textarea>
+  <h4 class="about-fc">ファンクラブの説明(必須)</h4>
   <textarea name="content" class="textbox"><%= @post.content %></textarea>
-  <p>ファンクラブのヘッダー画</p>
+  <h4 class="about-fc">ファンクラブのヘッダー画像(必須)</h4>
+  <!-- fileボタンは装飾が難しいからここは後回し -->
   <input name="post_image" type="file">
-  <input type="submit" value="これで完成！" class="btn btn-light-green btn-size-large">
+  <input type="submit" value="これで完成！" class="btn btn-color-blue btn-size-large">
 <% end %>
