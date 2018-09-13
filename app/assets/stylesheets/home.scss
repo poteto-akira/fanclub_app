@@ -170,7 +170,7 @@ table {
 	padding-bottom: 20px;
 	width: 60%;
   text-align: center;
-  margin: 20px auto;
+  margin: 20px auto 10px;
   // position: absolute;
   // bottom: 60px;
   // left: 20%;
@@ -186,9 +186,7 @@ table {
 }
 
 .pay-caution {
-  position: absolute;
-  bottom: 40px;
-  left: 10%;
+  margin-bottom: 10px;
 }
 /* ---------------------------
 edit_fc.html.erb
