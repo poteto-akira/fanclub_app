@@ -8,20 +8,6 @@
 </div>
 <h2 class="profile-name"><%= @user.name %></h2>
 
-<table>
-  <tr>
-    <th>ファンクラブ総会員数</th>
-    <th>入会ファンクラブ数</th>
-  </tr>
-  <!-- 自分のファンクラブに何人入っているのか、自分がファンクラブに何個入っているのかがまだ手付けてない -->
-  <tr>
-    <td>11</td>
-    <td>20</td>
-  </tr>
-</table>
-
-
-
   <div class="my-fc">
     <h3 class=""><%= @user.name %>さんが作ったファンクラブ</h3>
 
@@ -40,26 +26,5 @@
     <% end %>
 
   </div>
-
-
-
-  <h3><%= @user.name %>さんがいいねしたファンクラブ</h3>
-  <% @likes.each do |like|%>
-
-    <% post = Post.find_by(id: like.post_id)%>
-    <% user = User.find_by(id: like.user_id) %>
-
-    <section class="card">
-      <div class="card-img-parent">
-        <img class="card-img" src="<%= "/post_images/#{post.post_image}" %>" alt="">
-        <li class="card-img-child"><%= link_to(user.name, "/home/profile/#{post.user_id}") %></li>
-      </div>
-      <div class="card-content">
-        <h1 class="card-title"><%= link_to(post.fc_name, "/#{post.id}/show_fc") %></h1>
-        <p class="card-text"><%= post.content %></p>
-      </div>
-    </section>
-  <% end%>
-
 
 </div>
