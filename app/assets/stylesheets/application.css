@@ -31,6 +31,7 @@ html {
    padding: 0;
    margin: 0;
    font-size: 1.4rem;
+   color: #333333;
  }
 
 
@@ -46,12 +47,12 @@ html {
  }
 
  body {
-  color: #2d3133;
   background-color: #fff;
   margin: 0;
   padding-bottom: 40px;
   -webkit-overflow-scrolling: touch;
   font-size: 1.4rem;
+  color: #333333;
 
 }
 

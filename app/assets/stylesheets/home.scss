@@ -5,6 +5,13 @@
 /* ---------------------------
 index.html.erb
 --------------------------- */
+.index-text-top {
+  text-align: center;
+  line-height: 4.5rem;
+  background-color: rgb(7, 71, 166);
+  color: rgb(222, 235, 255);
+  align-items: center;
+}
 .card {
   margin: 30px auto;
   width: 80%;
@@ -16,6 +23,7 @@ index.html.erb
 
 .card-title {
   z-index: 2;
+  color: #333333;
 }
 
 .card .card-title a {
@@ -50,22 +58,10 @@ index.html.erb
   padding: 20px;
 }
 
-// .card-name {
-//   font-size: 20px;
-//   margin-bottom: 20px;
-//   text-align: left;
-//   padding-left: 20px;
-//   color: #333;
-// }
-
 .card-text {
-  color: #777;
+  color: #333333;
   line-height: 1.5;
   font-size: 1.4rem;
-}
-
-p {
-
 }
 
 /* ---------------------------
