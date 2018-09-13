@@ -96,6 +96,11 @@ table {
   border-bottom: 1px solid #cccccc;
 }
 
+.about-fc-content {
+  padding: 15px 10px 50px 10px;
+
+}
+
 
 // --共通のボタンスタイル--
 .btn {
@@ -121,6 +126,7 @@ table {
   background-color: rgb(7, 71, 166);
   color: #deebff;
   padding: 10px;
+  position: fixed;
 }
 .edit-btn a {
   color: #deebff;
