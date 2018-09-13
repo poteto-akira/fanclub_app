@@ -204,9 +204,13 @@ edit_fc.html.erb
 }
 
 .textbox-short {
+  border: 1px solid rgb(7, 71, 166);
+  width: 100%;
   height: 50px;
   align-items: center;
-  line-height: 3.5rem;
+  line-height: 4.0rem;
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24);
+  color: #333333;
 }
 
 
