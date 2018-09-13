@@ -1,4 +1,4 @@
-<h3><%= @post.fc_name %></h3>
+<h3 class="fc_name"><%= @post.fc_name %></h3>
 <div class="show-fc-img parent">
   <img class="card-img" src="<%= "/post_images/#{@post.id}.jpg" %>" alt="">
   <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
@@ -19,14 +19,6 @@
 <!-- 会員数と月額費をテーブルで作る -->
 <table class="table-show-fc ">
   <tr>
-    <th>会員数</th>
-    <th>月額費</th>
-  </tr>
-  <tr>
-    <td>11</td>
-    <td>¥300</td>
-  </tr>
-  <tr>
     <th>管理者</th>
     <th>作成日時</th>
   </tr>
@@ -37,7 +29,7 @@
 </table>
 
 <!-- ファンクラブ詳細を書く -->
-<p>このファンクラブについて</p>
+<h4 class="about-fc">このファンクラブについて</h4>
 <p><%= @post.content %></p>
 
 
@@ -51,16 +43,16 @@
 
 
 <% if @user.id == current_user.id %>
-  <button class="btn btn-color-black btn-size-large">
-    <%= link_to "編集する" , "/#{@post.id}/edit_fc" %>
+  <button class="btn edit-btn">
+    <%= link_to "編集" , "/#{@post.id}/edit_fc" %>
   </button>
 
 <!-- ===================================================== -->
 <!-- 削除ボタンはプロフィールページに表示して削除依頼という形式にする -->
 
-  <button class="btn btn-color-danger btn-size-small">
+  <!-- <button class="btn btn-color-danger btn-size-small">
     <%= link_to("削除する", "/#{@post.id}/fc/destroy", {method: "post"}) %>
-  </button>
+  </button> -->
 <!-- ========================================================== -->
 
 <% else %>

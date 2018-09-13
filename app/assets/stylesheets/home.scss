@@ -67,6 +67,10 @@ index.html.erb
 /* ---------------------------
 show_fc.html.erb
 --------------------------- */
+.fc_name {
+  text-align: center;
+  line-height: 4.5rem;
+}
 table {
   font-size: 1.4rem;
 }
@@ -88,6 +92,10 @@ table {
   width: 50%;
 }
 
+.about-fc {
+  border-bottom: 1px solid #cccccc;
+}
+
 
 // --共通のボタンスタイル--
 .btn {
@@ -105,7 +113,22 @@ table {
   padding-bottom: 10px;
 }
 // --------------------
+.edit-btn {
+  position: absolute;
+  bottom: 50px;
+  right: 20px;
+  border-radius: 50%;
+  background-color: rgb(7, 71, 166);
+  color: #deebff;
+  padding: 10px;
+}
+.edit-btn a {
+  color: #deebff;
 
+}
+.btn a {
+  display: block;
+}
 .btn-color-danger {
   background-color: #fff;
 }
