@@ -72,6 +72,10 @@ show_fc.html.erb
   line-height: 4.5rem;
 }
 
+.title-top {
+  padding: 30px 0;
+}
+
 table {
   font-size: 1.4rem;
 }
@@ -116,7 +120,7 @@ table {
 	text-align: center;
 	text-decoration: none;
   box-shadow: 0 0 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24);
-  border-radius: 100px;
+  border-radius: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -168,7 +172,7 @@ table {
 .btn-size-large{
 	padding-top: 20px;
 	padding-bottom: 20px;
-	width: 60%;
+	width: 80%;
   text-align: center;
   margin: 20px auto 10px;
   // position: absolute;
@@ -205,6 +209,7 @@ edit_fc.html.erb
   border: 1px solid rgb(7, 71, 166);
   width: 100%;
   height: 50px;
+  padding: 0 10px;
   align-items: center;
   line-height: 4.0rem;
   box-shadow: 0 0 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24);

@@ -23,37 +23,34 @@
 
 html {
   font-size: 62.5%;
-
 }
 
- ul, li {
-   list-style-type: none;
-   padding: 0;
-   margin: 0;
-   font-size: 1.4rem;
-   color: #333333;
- }
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.4rem;
+  color: #333333;
+}
 
 
- a {
-   text-decoration: none;
-   color: #2d3133;
-   font-size: 1.4rem;
-
- }
+a {
+  text-decoration: none;
+  color: #2d3133;
+  font-size: 1.4rem;
+}
 
  h1, h2, h3, h4, h5, h6, p {
-   margin: 0;
- }
+  margin: 0;
+}
 
- body {
+body {
   background-color: #fff;
   margin: 0;
   padding-bottom: 40px;
   -webkit-overflow-scrolling: touch;
   font-size: 1.4rem;
   color: #333333;
-
 }
 
 .main {
@@ -61,6 +58,10 @@ html {
   width: 100%;
   min-height: 100%;
   background-color: #fff;
+}
+
+.center {
+  text-align: center;
 }
 
 .field {
@@ -73,7 +74,6 @@ html {
   font-size: 1.2rem;
   text-align: center;
 }
-
 
 .parent {
   position: relative;
@@ -102,6 +102,7 @@ table {
   color: #3C3C3C;
   margin: 20px auto;
 }
+
 table tr {
   text-align: center;
 }
@@ -138,8 +139,6 @@ header ul {
   /* -webkit-flex-direction: row;
   flex-direction: row;
   flex-wrap: nowrap; */
-
-
 }
 
 header li {
@@ -153,8 +152,6 @@ header li {
   font-size: 22px;
   line-height: 40px;
 }
-
-
 
 .header-ul {
   float: right;
