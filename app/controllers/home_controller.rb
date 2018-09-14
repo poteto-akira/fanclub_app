@@ -30,6 +30,7 @@ class HomeController < ApplicationController
       flash[:notice] = "ファンクラブを作成しました！これから素晴らしいファンクラブにしていってくださいね♡"
     else
       render("new_fc")
+
     end
   end
 

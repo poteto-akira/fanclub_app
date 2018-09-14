@@ -1,13 +1,14 @@
-<h3>ファンクラブ名を入力してね！<h3>
+<h3 class="title">ファンクラブ名を入力してね！<h3>
 
 <%= form_tag("/home/create", {multipart: true}) do %>
-<ul>
-  <p>ファンクラブ名</p>
-  <li><textarea class="textbox" name="fc_name" type="text" placeholder="ファンクラブ名を入力してね♡"></textarea></li>
-  <p>ファンクラブについて</p>
-  <li><textarea class="textbox" name="content" type="text" placeholder="ファンクラブについて詳しく書いてね♡"></textarea></li>
-  <p>ファンクラブのヘッダー画像</p>
+
+  <p>ファンクラブ名(必須)</p>
+  <textarea class="textbox-short" name="fc_name" type="text" placeholder="ファンクラブ名を入力してね♡"></textarea>
+  <p>ファンクラブについて(必須)</p>
+  <textarea class="textbox" name="content" type="text" placeholder="ファンクラブについて詳しく書いてね♡"></textarea>
+  <p>ファンクラブのヘッダー画像(必須)</p>
+  <!-- fileボタンはcss書くの難しいから保留 -->
   <input name="post_image" type="file">
-  <input type="submit" value="これで完成！" class="btn btn-light-green btn-size-large"></input>
-</ul>
+  <input type="submit" value="これで完成！" class="btn btn-color-blue btn-size-large"></input>
+
 <% end %>

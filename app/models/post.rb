@@ -2,6 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user
   validates :fc_name, {presence: true}
   validates :content, {presence: true}
+  validates :post_image, {presence: true}
   # validates :post_image, {presence: true}
   # validates :user_id, {presence: true}
 
