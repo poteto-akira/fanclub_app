@@ -201,7 +201,7 @@ edit_fc.html.erb
 .textbox {
   border: 1px solid rgb(7, 71, 166);
   width: 100%;
-  height: 250px;
+  height: 350px;
   padding: 15px 10px 50px 10px;
   box-shadow: 0 0 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24);
   color: #333333;
@@ -234,6 +234,31 @@ input .btn {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+/* ---------------------------
+fc_contents/index.html.erb
+--------------------------- */
+.timeline {
+  width: 100%;
+  border-bottom: 1px solid #E9E9E9;
+
+}
+
+.timeline-body {
+  padding: 10px;
+
+}
+
+.created-at {
+  font-size: 1.2rem;
+  padding: 0 0 5px 10px; 
+
+}
+
+/* ---------------------------
+fc_contents/new.html.erb
+--------------------------- */
+
 
 /* ---------------------------
 profile.html.erb

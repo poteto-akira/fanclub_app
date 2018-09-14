@@ -1,9 +1,8 @@
 class FcContentsController < ApplicationController
   def index
-    # @enters = Enter.find_by(id: params[:id])
     @post = Post.find_by(id: params[:id])
 
-    @contents = FcContent.all
+    @contents = FcContent.all.order(created_at: :desc)
   end
 
   def show
@@ -24,8 +23,12 @@ class FcContentsController < ApplicationController
                              content_body: params[:content_body],
                              user_id: current_user.id,
                              fc_id: params[:id])
-    @content.save
+    if @content.save
     # リダイレクトの後にpost.idがついたurlに戻る
     redirect_to("/fc_contents/index/#{@post.id}")
+
+    else
+      render("new")
+    end
   end
 end
