@@ -16,10 +16,11 @@ class HomeController < ApplicationController
     @post = Post.new(content: params[:content],
                      user_id: current_user.id,
                      fc_name: params[:fc_name],
-                     post_image: "default_post.jpg")
+                     post_image: params[:post_image])
   if @post.save
 
-    # ここから画像保存処理してる
+    # ここから画像保存処理してるんだけどPost.newでpost_iamge: params[:post_image]
+    # をしてるからpostテーブルに--.jpgの形で保存されていない。
     if params[:post_image]
       @post.post_image = "#{@post.id}.jpg"
       image = params[:post_image]
