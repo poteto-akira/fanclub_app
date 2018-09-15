@@ -15,15 +15,22 @@ class HomeController < ApplicationController
                      user_id: current_user.id,
                      fc_name: params[:fc_name],
                      post_image: params[:post_image])
-  if @post.save
 
+    if @post.save
     # ここから画像保存処理してるんだけどPost.newでpost_iamge: params[:post_image]
     # をしてるからpostテーブルに--.jpgの形で保存されていない。
     if params[:post_image]
+      # 画像のリサイズをする
+
+      # アップロードした画像を300x300のサイズに編集
+      image = MiniMagick::Image.read(params[:post_image])
+      image.resize "300x240"
       @post.post_image = "#{@post.id}.jpg"
-      image = params[:post_image]
-      File.binwrite("public/post_images/#{@post.post_image}",image.read )
+      # image = params[:post_image]
+      # File.binwrite("public/post_images/#{@post.post_image}",image.read )
+      image.write "public/post_images/#{@post.post_image}"
     end
+
 
       redirect_to(root_path)
       flash[:notice] = "ファンクラブを作成しました！これから素晴らしいファンクラブにしていってくださいね♡"

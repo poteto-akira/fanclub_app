@@ -1,6 +1,8 @@
 <h3 class="index-text-top">お気に入りのファンクラブを探してね！</h3>
     <% @posts.each do |post| %>
       <section class="card">
+
+        <!-- 画像のリサイズをする -->
         <div class="card-img-parent">
             <img class="card-img" src="<%= "/post_images/#{post.id}.jpg" %>" alt="">
           <li class="card-img-child">
