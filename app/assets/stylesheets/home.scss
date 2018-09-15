@@ -241,7 +241,7 @@ fc_contents/index.html.erb
 .timeline {
   width: 100%;
   border-bottom: 1px solid #E9E9E9;
-
+  padding: 15px;
 }
 
 .timeline-body {
@@ -251,11 +251,36 @@ fc_contents/index.html.erb
 
 .created-at {
   font-size: 1.2rem;
-  padding: 0 0 5px 10px;
+  padding: 0 0 0 10px;
   color: #767676;
 
 }
 
+/* ---------------------------
+fc_contents/show.html.erb
+--------------------------- */
+.show-content-container {
+  width: 100%;
+  padding: 10px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-content-name {
+  font-size: 1.4rem;
+}
+
+.show-content-body {
+  padding: 10px 10px 20px 10px;
+  font-size: 1.8rem;
+}
+
+.link-back {
+  float: left;
+}
 /* ---------------------------
 fc_contents/new.html.erb
 --------------------------- */

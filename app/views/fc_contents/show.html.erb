@@ -1,3 +1,10 @@
- <%= @content.content_title %>
- <%= @content.content_body %>
- <%= @content.created_at.strftime('%Y/%m/%d %H:%M') %>
+<div class="show-content-container">
+  <div class="flex">
+    <p class="show-content-name">ユーザー：<%= @content.user_id %></p>
+    <p class="link-back"><%= link_to '戻る', :back %></p>
+  </div>
+
+  <p class="show-content-body"><%= @content.content_body %></p>
+  <p class="created-at"><%= @content.created_at.strftime('%Y/%m/%d %H:%M') %></p>
+
+</div>
