@@ -2,7 +2,6 @@
   <!-- リンクにファンクラブのidを入れている -->
   <%= link_to("コンテンツを投稿する", "/fc_contents/new/#{@post.id}") %>
 </div>
-
 <!-- 現在のpostのコンテンツって意味 -->
 <% @post.contents.each do |content| %>
   <div class="timeline">

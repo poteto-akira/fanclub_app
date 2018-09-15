@@ -3,7 +3,9 @@
 <input type="submit" value="投稿する" class="btn btn-color-blue btn-size-large">
 
 
-
+<% @content.errors.full_messages.each do |message| %>
+<%= message %>
+ <% end %>
   <!-- コンテンツにタイトルいらない件 -->
   <!-- <input name="content_title" placeholder="タイトル" type="text"> -->
 

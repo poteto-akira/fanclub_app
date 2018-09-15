@@ -106,13 +106,13 @@ ja:
       second: 秒
       year: 年
   errors:
-    format: "%{attribute}%{message}"
+    format: "%{message}"
     messages:
       accepted: を受諾してください
-      blank: を入力してください
+      blank: 空のままだと投稿できませんよ！
       present: は入力しないでください
       confirmation: と%{attribute}の入力が一致しません
-      empty: を入力してください
+      empty: 空のままはいけませんよ！
       equal_to: は%{count}にしてください
       even: は偶数にしてください
       exclusion: は予約されています
