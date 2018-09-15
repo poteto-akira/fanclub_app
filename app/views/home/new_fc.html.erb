@@ -1,6 +1,7 @@
-<input type="submit" value="これで完成！" class="btn btn-color-blue btn-size-large"></input>
 
 <%= form_tag("/home/create", {multipart: true}) do %>
+<input type="submit" value="これで完成！" class="btn btn-color-blue btn-size-large"></input>
+
   <p>ファンクラブのヘッダー画像(必須)</p>
   <!-- fileボタンはcss書くの難しいから保留 -->
   <input name="post_image" type="file">

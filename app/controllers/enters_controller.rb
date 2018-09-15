@@ -9,7 +9,9 @@ class EntersController < ApplicationController
                 post_id: params[:post_id]
                 )
     @enter.save
+    # saveした後にfc_contents/indexページに飛びたい
     redirect_to("/")
+
   end
 
   # ファンクラブの中身ページのアクション
