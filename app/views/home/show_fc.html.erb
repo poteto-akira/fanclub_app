@@ -1,47 +1,4 @@
 <h3 class="title"><%= @post.fc_name %></h3>
-<div class="show-fc-img parent">
-  <img class="card-img" src="<%= "/post_images/#{@post.id}.jpg" %>" alt="">
-  <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
-    <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
-      <span class="fa fa-heart like-btn-unlike heart-child">
-        <%= @likes_count %>
-      </span>
-      <%end%>
-  <% else %>
-    <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do%>
-    <span class="fa fa-heart like-btn heart-child">
-      <%= @likes_count %>
-    </span>
-    <% end%>
-  <% end %>
-
-</div>
-<!-- 会員数と月額費をテーブルで作る -->
-<table class="table-show-fc ">
-  <tr>
-    <th>管理者</th>
-    <th>作成日時</th>
-  </tr>
-  <tr>
-    <td><%= link_to(@user.name, "/home/profile/#{@user.id}") %></td>
-    <td><%= @post.created_at.strftime('%Y/%m/%d') %></td>
-  </tr>
-</table>
-
-<!-- ファンクラブ詳細を書く -->
-<h4 class="about-fc">このファンクラブについて</h4>
-<p class="about-fc-content"><%= @post.content %></p>
-
-
-<!-- いいねをボタンにしようと思う -->
-<!-- <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
-  <%= link_to("いいね！済み", "/likes/#{@post.id}/destroy", {method: "post"}) %>
-<% else %>
-  <%= link_to("いいね！", "/likes/#{@post.id}/create",{method:"post"}) %>
-<% end%>
-<%= @likes_count %> -->
-
-
 <% if @user.id == current_user.id %>
   <button class="btn edit-btn">
     <%= link_to "編集" , "/#{@post.id}/edit_fc" %>
@@ -71,3 +28,66 @@
   <% end %>
 
 <% end %>
+
+<!-- ここからタブバーエリア ===============================================-->
+<div class="tabs">
+    <input id="fc" type="radio" name="tab_item" checked>
+    <label class="tab_item" for="fc">ファンクラブ</label>
+    <input id="programming" type="radio" name="tab_item">
+    <label class="tab_item" for="programming">動画</label>
+    <input id="design" type="radio" name="tab_item">
+    <label class="tab_item" for="design">管理者</label>
+
+    <div class="tab_content" id="fc_content">
+      <div class="show-fc-img parent">
+        <img class="card-img" src="<%= "/post_images/#{@post.id}.jpg" %>" alt="">
+        <!-- <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
+          <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
+            <span class="fa fa-heart like-btn-unlike heart-child">
+              <%= @likes_count %>
+            </span>
+            <%end%>
+        <% else %>
+          <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do%>
+          <span class="fa fa-heart like-btn heart-child">
+            <%= @likes_count %>
+          </span>
+          <% end%>
+        <% end %> -->
+
+      </div>
+      <!-- 会員数と月額費をテーブルで作る -->
+      <table class="table-show-fc ">
+        <tr>
+          <th>管理者</th>
+          <th>作成日時</th>
+        </tr>
+        <tr>
+          <td><%= link_to(@user.name, "/home/profile/#{@user.id}") %></td>
+          <td><%= @post.created_at.strftime('%Y/%m/%d') %></td>
+        </tr>
+      </table>
+
+      <!-- ファンクラブ詳細を書く -->
+      <h4 class="about-fc">このファンクラブについて</h4>
+
+      <p class="about-fc-content"><%= @post.content %></p>
+
+    </div>
+    <div class="tab_content" id="programming_content">
+        動画がここに入ります
+    </div>
+    <div class="tab_content" id="design_content">
+        管理者の内容がここに入ります
+    </div>
+
+<!-- ここまでタブバーエリア ===============================================-->
+
+
+<!-- いいねをボタンにしようと思う -->
+<!-- <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
+  <%= link_to("いいね！済み", "/likes/#{@post.id}/destroy", {method: "post"}) %>
+<% else %>
+  <%= link_to("いいね！", "/likes/#{@post.id}/create",{method:"post"}) %>
+<% end%>
+<%= @likes_count %> -->
