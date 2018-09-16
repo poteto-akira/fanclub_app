@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "fc_content/:id" => "fc_contents#show"
   post "fc_content/create/:id" => "fc_contents#create"
 
-  post "enter/:post_id/create" => "enters#create"
+  post "enter/:id/create" => "enters#create"
 
   get ":post_id/fcshow" => "home#show"
   get ":id/edit_profile" => "home#edit_profile"
