@@ -28,6 +28,7 @@ index.html.erb
   // box-shadow: 0 0 4px 0;
   position: relative;
   float: left;
+  border: 1px solid #F2F2F2;
 }
 
 .card-title {
@@ -103,8 +104,7 @@ table {
   font-size: 1.4rem;
 }
 .show-fc-img {
-  width: 80%;
-  margin: 0 auto;
+  text-align: center;
 }
 
 .table-show-fc {
@@ -323,9 +323,10 @@ fc_contents/new.html.erb
 profile.html.erb
 --------------------------- */
 .profile-image {
-  width: 45px;
-  height: 45px;
-  // margin: 2.0rem auto;
+  margin: 10px auto;
+  width: 50px;
+  height: 50px;
+  text-align: center;
 }
 
 .profile-image img {
