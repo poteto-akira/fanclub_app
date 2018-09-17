@@ -1,5 +1,7 @@
 <h3 class="index-text-top">お気に入りのファンクラブを探してね！</h3>
     <% @posts.each do |post| %>
+    <!-- link_to ~ do で画像全体にリンクをかけている -->
+    <%= link_to ("/#{post.id}/show_fc") do %>
       <section class="card">
 
         <!-- 画像のリサイズをする -->
@@ -20,4 +22,5 @@
           </div>
           <!-- <p class="card-text"><%= post.content %></p> -->
       </section>
+    <% end %>
     <% end %>
