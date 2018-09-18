@@ -3,10 +3,10 @@
 
 <%= form_tag("/user/#{current_user.id}/update", {multipart: true}) do %>
   <p>ユーザー名</p>
-  <textarea name="name" class="textbox"><%= current_user.name %></textarea>
+  <textarea name="name" class="textbox-short"><%= current_user.name %></textarea>
   <li>自己紹介変更</li>
   <li>プロフィール写真変更</li>
   <p>画像</p>
   <input name="image" type="file">
-  <input type="submit" value="これで完成！" class="btn btn-light-green btn-size-large">
+  <input type="submit" value="これで完成！" class="btn btn-color-blue btn-size-large">
 <% end %>

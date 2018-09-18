@@ -266,11 +266,28 @@ fc_contents/index.html.erb
   border-bottom: 1px solid #E9E9E9;
   padding: 15px;
   position: relative;
+}
+
+.content-user-img {
+  width: 50px;
+  height: 50px;
+  float: left;
 
 }
 
+.content-user-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.content-id {
+  // float: left;
+}
 .timeline-body {
-  padding: 10px;
+  width: 90%;
+  margin: 0 0 0 50px;
 }
 
 // .timeline全体にリンクをつけたいけどレイアウトが崩れてしまう。
@@ -287,6 +304,7 @@ fc_contents/index.html.erb
   font-size: 1.2rem;
   padding: 0 0 0 10px;
   color: #767676;
+
 }
 
 /* ---------------------------

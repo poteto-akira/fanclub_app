@@ -1,3 +1,4 @@
+<div class="main">
 <div class="btn btn-size-large">
   <!-- リンクにファンクラブのidを入れている -->
   <%= link_to("コンテンツを投稿する", "/fc_contents/new/#{@post.id}") %>
@@ -5,13 +6,22 @@
 <!-- 現在のpostのコンテンツって意味 -->
 <% @post.contents.each do |content| %>
   <div class="timeline">
-      <p>投稿ID:<%= content.id %>   ユーザー:<%= content.user_id %></p>
+    <div class="content-user-img">
+      <% if content.user_id%>
+        <%= link_to image_tag("/user_images/#{content.user_id}.jpg"), "/home/profile/#{content.user_id}" %>
+      <% else %>
+        <img src="<%= "/default_image.jpg" %>">
+      <% end %>
+    </div>
+      <p class="content-id">投稿ID:<%= content.id %>   ユーザー:<%= content.user_id %>   <span class="created-at"><%= time_ago_in_words(content.created_at)%></span>
+</p>
+      <li class="created-at">
+      </li>
 
     <li class="timeline-body">
       <%= link_to(content.content_body, "/fc_content/#{content.id}") %>
     </li>
-    <li class="created-at">
-      <%= time_ago_in_words(content.created_at)%>
-    </li>
+
   </div>
 <% end %>
+</div>
