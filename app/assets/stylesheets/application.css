@@ -23,6 +23,8 @@
 
 html {
   font-size: 62.5%;
+  margin-bottom: 70px;
+
 }
 
 ul, li {
@@ -58,7 +60,6 @@ body {
   width: 100%;
   min-height: 100%;
   background-color: #fff;
-  margin-bottom: 70px; 
 }
 
 .center {
