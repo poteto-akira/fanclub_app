@@ -10,9 +10,12 @@
   </div>
 
 <!-- ここからユーザーが作ったファンクラブを表示するエリア =================================-->
+
   <div class="my-fc">
     <h3 class="who-make-fc"><%= @user.name %>さんが作ったファンクラブ</h3>
     <% @user.posts.each do |post|%>
+    <%= link_to ("/#{post.id}/show_fc") do %>
+
       <section class="card">
         <div class="card-img-parent">
           <img class="card-img" src="<%= "/post_images/#{post.id}.jpg" %>" alt="">
@@ -23,6 +26,7 @@
       </section>
     <% end %>
   </div>
+  <% end %>
 <!-- ここまでユーザーが作ったファンクラブを表示するエリア =================================-->
 
 </div>

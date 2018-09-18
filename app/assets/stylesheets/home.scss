@@ -22,7 +22,7 @@ index.html.erb
   // margin: 30px auto;
   // width: 83.334%;
   width: 49%;
-  margin: 3px 1.5px;
+  margin: 1.5px 1.5px;
   background: #fff;
   border-radius: 5px;
   // box-shadow: 0 0 4px 0;
@@ -57,7 +57,7 @@ index.html.erb
 
 .card-img-parent {
   position: relative;
-  width: 174px;
+  // width: 174px;
   height: 174px;
 }
 
@@ -67,7 +67,7 @@ index.html.erb
 }
 
 .card-img {
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px;
   width: 174px;
   height: 174px;
   margin: 0 auto;
@@ -363,7 +363,7 @@ profile.html.erb
 
 .my-fc {
   width: 100%;
-  margin: 20px auto;
+  margin: 0px auto;
 }
 
 .who-make-fc {
