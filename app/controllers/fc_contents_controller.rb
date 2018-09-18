@@ -1,4 +1,6 @@
 class FcContentsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @post = Post.find_by(id: params[:id])
 

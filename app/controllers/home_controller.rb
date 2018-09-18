@@ -1,4 +1,8 @@
 class HomeController < ApplicationController
+  before_action :authenticate_user!, only:[:new_fc, :create, :edit_fc, :setting,
+                                    :edit_account, :edit_profile]
+
+
   def index
     @posts = Post.all.order(created_at: :desc)
     @users = User.all.order(created_at: :desc)

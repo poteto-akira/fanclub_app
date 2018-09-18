@@ -1,32 +1,45 @@
 <h3 class="title"><%= @post.fc_name %></h3>
-<% if @user.id == current_user.id %>
-  <button class="btn edit-btn">
-    <%= link_to "編集" , "/#{@post.id}/edit_fc" %>
-  </button>
+<!-- ログイン状態の処理 -->
+<% if user_signed_in? %>
+  <!-- ファンクラブのuser.idと現在のuser.idが同じ場合(ファンクラブの管理者)の処理 -->
+  <% if @user.id == current_user.id %>
+    <button class="btn edit-btn">
+      <%= link_to "編集" , "/#{@post.id}/edit_fc" %>
+    </button>
 
-<!-- ===================================================== -->
-<!-- 削除ボタンはプロフィールページに表示して削除依頼という形式にする -->
+      <!-- ===================================================== -->
+      <!-- 削除ボタンはプロフィールページに表示して削除依頼という形式にする -->
 
-  <!-- <button class="btn btn-color-danger btn-size-small">
-    <%= link_to("削除する", "/#{@post.id}/fc/destroy", {method: "post"}) %>
-  </button> -->
-<!-- ========================================================== -->
-
-<% else %>
-
+        <!-- <button class="btn btn-color-danger btn-size-small">
+          <%= link_to("削除する", "/#{@post.id}/fc/destroy", {method: "post"}) %>
+        </button> -->
+      <!-- ========================================================== -->
+  <% end %>
+  <!-- ファンクラブにすでに入会している場合の処理 -->
   <% if Enter.find_by(user_id: current_user.id , post_id: @post.id) %>
-  <button class="btn btn-color-blue btn-size-large">
-    <!-- ここからは各ファンクラブ専用サイト。validatesで制限をかける。 -->
-    <%= link_to("このファンクラブの中を見る", "/fc_contents/index/#{@post.id}") %>
-  </button>
+    <button class="btn btn-color-blue btn-size-large">
+      <!-- ここからは各ファンクラブ専用サイト。validatesで制限をかける。 -->
+      <%= link_to("このファンクラブの中を見る", "/fc_contents/index/#{@post.id}") %>
+    </button>
 
   <% else %>
-    <button class="btn btn-color-blue btn-size-large">
-      <%= link_to("入会する", "/enter/#{@post.id}/create",{method:"post"}) %>
-    </button>
-    <p class="text-caution pay-caution">このボタンをタップしてもまだ支払いは行われません</p>
+    <!-- ファンクラブのuser.idと現在のuser.idが同じ(ファンクラブの管理者)だったら入会するボタンを非表示にする -->
+    <% if @user.id != current_user.id %>
+      <button class="btn btn-color-blue btn-size-large">
+        <%= link_to("入会する", "/enter/#{@post.id}/create",{method:"post"}) %>
+      </button>
+      <p class="text-caution pay-caution">このボタンをタップしてもまだ支払いは行われません</p>
+    <% end %>
   <% end %>
 
+<% end %>
+
+<!-- ログインしていない場合の処理 -->
+<% if !user_signed_in? %>
+  <button class="btn btn-color-blue btn-size-large">
+    <%= link_to("入会する", "/enter/#{@post.id}/create",{method:"post"}) %>
+  </button>
+  <p class="text-caution pay-caution">このボタンをタップしてもまだ支払いは行われません</p>
 <% end %>
 
 <!-- ここからタブバーエリア ===============================================-->
@@ -37,24 +50,27 @@
     <label class="tab_item" for="programming">動画</label>
     <input id="design" type="radio" name="tab_item">
     <label class="tab_item" for="design">管理者</label>
-
     <div class="tab_content" id="fc_content">
       <div class="show-fc-img parent">
         <img class="card-img" src="<%= "/post_images/#{@post.id}.jpg" %>" alt="">
-        <!-- <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
-          <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
-            <span class="fa fa-heart like-btn-unlike heart-child">
+
+        <% if false %>
+
+          <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
+            <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
+              <span class="fa fa-heart like-btn-unlike heart-child">
+                <%= @likes_count %>
+              </span>
+              <%end%>
+          <% else %>
+            <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do%>
+            <span class="fa fa-heart like-btn heart-child">
               <%= @likes_count %>
             </span>
-            <%end%>
-        <% else %>
-          <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do%>
-          <span class="fa fa-heart like-btn heart-child">
-            <%= @likes_count %>
-          </span>
-          <% end%>
-        <% end %> -->
+            <% end%>
+          <% end %>
 
+        <% end %>
       </div>
       <!-- 会員数と月額費をテーブルで作る -->
       <table class="table-show-fc ">
@@ -83,6 +99,7 @@
 
 <!-- ここまでタブバーエリア ===============================================-->
 
+<% if false %>
 
 <!-- いいねをボタンにしようと思う -->
 <!-- <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
@@ -91,3 +108,5 @@
   <%= link_to("いいね！", "/likes/#{@post.id}/create",{method:"post"}) %>
 <% end%>
 <%= @likes_count %> -->
+
+<% end %>

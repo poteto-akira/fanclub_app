@@ -54,17 +54,21 @@
 
 
     <!-- justify-content: space-around;を効かせたいけど効かない -->
-    <% if user_signed_in? %>
+    <% if false %>
+      <% if user_signed_in? %>
+      <% end %>
+    <% end %>
     <header>
       <nav>
         <ul>
           <li><%= link_to("ホーム" , "/")%></li>
           <li><%= link_to("未定" , "/")%></li>
-          <li><%= link_to("アカウント" , "/#{current_user.id}/setting")%></li>
+            <li><%= link_to("アカウント" , "/setting")%></li>
+
         </ul>
       </nav>
     </header>
-    <% end %>
+
     <!-- ここまで =========================================-->
 
 
