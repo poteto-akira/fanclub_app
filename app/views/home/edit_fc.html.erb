@@ -1,6 +1,8 @@
 <div class="main">
   <h3 class="title">ファンクラブを編集する</h3>
   <%= form_tag("/#{@post.id}/update_fc", {multipart: true}) do %>
+  <input type="submit" value="これで完成！" class="btn btn-color-blue btn-size-large">
+
     <% @post.errors.full_messages.each do |message| %>
       <p><%= message %></p>
     <% end %>
@@ -12,6 +14,5 @@
       <h4 class="about-fc">ファンクラブの説明(必須)</h4>
       <textarea name="content" class="textbox"><%= @post.content %></textarea>
 
-      <input type="submit" value="これで完成！" class="btn btn-color-blue btn-size-large">
   <% end %>
 </div>

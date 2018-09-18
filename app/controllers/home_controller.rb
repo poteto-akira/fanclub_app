@@ -62,10 +62,19 @@ class HomeController < ApplicationController
     @post.fc_name = params[:fc_name]
 
     if params[:post_image]
+      # @post.post_image = "#{@post.id}.jpg"
+      # image = params[:post_image]
+      # リサイズしてから保存
       @post.post_image = "#{@post.id}.jpg"
-      image = params[:post_image]
-      File.binwrite("public/post_images/#{@post.post_image}",image.read )
+      image = MiniMagick::Image.read(params[:post_image])
+      image.resize "200x200"
+      image.write "public/post_images/#{@post.post_image}"
+
+      # File.binwrite("public/post_images/#{@post.post_image}",image.read )
     end
+
+
+    @post.post_image = "#{@post.id}.jpg"
 
     if @post.save
       flash[:notice] = "編集完了！！！"
