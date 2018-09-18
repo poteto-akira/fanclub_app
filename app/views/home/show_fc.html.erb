@@ -54,8 +54,8 @@
       <div class="show-fc-img parent">
         <img class="card-img" src="<%= "/post_images/#{@post.id}.jpg" %>" alt="">
 
+        <!-- destroyができるまで非表示 -->
         <% if false %>
-
           <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
             <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
               <span class="fa fa-heart like-btn-unlike heart-child">
@@ -69,18 +69,20 @@
             </span>
             <% end%>
           <% end %>
-
         <% end %>
       </div>
+
       <!-- 会員数と月額費をテーブルで作る -->
       <table class="table-show-fc ">
         <tr>
           <th>管理者</th>
           <th>作成日時</th>
+          <th>会員数</th>
         </tr>
         <tr>
           <td><%= link_to(@user.name, "/home/profile/#{@user.id}") %></td>
           <td><%= @post.created_at.strftime('%Y/%m/%d') %></td>
+          <td><%= @member_count %></td>
         </tr>
       </table>
 
