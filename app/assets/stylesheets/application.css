@@ -296,3 +296,55 @@ background: -webkit-linear-gradient(45deg, #f2c8c5 0, #f686bc 100%);
 background: linear-gradient(45deg,#f2c8c5 0,#f686bc 100%);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2c8c5', endColorstr='#f686bc', GradientType=1);
 } */
+
+
+/* いいねアニメーションの読み込み */
+.icobutton {
+  /* フォントサイズを大きく */
+  font-size: 1.8em;
+  /* 中心に表示 */
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -42%);
+  background: transparent;
+  border: none;
+
+}
+.icobutton:hover,
+.icobutton:focus {
+  /* hover、focus時の背景色を透明に */
+  background: transparent;
+}
+
+.circle-button {
+  position: absolute;
+  bottom: 0;
+  right: 3.5em;
+  width: 70px;
+  height: 70px;
+  font-size: 1.5em;
+  color: #fff;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.275);
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+.circle-button:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.275);
+}
+
+.triangle {
+  position: relative;
+  height: 0;
+  width: 0;
+  border-left: 1.5em solid transparent;
+  border-right: 1.5em solid transparent;
+  border-top: 1.5em solid transparent;
+  margin: 0 auto -1.75em auto;
+  top: .6em;
+  z-index: 20;
+}

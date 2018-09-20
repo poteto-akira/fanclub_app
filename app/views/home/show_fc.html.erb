@@ -54,6 +54,17 @@
       <div class="show-fc-img parent">
         <img class="card-img" src="<%= "/post_images/#{@post.id}.jpg" %>" alt="">
 
+        <% if false %>
+        <!-- いいね機能はvue.jsを勉強してから -->
+        <div class="triangle">
+          <div class="circle-button">
+            <button class="icobutton icobutton-7-grey-ffd715 once">
+              <span class="fa fa-heart"></span>
+            </button>
+          </div>
+        </div>
+        <% end %>
+
         <!-- destroyができるまで非表示 -->
         <% if false %>
           <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
