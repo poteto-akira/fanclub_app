@@ -3,8 +3,8 @@ class FcContentsController < ApplicationController
 
   def index
     @post = Post.find_by(id: params[:id])
-
-    @contents = FcContent.all.order(created_at: :desc)
+    # ここでorderしてもダメだからfc_content.rbで書いている
+    # @contents = FcContent.all.order(created_at: :desc)
   end
 
   def show

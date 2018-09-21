@@ -7,6 +7,7 @@ class Post < ApplicationRecord
   # validates :user_id, {presence: true}
 
   # has_many :fc_contents
+  default_scope -> { order(created_at: :desc) }
 
   def user
     return User.find_by(id: self.user_id)
