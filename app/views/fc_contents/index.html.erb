@@ -3,13 +3,13 @@
   <!-- リンクにファンクラブのidを入れている -->
   <%= link_to("コンテンツを投稿する", "/fc_contents/new/#{@post.id}") %>
 </div>
-<!-- 現在のpostのコンテンツって意味 -->
-<div class="member-timeline-container">
 
-<% @post.contents.each do |content| %>
-  <!-- このif文はファンクラブオーナーとコンテンツのuser_idが同じだった場合(ファンクラブオーナーの場合)のこと -->
-  <!-- <div class="orner-container">
+<!-- ファンクラブオーナーのタイムライン -->
+<div class="orner-container">
+  <!-- 現在のpostのコンテンツって意味 -->
+  <% @post.contents.each do |content| %>
     <% if @post.user_id == content.user_id %>
+    <li class="member-timeline">
       <div class="content-member-img">
         <% if content.user_id %>
           <%= link_to image_tag("/user_images/#{content.user_id}.jpg"), "/home/profile/#{content.user_id}" %>
@@ -18,10 +18,16 @@
         <% end %>
       </div>
         <%= link_to(content.content_body, "/fc_content/#{content.id}") %>
-  </div> -->
+      </li>
+    <% end %>
+  <% end %>
+</div>
 
-  <!-- elseはファンクラブの会員だった場合 -->
-    <!-- <% else %> -->
+<!-- 会員のタイムライン -->
+<div class="member-timeline-container">
+  <!-- 現在のpostのコンテンツって意味 -->
+  <% @post.contents.each do |content| %>
+    <% if @post.user_id != content.user_id %>
       <li class="member-timeline">
         <div class="content-member-img">
           <% if content.user_id %>
@@ -35,7 +41,6 @@
           <%= link_to(content.content_body, "/fc_content/#{content.id}") %>
         </div>
       </li>
-    <!-- <% end %> -->
-
-<% end %>
+    <% end %>
+  <% end %>
 </div>

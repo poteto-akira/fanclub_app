@@ -262,11 +262,21 @@ input .btn {
 fc_contents/index.html.erb
 --------------------------- */
 // 会員のタイムラインを半分より下に表示
+
 .member-timeline-container {
-  margin-top: 70%;
+  // margin-top: 70%;
+  position: absolute;
+  bottom: 0;
+  height: 45%;
+  overflow: scroll;
+  width: 100%;
+  background-color: rgba(102,102,102,0.5);
 }
 .orner-container {
-  // margin-bottom: 70%;
+  overflow: scroll;
+  height: 70%;
+  position: absolute;
+  top: 100px;
 }
 
 .member-timeline {
@@ -275,7 +285,6 @@ fc_contents/index.html.erb
   border: 1px solid #E9E9E9;
   padding: 5px;
   position: relative;
-
 }
 
 .content-member-img {
