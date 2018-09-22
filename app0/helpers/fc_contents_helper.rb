@@ -1,0 +1,2 @@
+module FcContentsHelper
+end

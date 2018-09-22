@@ -1,5 +1,31 @@
 {
-  "name": "fc_app2",
+  "name": "fcapp",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "webpack": "^4.19.1",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "0.0.1",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/akirin/fc_app.git"
+  },
+  "keywords": [
+    "akiaki0424"
+  ],
+  "author": "akira",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/akirin/fc_app#readme"
 }

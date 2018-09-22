@@ -1,0 +1,555 @@
+
+/* ===========================================
+ここからスマホに適用するスタイルはグローバルに書く
+============================================== */
+/* ---------------------------
+index.html.erb
+--------------------------- */
+.index-text-top {
+  text-align: center;
+  line-height: 4.5rem;
+  background-color: rgb(7, 71, 166);
+  color: rgb(222, 235, 255);
+  align-items: center;
+}
+
+.card-flex {
+  // display: flex;
+  // margin-bottom: 30px;
+}
+
+.card {
+  // margin: 30px auto;
+  // width: 83.334%;
+  width: 49%;
+  margin: 1.5px 1.5px;
+  background: #fff;
+  border-radius: 5px;
+  // box-shadow: 0 0 4px 0;
+  position: relative;
+  float: left;
+  border: 1px solid #F2F2F2;
+}
+
+.card-title {
+  z-index: 2;
+  color: #fff;
+  font-size: 1.4rem;
+  background-color: rgba(153, 153, 153, 0.55 );
+  border-radius: 0 10px 10px 0;
+  padding: 2px 8px;
+  position: absolute;
+  bottom: 3px;
+}
+
+.card .card-title a {
+  // position: absolute;
+  // width: 100%;
+  // height: 200px;
+  // top: 0;
+  bottom: 0;
+  left: 0;
+  // text-indent: 999px;
+  z-index: 1;
+  display: block;
+  color: #fff;
+}
+
+.card-img-parent {
+  position: relative;
+  // width: 174px;
+  height: 174px;
+}
+
+.card-img-parent img {
+  width: 100%;
+  height: 100%;
+}
+
+.card-img {
+  border-radius: 5px;
+  width: 174px;
+  height: 174px;
+  margin: 0 auto;
+}
+
+.card-img-child {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 3;
+}
+
+.card-text {
+  color: #333333;
+  line-height: 1.5;
+  font-size: 1.4rem;
+}
+
+/* ---------------------------
+show_fc.html.erb
+--------------------------- */
+.title {
+  text-align: center;
+  line-height: 4.5rem;
+  padding: 10px 0;
+}
+
+.title-top {
+  padding: 30px 0;
+}
+
+table {
+  font-size: 1.4rem;
+}
+
+.show-fc-img {
+  text-align: center;
+}
+
+.table-show-fc {
+  width: 85%;
+  margin: 20px auto;
+}
+
+.table-show-fc th {
+  padding-top: 20px;
+}
+
+.table-show-fc td {
+  width: 0%;
+}
+
+.about-fc {
+  border-bottom: 1px solid #cccccc;
+  padding: 10px 0;
+}
+
+.about-fc-content {
+  padding: 15px 10px 50px 10px;
+  line-height: 3.0rem; //14px * 3.0 = 42px?
+
+}
+
+
+// --共通のボタンスタイル--
+.btn {
+  border: 0;
+	cursor: pointer;
+	display: block;
+	-webkit-appearance: none;
+	appearance: none;
+	outline: none;
+	text-align: center;
+	text-decoration: none;
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24);
+  border-radius: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+// --------------------
+.edit-btn {
+  position: absolute;
+  bottom: 50px;
+  right: 20px;
+  border-radius: 50%;
+  background-color: rgb(7, 71, 166);
+  color: #deebff;
+  padding: 10px;
+  position: fixed;
+}
+.edit-btn a {
+  color: #deebff;
+
+}
+.btn a {
+  display: block;
+}
+.btn-color-danger {
+  background-color: #fff;
+}
+
+.btn-color-danger a {
+  color: #FF3030;
+}
+
+.btn-color-black {
+  color: #2d3133;
+  background: #fff;
+}
+
+.btn-color-blue {
+  background-color: rgb(7, 71, 166);
+  color: #deebff;
+}
+
+.btn-color-blue a {
+  color: #deebff;
+}
+
+.btn-light-green {
+  background-color: #35EABD;
+}
+
+.btn-light-green a {
+  color: #fff;
+}
+
+.btn-size-large{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 80%;
+  text-align: center;
+  margin: 20px auto 10px;
+  // position: absolute;
+  // bottom: 60px;
+  // left: 20%;
+  // position: fixed;
+}
+
+.btn-size-small {
+  font-size: 1.4rem;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 30%;
+  margin: 10px auto;
+}
+
+.pay-caution {
+  margin-bottom: 10px;
+}
+/* ---------------------------
+edit_fc.html.erb
+--------------------------- */
+.textbox {
+  border: 1px solid rgb(7, 71, 166);
+  width: 100%;
+  height: 350px;
+  padding: 15px 10px 50px 10px;
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24);
+  color: #333333;
+  line-height: 3.0rem;
+}
+
+.textbox-short {
+  border: 1px solid rgb(7, 71, 166);
+  width: 100%;
+  height: 50px;
+  padding: 0 10px;
+  align-items: center;
+  line-height: 4.0rem;
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24);
+  color: #333333;
+}
+
+
+input .btn {
+  border: 0;
+  cursor: pointer;
+  display: block;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24);
+  border-radius: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* ---------------------------
+fc_contents/index.html.erb
+--------------------------- */
+// 会員のタイムラインを半分より下に表示
+
+.member-timeline-container {
+  // margin-top: 70%;
+  position: relative;
+  bottom: 0;
+  // height: 45%;
+  overflow: scroll;
+  width: 100%;
+  background-color: rgba(102,102,102,0.7);
+  z-index: 4;
+}
+.orner-container {
+  overflow: scroll;
+  height: 70%;
+  position: absolute;
+  top: 100px;
+
+  // z-index: 13;
+}
+
+.orner-timeline {
+  width: 90%;
+  min-height: 100px;
+  border: 1px solid #E9E9E9;
+  margin: 0 auto;
+  padding: 5px;
+  position: relative;
+}
+
+.member-timeline {
+  width: 100%;
+  min-height: 50px;
+  border: 1px solid #E9E9E9;
+  padding: 5px;
+  position: relative;
+  color: #fff;
+
+}
+
+.content-member-img {
+  width: 40px;
+  height: 40px;
+  float: left;
+
+}
+
+.content-member-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin: 0 -5px;
+}
+
+.content-id {
+  // float: left;
+}
+.member-timeline-body {
+  width: auto;
+  margin: 0 0 0 50px;
+  padding-top: 5px;
+}
+
+.member-timeline-body a {
+  font-size: 1.2rem;
+      color: #fff;
+}
+
+
+// .timeline全体にリンクをつけたいけどレイアウトが崩れてしまう。
+// .timeline a {
+//   display: block;
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   top: 0;
+//   left: 0;
+// }
+
+.created-at {
+  font-size: 1.2rem;
+  padding: 0 0 0 10px;
+  color: #767676;
+
+}
+
+/* ---------------------------
+fc_contents/show.html.erb
+--------------------------- */
+.show-content-container {
+  width: 100%;
+  padding: 10px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-content-name {
+  font-size: 1.4rem;
+}
+
+.show-content-body {
+  padding: 10px 10px 20px 10px;
+  font-size: 1.8rem;
+}
+
+.link-back {
+  float: left;
+}
+/* ---------------------------
+fc_contents/new.html.erb
+--------------------------- */
+
+
+/* ---------------------------
+profile.html.erb
+--------------------------- */
+.profile-image {
+  margin: 10px auto;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.profile-name {
+  text-align: center;
+}
+
+.my-fc {
+  width: 100%;
+  margin: 0px auto;
+}
+
+.who-make-fc {
+  text-align: center;
+}
+/* ---------------------------
+setting.html.erb
+--------------------------- */
+.table-setting td {
+  width: 30%;
+  border: 1px solid #E9E9E9;
+  padding: 45px 0;
+}
+
+/* ---------------------------
+edit_account.html.erb
+--------------------------- */
+.edit-account li {
+  border-bottom: 1px solid #E9E9E9;
+  padding: 10px 0;
+}
+
+.edit-account li a {
+  padding-left: 10px;
+}
+
+
+/* ===========================================
+ここからタブレットに適用するスタイル
+============================================== */
+@media screen and (min-width:600px) and (max-width:959px) {
+/* ---------------------------
+show_fc.html.erb
+--------------------------- */
+.btn-large{
+	font-size: 16px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	width: 70%;
+  margin: 0 auto;
+}
+
+}
+
+/* ===========================================
+ここから通常のパソコンに適用したいスタイル
+============================================== */
+@media screen and (min-width:960px) and (max-width:1280px) {
+/* ---------------------------
+show_fc.html.erb
+--------------------------- */
+.btn-large{
+	font-size: 16px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	width: 70%;
+  margin: 0 auto;
+}
+body {
+  width: 380px;
+}
+
+}
+
+/* ===========================================
+ここから横幅の広いデスクトップに適用したいスタイル
+============================================== */
+@media screen and (min-width:1281px) {
+/* ---------------------------
+show_fc.html.erb
+--------------------------- */
+.btn-large{
+	font-size: 16px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	width: 70%;
+  margin: 0 auto;
+}
+
+body {
+  width: 500px;
+  margin: 0 auto!important;
+}
+
+header {
+  width: 500px!important;
+  margin: 0 auto!important;
+}
+
+}
+
+
+/*タブ切り替え全体のスタイル*/
+.tabs {
+  margin-top: 50px;
+  padding-bottom: 40px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  margin: 0 auto;}
+
+/*タブのスタイル*/
+.tab_item {
+  width: calc(100%/3);
+  height: 50px;
+  border-bottom: 3px solid #5ab4bd;
+  background-color: #d9d9d9;
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  color: #565656;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+.tab_item:hover {
+  opacity: 0.75;
+}
+
+/*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+  display: none;
+}
+
+/*タブ切り替えの中身のスタイル*/
+.tab_content {
+  display: none;
+  padding: 10px 10px 0;
+  clear: both;
+  overflow: hidden;
+}
+
+
+/*選択されているタブのコンテンツのみを表示*/
+#fc:checked ~ #fc_content,
+#programming:checked ~ #programming_content,
+#design:checked ~ #design_content {
+  display: block;
+}
+
+/*選択されているタブのスタイルを変える*/
+.tabs input:checked + .tab_item {
+  background-color: #5ab4bd;
+  color: #fff;
+}
+
+.snap-drawer {
+  // background-color: red;
+}

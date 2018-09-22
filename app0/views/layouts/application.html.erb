@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+
+  <head>
+
+    <title>FcApp2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" /> -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <%= javascript_include_tag 'application' %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js" type="text/javascript"></script>
+    <!-- <script src="js/barba.min.js" type="text/javascript"></script>
+    <script src="js/barba-custom.js" type="text/javascript"></script> -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122935431-3"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-122935431-3');
+    </script>
+    <!-- <script src="animocons.min.js"></script> -->
+    <!-- <link rel="stylesheet" type="text/css" href="animocons.min.css" /> -->
+    <link rel="stylesheet" href="snap.css">
+    <script src="snap.min.js"></script>
+
+  </head>
+
+
+  <body>
+
+    <!-- <% if user_signed_in? %>
+      <div class="header-logo">
+        <%= link_to(current_user.name , "/home/profile/#{current_user.id}") %>
+      </div>
+      <ul class="header-ul">
+        <li class="header-li">
+          <%= link_to 'ホーム', root_path %>
+        </li>
+        <li>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+        </li>
+    <% else %>
+        <li>
+          <%= link_to '登録', new_user_registration_path %>
+        </li>
+        <li>
+          <%= link_to 'ログイン', new_user_session_path %>
+        </li>
+      </ul>
+    <% end %> -->
+
+
+    <!-- justify-content: space-around;を効かせたいけど効かない -->
+    <% if false %>
+      <% if user_signed_in? %>
+      <% end %>
+    <% end %>
+    <header>
+      <nav>
+        <ul>
+          <li><%= link_to("ホーム" , "/")%></li>
+          <li><%= link_to("未定" , "/")%></li>
+            <li><%= link_to("アカウント" , "/setting")%></li>
+
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ここまで =========================================-->
+
+
+
+
+
+
+    <!-- ここからjqueryを書いているんだけどどこにファイルを作ったらいいかわからな
+    かったからとりあえずここに書いた -->
+        <!-- <script>
+          $(function () {
+            /*初期表示*/
+            $('.ChangeElem_Panel').hide();
+            $('.ChangeElem_Panel').eq(0).show();
+            $('.ChangeElem_Btn').eq(0).addClass('is-active');
+            /*クリックイベント*/
+            $('.ChangeElem_Btn').each(function () {
+              $(this).on('click', function () {
+                var index = $('.ChangeElem_Btn').index(this);
+                $('.ChangeElem_Btn').removeClass('is-active');
+                $(this).addClass('is-active');
+                $('.ChangeElem_Panel').hide();
+                $('.ChangeElem_Panel').eq(index).show();
+              });
+            });
+          });
+        </script> -->
+    <!-- ===============ここまで=========================== -->
+
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <!-- <% if flash[:notice]%>
+            <%= flash[:notice]%>
+        <% end %> -->
+    <%= yield %>
+
+
+  </body>
+
+
+</html>

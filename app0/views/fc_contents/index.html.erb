@@ -1,0 +1,98 @@
+<!-- <div class="main"> -->
+<div class="btn btn-size-large">
+  <!-- リンクにファンクラブのidを入れている -->
+  <%= link_to("コンテンツを投稿する", "/fc_contents/new/#{@post.id}") %>
+</div>
+
+<!-- ファンクラブオーナーのタイムライン -->
+<div class="orner-container">
+  <!-- 現在のpostのコンテンツって意味 -->
+  <% @post.contents.each do |content| %>
+    <% if @post.user_id == content.user_id %>
+    <li class="orner-timeline">
+      <div class="content-member-img">
+        <% if content.user_id %>
+          <%= link_to image_tag("/user_images/#{content.user_id}.jpg"), "/home/profile/#{content.user_id}" %>
+        <% else %>
+          <img src="<%= "/default_image.jpg" %>">
+        <% end %>
+      </div>
+        <%= link_to(content.content_body, "/fc_content/#{content.id}") %>
+      </li>
+    <% end %>
+  <% end %>
+</div>
+<% if false %>
+<!-- 会員のタイムライン -->
+<div class="member-timeline-container">
+  <!-- 現在のpostのコンテンツって意味 -->
+  <% @post.contents.each do |content| %>
+    <% if @post.user_id != content.user_id %>
+      <li class="member-timeline">
+        <div class="content-member-img">
+          <% if content.user_id %>
+            <%= link_to image_tag("/user_images/#{content.user_id}.jpg"), "/home/profile/#{content.user_id}" %>
+          <% else %>
+            <img src="<%= "/default_image.jpg" %>">
+          <% end %>
+        </div>
+          <p class="content-id">投稿ID:<%= content.id %>   ユーザー:<%= content.user_id %>   <span class="created-at"><%= time_ago_in_words(content.created_at)%></span></p>
+        <div class="member-timeline-body">
+          <%= link_to(content.content_body, "/fc_content/#{content.id}") %>
+        </div>
+      </li>
+    <% end %>
+  <% end %>
+</div>
+<% end %>
+<div class="snap-drawers">
+            <div class="snap-drawer snap-drawer-right">
+                    <!-- メニューの部分 -->
+                    <div class="member-timeline-container">
+                      <!-- 現在のpostのコンテンツって意味 -->
+                      <% @post.contents.each do |content| %>
+                        <% if @post.user_id != content.user_id %>
+                          <li class="member-timeline">
+                            <div class="content-member-img">
+                              <% if content.user_id %>
+                                <%= link_to image_tag("/user_images/#{content.user_id}.jpg"), "/home/profile/#{content.user_id}" %>
+                              <% else %>
+                                <img src="<%= "/default_image.jpg" %>">
+                              <% end %>
+                            </div>
+                              <p class="content-id">投稿ID:<%= content.id %>   ユーザー:<%= content.user_id %>   <span class="created-at"><%= time_ago_in_words(content.created_at)%></span></p>
+                            <div class="member-timeline-body">
+                              <%= link_to(content.content_body, "/fc_content/#{content.id}") %>
+                            </div>
+                          </li>
+                        <% end %>
+                      <% end %>
+                    </div>
+            </div>
+</div>
+
+<div id="content" class="snap-content">
+  <!-- ドロワーメニューを開くボタン -->
+  <a href="#" id="open-right">タイムライン</a>
+  <!-- コンテンツ部分 -->
+</div>
+<script type="text/javascript">
+// 基本的な記述です。コンテンツ部分のID名を書いておきましょう。
+var snapper = new Snap({
+  element: document.getElementById('content')
+});
+
+// 以下はフリックやドラッグだけでなく、ボタンでも開いたり閉じたりできるようにする記述です。
+var addEvent = function addEvent(element, eventName, func) {
+  if (element.addEventListener) {
+      return element.addEventListener(eventName, func, false);
+  } else if (element.attachEvent) {
+      return element.attachEvent("on" + eventName, func);
+  }
+};
+
+// ボタンのID名と揃えておきましょう。
+addEvent(document.getElementById('open-right'), 'click', function(){
+  snapper.open('bottom');
+});
+</script>

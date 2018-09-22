@@ -1,0 +1,28 @@
+<div class="main">
+  <h3 class="index-text-top">お気に入りのファンクラブを探してね！</h3>
+      <% @posts.each do |post| %>
+        <!-- link_to ~ do で画像全体にリンクをかけている -->
+        <%= link_to ("/#{post.id}/show_fc") do %>
+          <section class="card">
+
+            <!-- 画像のリサイズをする -->
+            <div class="card-img-parent">
+                <img class="card-img" src="<%= "/post_images/#{post.id}.jpg" %>" alt="">
+              <li class="card-img-child">
+                <div class="profile-image">
+                  <% if post.user.image_name %>
+                    <%= link_to image_tag("/user_images/#{post.user.id}.jpg"), "/home/profile/#{post.user_id}" %>
+                  <% else %>
+                    <img src="<%= "/default_image.jpg" %>">
+                  <% end %>
+                </div>
+              </li>
+            </div>
+              <div class="card-title">
+                <%= link_to(post.fc_name, "/#{post.id}/show_fc") %>
+              </div>
+              <!-- <p class="card-text"><%= post.content %></p> -->
+          </section>
+        <% end %>
+      <% end %>
+</div>
