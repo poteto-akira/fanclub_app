@@ -17,5 +17,7 @@ module FcApp2
     # the framework and any gems in your application.
     config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
     config.i18n.default_locale = :ja
+    config.assets.initialize_on_precompile = false
+
   end
 end
