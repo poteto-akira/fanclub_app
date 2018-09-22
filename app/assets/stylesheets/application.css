@@ -49,10 +49,11 @@ a {
 body {
   background-color: #fff;
   margin: 0;
-  /* padding-bottom: 40px; */
+  padding-bottom: 40px;
   -webkit-overflow-scrolling: touch;
   font-size: 1.4rem;
   color: #333333;
+  overflow: scroll;
 }
 
 .main {
@@ -60,6 +61,7 @@ body {
   width: 100%;
   min-height: 100%;
   background-color: #fff;
+  margin-bottom: 50px;
 }
 
 .center {
