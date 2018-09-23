@@ -15,6 +15,10 @@
     "lib": "lib",
     "test": "test"
   },
+  "engines": {
+    "yarn": "0.27.5",
+    "node": "8.1.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -28,4 +32,5 @@
   "author": "akira",
   "license": "ISC",
   "homepage": "https://bitbucket.org/akirin/fc_app#readme"
+
 }
