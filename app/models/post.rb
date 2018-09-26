@@ -3,10 +3,7 @@ class Post < ApplicationRecord
   validates :fc_name, {presence: true , length: { maximum: 10 }}
   validates :content, {presence: true}
   validates :post_image, {presence: true}
-  # validates :post_image, {presence: true}
-  # validates :user_id, {presence: true}
-
-  # has_many :fc_contents
+  has_many :fc_contents, dependent: :destroy
   default_scope -> { order(created_at: :desc) }
 
   def user
