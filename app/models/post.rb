@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
-  validates :fc_name, {presence: true}
+  validates :fc_name, {presence: true , length: { maximum: 10 }}
   validates :content, {presence: true}
   validates :post_image, {presence: true}
   # validates :post_image, {presence: true}

@@ -37,7 +37,7 @@ index.html.erb
   font-size: 1.4rem;
   background-color: rgba(153, 153, 153, 0.55 );
   border-radius: 0 10px 10px 0;
-  padding: 2px 8px;
+  padding: 2px 1px;
   position: absolute;
   bottom: 3px;
 }
@@ -598,6 +598,7 @@ input[name="tab_item"] {
   left: 0;
   width: 100%;
   height: auto;
+  background-color: rgba(101, 101, 101, 0.2);
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   // -webkit-transition: width 0.3s ease;
