@@ -5,8 +5,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:twitter]
 
-  has_many :posts, dependent: :destroy
-  has_many :fc_contents, dependent: :destroy
+  # has_many :posts, dependent: :destroy
+  # has_many :fc_contents, dependent: :destroy
   # has_many :fc_name
 
 
@@ -77,7 +77,12 @@ class User < ApplicationRecord
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
         user.provider = auth.provider
         user.uid      = auth.uid
+        user.name = auth.info.name
         user.username = auth.info.nickname
+        remote_image_name_url = auth.info.image
+        # DBに仮のメアドを保存
+        user.email = auth["email"].nil? ? auth["provider"] + auth["uid"] + "@login.function" : auth["email"]
+
         # パスワード不要なので、パスワードには触らない。
       end
     end

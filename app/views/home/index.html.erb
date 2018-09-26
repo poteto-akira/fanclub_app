@@ -8,15 +8,7 @@
             <!-- 画像のリサイズをする -->
             <div class="card-img-parent">
                 <img class="card-img" src="<%= "/post_images/#{post.id}.jpg" %>" alt="">
-              <!-- <li class="card-img-child">
-                <div class="profile-image">
-                  <% if post.user.image_name %>
-                    <%= link_to image_tag("/user_images/#{post.user.id}.jpg"), "/home/profile/#{post.user_id}" %>
-                  <% else %>
-                    <img src="<%= "/default_image.jpg" %>">
-                  <% end %>
-                </div>
-              </li> -->
+
             </div>
               <div class="card-title">
                 <%= link_to(post.fc_name, "/#{post.id}/show_fc") %>

@@ -93,7 +93,7 @@ class HomeController < ApplicationController
   def update_user
     @user = User.find_by(id: params[:id])
     @user.name = params[:name]
-    @user.email = params[:email]
+    # @user.email = params[:email]
     if params[:image]
       @user.image_name = "#{@user.id}.jpg"
       image = params[:image]

@@ -96,7 +96,11 @@
           <th>会員数</th>
         </tr>
         <tr>
-          <td><%= link_to(@user.name, "/home/profile/#{@user.id}") %></td>
+          <% if @user.name %>
+            <td><%= link_to(@user.name, "/home/profile/#{@user.id}") %></td>
+          <% else %>
+            <td><%= link_to(@user.username, "/home/profile/#{@user.id}") %></td>
+          <% end %>
           <td><%= @post.created_at.strftime('%Y/%m/%d') %></td>
           <td><%= @member_count %></td>
         </tr>
