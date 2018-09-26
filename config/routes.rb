@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
   # ============fc_content.controller ==============
   get 'fc_contents/index/:id' => "fc_contents#index"

@@ -21,8 +21,8 @@ index.html.erb
 .card {
   // margin: 30px auto;
   // width: 83.334%;
-  width: 49%;
-  margin: 1.5px 1.5px;
+  width: 30%;
+  margin: 1.4% 1.4%;
   background: #fff;
   border-radius: 5px;
   // box-shadow: 0 0 4px 0;
@@ -53,12 +53,13 @@ index.html.erb
   z-index: 1;
   display: block;
   color: #fff;
+  font-size: 1.1rem;
 }
 
 .card-img-parent {
   position: relative;
   // width: 174px;
-  height: 174px;
+  height: 116px;
 }
 
 .card-img-parent img {
@@ -571,11 +572,11 @@ input[name="tab_item"] {
   z-index: 100;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-  -webkit-transform: translate3d(0, 0, 0);
-     -moz-transform: translate3d(0, 0, 0);
-      -ms-transform: translate3d(0, 0, 0);
-       -o-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
+  // -webkit-transform: translate3d(0, 0, 0);
+  //    -moz-transform: translate3d(0, 0, 0);
+  //     -ms-transform: translate3d(0, 0, 0);
+  //      -o-transform: translate3d(0, 0, 0);
+  //         transform: translate3d(0, 0, 0);
 }
 
 .snap-drawers {
@@ -599,11 +600,11 @@ input[name="tab_item"] {
   height: auto;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-  -webkit-transition: width 0.3s ease;
-     -moz-transition: width 0.3s ease;
-      -ms-transition: width 0.3s ease;
-       -o-transition: width 0.3s ease;
-          transition: width 0.3s ease;
+  // -webkit-transition: width 0.3s ease;
+  //    -moz-transition: width 0.3s ease;
+  //     -ms-transition: width 0.3s ease;
+  //      -o-transition: width 0.3s ease;
+  //         transition: width 0.3s ease;
 }
 
 .snap-drawer-left {

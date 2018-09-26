@@ -78,3 +78,7 @@ end
 gem 'mini_magick'
 
 gem 'jquery-turbolinks'
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'dotenv-rails' #環境変数を簡単に利用できるgem

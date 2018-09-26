@@ -1,5 +1,11 @@
 <div class="main">
-  <h2 class="title"><%= @user.name %></h2>
+  <% if @user.name %>
+    <!-- アカウント登録時のユーザー名 -->
+    <h2 class="title"><%= @user.name %></h2>
+  <% else %>
+    <!-- twitterのアカウント名 -->
+    <h2 class="title"><%= @user.username %></h2>
+  <% end %>
 
   <div class="profile-image">
     <% if @user.image_name %>
