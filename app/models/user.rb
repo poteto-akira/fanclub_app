@@ -5,8 +5,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:twitter]
 
-  # has_many :posts, dependent: :destroy
-  # has_many :fc_contents, dependent: :destroy
+  has_many :posts, dependent: :destroy
+  has_many :fc_contents, dependent: :destroy
   # has_many :fc_name
 
 
