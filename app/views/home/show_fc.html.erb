@@ -21,6 +21,8 @@
       <!-- ここからは各ファンクラブ専用サイト。validatesで制限をかける。 -->
       <%= link_to("このファンクラブの中を見る", "/fc_contents/index/#{@post.id}") %>
     </button>
+    <p class="text-caution pay-caution">あなたはこのファンクラブの会員です！</p>
+
 
   <% else %>
     <!-- ファンクラブのuser.idと現在のuser.idが同じ(ファンクラブの管理者)だったら入会するボタンを非表示にする -->

@@ -1,3 +1,4 @@
+<h3 class="">加入しているファンクラブ</h3>
 <% @enters.each do |enter|%>
   <% post = Post.find_by(id: enter.post_id)%>
   <%= link_to ("/fc_contents/index/#{post.id}") do %>

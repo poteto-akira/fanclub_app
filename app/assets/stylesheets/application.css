@@ -146,7 +146,7 @@ header ul {
 }
 
 header li {
-  margin-left: 3.7rem;
+  padding: 0 60px;
 }
 
 .header-logo {

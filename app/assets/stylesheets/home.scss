@@ -411,8 +411,12 @@ profile.html.erb
 /* ---------------------------
 setting.html.erb
 --------------------------- */
+.setting table {
+  margin: 0;
+  width: 100%;
+}
 .table-setting td {
-  width: 120px;
+  width: 30%;
   height: 120px;
   border: 1px solid #E9E9E9;
   padding: 45px 0;
@@ -426,7 +430,7 @@ setting.html.erb
   display: block;
   width: 100%;
   line-height: 120px;
-
+  font-size: 1.3rem;
 }
 
 /* ---------------------------
@@ -480,6 +484,7 @@ enter.html.erb
   // margin: 1% auto;
   font-size: 1.1rem;
   // padding-left: 29%;
+  line-height: 1.3rem;
 }
 
 .enter-container table td{
