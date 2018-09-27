@@ -4,7 +4,7 @@
     <tr>
       <td><%= link_to 'ファンクラブを作る', home_new_fc_path %></td>
       <td><%= link_to 'アカウント編集', "/account/#{current_user.id}/edit" %></td>
-      <td>通知設定</td>
+      <td><%= link_to '加入済みファンクラブ', "/#{current_user.id}/enters" %></td>
     </tr>
     <tr>
       <td>お問い合わせ</td>

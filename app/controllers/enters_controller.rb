@@ -12,7 +12,12 @@ class EntersController < ApplicationController
     # saveした後にfc_contents/indexページに飛びたい
     flash[:notice] = "入会できました！"
     redirect_to("/fc_contents/index/#{@post.id}")
+  end
 
+  # 加入しているファンクラブ一覧を表示
+  def enters
+    @user = User.find_by(id: params[:id])
+    @enters = Enter.where(user_id: @user.id)
   end
 
 

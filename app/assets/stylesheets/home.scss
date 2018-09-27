@@ -118,7 +118,7 @@ table {
 }
 
 .table-show-fc td {
-  width: 0%;
+  width: 30%;
 }
 
 .about-fc {
@@ -420,6 +420,7 @@ setting.html.erb
 /* ---------------------------
 edit_account.html.erb
 --------------------------- */
+
 .edit-account li {
   border-bottom: 1px solid #E9E9E9;
   padding: 10px 0;
@@ -429,7 +430,53 @@ edit_account.html.erb
   padding-left: 10px;
 }
 
+/* ---------------------------
+enter.html.erb
+--------------------------- */
+.enter-container {
+  width: 100%;
+  height: 140px;
+}
 
+.card-enter {
+  // float: none;
+  background: #fff;
+    border-radius: 5px;
+    position: relative;
+    float: left;
+    border: 1px solid #F2F2F2;
+}
+.card-title a {
+  // position: absolute;
+  // width: 100%;
+  // height: 200px;
+  // top: 0;
+  bottom: 0;
+  left: 0;
+  // text-indent: 999px;
+  z-index: 1;
+  display: block;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.enter-fc-content {
+  position: relative;
+  width: 95%;
+  // margin: 1% auto;
+  font-size: 1.1rem;
+  // padding-left: 29%;
+}
+
+.enter-container table td{
+  width: 120px;
+
+}
+
+.enter-container table td:nth-child(2) {
+  width: 200px;
+  padding-left: 10px;
+}
 /* ===========================================
 ここからタブレットに適用するスタイル
 ============================================== */

@@ -79,7 +79,7 @@ class User < ApplicationRecord
         user.uid      = auth.uid
         user.name = auth.info.name
         user.username = auth.info.nickname
-        user.remote_image_name_url = auth.info.image.gsub(/\Ahttp:/, "https")
+        user.remote_image_name_url = auth.info.image
         # DBに仮のメアドを保存
         user.email = auth["email"].nil? ? auth["provider"] + auth["uid"] + "@login.function" : auth["email"]
 

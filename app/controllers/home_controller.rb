@@ -130,6 +130,11 @@ class HomeController < ApplicationController
 
   def show
     @post = Post.find_by(id: params[:id])
+  end
 
+  # 加入しているファンクラブ一覧を表示
+  def enters
+    @user = User.find_by(id: params[:id])
+    @enters = Enter.where(user_id: @user.id)
   end
 end
