@@ -1,6 +1,6 @@
 <% @enters.each do |enter|%>
   <% post = Post.find_by(id: enter.post_id)%>
-  <%= link_to ("/#{post.id}/show_fc") do %>
+  <%= link_to ("/fc_contents/index/#{post.id}") do %>
     <div class="enter-container">
       <table>
         <tr>
@@ -10,7 +10,7 @@
                 <img class="card-img" src="<%= "/post_images/#{post.id}.jpg" %>" alt="">
               </div>
               <div class="card-title">
-                <%= link_to(post.fc_name, "/#{post.id}/show_fc") %>
+                <%= link_to(post.fc_name, "/fc_contents/index/#{post.id}") %>
               </div>
             </section>
           </td>

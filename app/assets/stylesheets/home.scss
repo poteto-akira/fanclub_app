@@ -412,9 +412,21 @@ profile.html.erb
 setting.html.erb
 --------------------------- */
 .table-setting td {
-  width: 30%;
+  width: 120px;
+  height: 120px;
   border: 1px solid #E9E9E9;
   padding: 45px 0;
+  position: relative;
+}
+
+.table-setting a {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  display: block;
+  width: 100%;
+  line-height: 120px;
+
 }
 
 /* ---------------------------
@@ -428,7 +440,10 @@ edit_account.html.erb
 
 .edit-account li a {
   padding-left: 10px;
+  line-height: 30px;
 }
+
+
 
 /* ---------------------------
 enter.html.erb
