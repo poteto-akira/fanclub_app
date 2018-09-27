@@ -48,7 +48,7 @@ a {
 }
 
 body {
-  background-color: #fff;
+  background-color: #F4F5F7;
   margin: 0;
   padding-bottom: 40px;
   -webkit-overflow-scrolling: touch;
@@ -61,7 +61,6 @@ body {
   position: relative;
   width: 100%;
   min-height: 100%;
-  background-color: #fff;
   margin-bottom: 50px;
 }
 
