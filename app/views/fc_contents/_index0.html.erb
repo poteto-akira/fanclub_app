@@ -1,0 +1,6 @@
+<% @post.contents.each do |content| %>
+  <% unless content.id.nil? %>
+    <p><%= link_to "#{content.user.name}さん", user_path(content.user.id) %></p>
+    <p>コメント：<%= content.content_body %></p>
+  <% end %>
+<% end %>

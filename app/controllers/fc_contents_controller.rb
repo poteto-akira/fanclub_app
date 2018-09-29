@@ -21,8 +21,7 @@ class FcContentsController < ApplicationController
   def create
     @post = Post.find_by(id: params[:id])
     # form_tagに@post.idを含ませて現在のfc.idを取得している
-    @content = FcContent.new(content_title: params[:content_title],
-                             content_body: params[:content_body],
+    @content = FcContent.new(content_body: params[:content_body],
                              user_id: current_user.id,
                              fc_id: params[:id])
     if @content.save
