@@ -2,6 +2,7 @@ class FcContentsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    # render :layout => "index.html.erb"
     @post = Post.find_by(id: params[:id])
     # ここでorderしてもダメだからfc_content.rbで書いている
     # @contents = FcContent.all.order(created_at: :desc)

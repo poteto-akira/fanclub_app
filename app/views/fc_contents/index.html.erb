@@ -1,5 +1,32 @@
 <!-- <div class="main"> -->
+<header class="site-header flex flex--bet">
+  <nav class="gnav">
+    <ul class="gnav__menu flex flex--bet">
+      <li class="gnav__menu__item">
+        <a class="gnav__menu__item__link" href="#sec1"><%= @post.fc_name %></a>
+      </li>
+    </ul>
+  </nav>
+</header>
 
+<script type="text/javascript">
+  $(function() {
+    var $win = $(window),
+      $header = $('header'),
+      headerHeight = $header.outerHeight(),
+      startPos = 0;
+
+    $win.on('load scroll', function() {
+      var value = $(this).scrollTop();
+        if ( value > startPos && value > headerHeight ) {
+          $header.css('top', '-' + headerHeight + 'px');
+        } else {
+          $header.css('top', '0');
+        }
+      startPos = value;
+    });
+  });
+</script>
 
 <!-- ファンクラブオーナーのタイムライン -->
 <div class="orner-container">

@@ -289,12 +289,12 @@ fc_contents/index.html.erb
   width: 100%;
   background-color: rgba(102,102,102,0.7);
   z-index: 4;
-  padding-bottom: 50px;
+  // padding-bottom: 50px;
 }
 .orner-container {
   overflow: scroll;
   height: 100%;
-  position: absolute;
+  position: relative;
   width: 100%;
   // top: 40px;
   // z-index: 13;
@@ -657,7 +657,7 @@ input[name="tab_item"] {
 // }
 
 .snap-content {
-  position: absolute;
+  position: fixed;
   top: 50%;
   right: 0;
   bottom: 0;
@@ -675,8 +675,8 @@ input[name="tab_item"] {
 }
 
 .snap-drawers {
-  position: absolute;
-  top: 55%;
+  position: fixed;
+  top: 65%;
   right: 0;
   bottom: 0;
   left: 0;
@@ -693,7 +693,7 @@ input[name="tab_item"] {
   left: 0;
   width: 100%;
   height: auto;
-  border-radius: 50px 0 0 50px;
+  border-radius: 50px 0 0 0;
   z-index: 10000000000000000;
   background-color: rgba(101, 101, 101, 0.2);
   overflow: auto;
