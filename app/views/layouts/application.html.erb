@@ -59,17 +59,13 @@
 
 
     <!-- justify-content: space-around;を効かせたいけど効かない -->
-    <% if false %>
-      <% if user_signed_in? %>
-      <% end %>
-    <% end %>
+
     <header>
       <nav>
         <ul>
           <li><%= link_to("ホーム" , "/")%></li>
           <!-- <li><%= link_to("       " , "/")%></li> -->
             <li><%= link_to("アカウント" , "/setting")%></li>
-
         </ul>
       </nav>
     </header>

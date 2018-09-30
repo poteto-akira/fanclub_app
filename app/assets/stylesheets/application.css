@@ -50,7 +50,7 @@ a {
 body {
   background-color: #F4F5F7;
   margin: 0;
-  padding-bottom: 40px;
+  /* padding-top: 40px; */
   -webkit-overflow-scrolling: touch;
   font-size: 1.4rem;
   color: #333333;
@@ -123,6 +123,7 @@ table td {
 header {
   height: 40px;
   bottom: 0;
+  /* top: 0; */
   position: relative;
   position: fixed;
   z-index: 100;

@@ -5,11 +5,16 @@ class FcContentsController < ApplicationController
     @post = Post.find_by(id: params[:id])
     # ここでorderしてもダメだからfc_content.rbで書いている
     # @contents = FcContent.all.order(created_at: :desc)
+    @content = FcContent.new
+    # @contents = @post.content
   end
 
   def show
+    @post = Post.find_by(id: params[:id])
     @content = FcContent.find_by(id: params[:id])
-    @post = @content.post
+    @content = FcContent.new
+    # @contents = @post.contents
+
   end
 
   def new
@@ -27,10 +32,22 @@ class FcContentsController < ApplicationController
                              username: current_user.name)
     if @content.save
     # リダイレクトの後にpost.idがついたurlに戻る
-    redirect_to("/fc_contents/index/#{@post.id}")
+    # redirect_to("/fc_contents/index/#{@post.id}")
+    render("index")
 
     else
       render("new")
     end
   end
+
+  private
+    def content_params
+      params.require(:content).permit(:content_content_body, :post_id, :user_id)
+    end
+
+
+    def fccontent_params
+      params.require(:fc_content).permit(:content_body)
+    end
+
 end
