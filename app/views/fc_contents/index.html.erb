@@ -3,7 +3,7 @@
   <nav class="gnav">
     <ul class="gnav__menu flex flex--bet">
       <li class="gnav__menu__item">
-        <a class="gnav__menu__item__link" href="#sec1"><%= @post.fc_name %></a>
+        <h3 class="gnav__menu__item__link"><%= @post.fc_name %></h3>
       </li>
     </ul>
   </nav>
@@ -41,6 +41,7 @@
           <img src="<%= "/default_image.jpg" %>">
         <% end %>
       </div>
+      <span class="created-at"><%= time_ago_in_words(content.created_at)%></span>
         <p class="orner-timeline-body">
           <!-- <%= link_to(content.content_body, "/fc_content/#{content.id}") %> -->
           <%= content.content_body %>
@@ -69,6 +70,7 @@
               <img src="<%= "/default_image.jpg" %>">
             <% end %>
           </div>
+          <p class="content-id"><%= content.username %><span class="created-at"><%= time_ago_in_words(content.created_at)%></span></p>
           <div class="member-timeline-body">
             <!-- <%= link_to(content.content_body, "/fc_content/#{content.id}") %> -->
             <%= content.content_body %>
