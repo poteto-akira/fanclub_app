@@ -29,8 +29,7 @@ class FcContentsController < ApplicationController
     # form_tagに@post.idを含ませて現在のfc.idを取得している
     @content = FcContent.new(content_body: params[:content_body],
                              user_id: current_user.id,
-                             fc_id: params[:id],
-                             username: current_user.name)
+                             fc_id: params[:id])
     if @content.save
     # リダイレクトの後にpost.idがついたurlに戻る
     # redirect_to("/fc_contents/index/#{@post.id}")
