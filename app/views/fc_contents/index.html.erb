@@ -69,7 +69,6 @@
               <img src="<%= "/default_image.jpg" %>">
             <% end %>
           </div>
-          <p class="content-id"><%= content.username %><span class="created-at"><%= time_ago_in_words(content.created_at)%></span></p>
           <div class="member-timeline-body">
             <!-- <%= link_to(content.content_body, "/fc_content/#{content.id}") %> -->
             <%= content.content_body %>
