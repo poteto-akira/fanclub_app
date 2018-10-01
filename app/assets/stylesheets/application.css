@@ -23,7 +23,7 @@
 
 html {
   font-size: 62.5%;
-  /* margin-bottom: 70px; */
+  /* padding-bottom: 70px; */
 
 }
 
@@ -57,12 +57,7 @@ body {
   overflow: scroll;
 }
 
-.main {
-  position: relative;
-  width: 100%;
-  min-height: 100%;
-  margin-bottom: 50px;
-}
+
 
 .center {
   text-align: center;
@@ -121,7 +116,7 @@ table td {
 
 /* ここからヘッダーエリア */
 
-/* header {
+.header-bottom {
   height: 40px;
   bottom: 0;
   position: relative;
@@ -138,40 +133,14 @@ table td {
   flex-wrap: nowrap;
 }
 
-header ul {
+.header-bottom ul {
   display: flex;
 }
 
-header li {
+.header-bottom li {
   padding: 0 60px;
 }
 
-.header-logo {
-  float: left;
-  padding-left: 20px;
-  color: red;
-  font-size: 22px;
-  line-height: 40px;
-}
-
-.header-ul {
-  float: right;
-  padding-right: 20px;
-}
-
-.header-ul li {
-  float: left;
-  line-height: 40px;
-  font-size: 1.6rem;
-  color: black;
-  padding-left: 15px;
-}
-
-.header-ul a {
-  float: left;
-  font-size: 1.6rem;
-  color: black;
-} */
 
 .site-header{
     background: rgba(255,255,255,0.8);

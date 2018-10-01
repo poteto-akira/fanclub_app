@@ -5,6 +5,12 @@
 /* ---------------------------
 index.html.erb
 --------------------------- */
+.main {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  margin: 60px 0;
+}
 .index-text-top {
   text-align: center;
   line-height: 4.5rem;
@@ -424,7 +430,7 @@ setting.html.erb
   display: block;
   width: 100%;
   line-height: 120px;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 /* ---------------------------
