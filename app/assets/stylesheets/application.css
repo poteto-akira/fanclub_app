@@ -15,7 +15,7 @@
  *= require bootstrap-social
  *= require font-awesome
  */
- @import "bootstrap-social.css";
+ @import "bootstrap-social";
  @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome-sprockets";
