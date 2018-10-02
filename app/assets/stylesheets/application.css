@@ -15,7 +15,7 @@
  *= require bootstrap-social
  *= require font-awesome
  */
-@import "font-awesome";
+@import "font-awesome.css";
 @import "bootstrap-social";
 
  /* ここから共通レイアウト */
