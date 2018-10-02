@@ -12,9 +12,11 @@
  *
  *= require_tree .
  *= require_self
-
+ *= require bootstrap-social
+ *= require font-awesome
  */
-
+@import "font-awesome";
+@import "bootstrap-social";
 
  /* ここから共通レイアウト */
  * {
@@ -24,7 +26,7 @@
 html {
   font-size: 62.5%;
   /* padding-bottom: 70px; */
-
+  max-width: 500px;
 }
 
 ul, li {
@@ -49,12 +51,14 @@ a {
 
 body {
   background-color: #F4F5F7;
-  margin: 0;
+  margin: 0 auto;
   /* padding-top: 40px; */
   -webkit-overflow-scrolling: touch;
   font-size: 1.4rem;
   color: #333333;
   overflow: scroll;
+  max-width: 500px;
+
 }
 
 .notice {
@@ -136,6 +140,8 @@ table td {
   justify-content: space-around;
   align-items: center;
   flex-wrap: nowrap;
+  max-width: 500px;
+    margin: 0 auto;
 }
 
 .header-bottom ul {
@@ -148,13 +154,15 @@ table td {
 
 
 .site-header{
-    background: rgba(255,255,255,0.8);
-    padding: 20px;
-    position: fixed;
-    top: 0;
-    transition: .5s;
-    width: 100%;
-    z-index: 999;
+  background: rgba(255,255,255,0.8);
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  transition: .5s;
+  width: 100%;
+  z-index: 999;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .site-header.hide{
@@ -165,6 +173,27 @@ table td {
   display: none;
 }
 
+.btn-twitter a {
+  color: #fff;
+  font-size: 1.3rem;
+  text-align: center;
+  padding-top: 8px;
+}
+
+.btn-social {
+  padding-left: 0!important;
+}
+
+.btn-social>:first-child {
+  top: 12px!important;
+  left: 30px!important;
+  border: none!important;
+}
+
+.user-new {
+  text-align: center;
+  padding: 30px;
+}
 @media screen and (min-width:600px) and (max-width:959px) {
 
 }

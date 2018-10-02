@@ -32,4 +32,9 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<div class="btn btn-block btn-social btn-twitter">
+<span class="fa fa-twitter"></span>
+<%- resource_class.omniauth_providers.each do |provider| %>
+  <%= link_to "Twitterアカウントでログイン", omniauth_authorize_path(resource_name, provider) %><br />
+<% end -%>
+</div>

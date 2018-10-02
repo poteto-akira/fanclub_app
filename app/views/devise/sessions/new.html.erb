@@ -23,5 +23,12 @@
     <%= f.submit "ログイン", class: "actions btn btn-size-large btn-color-blue" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+<div class="btn btn-block btn-social btn-twitter">
+<span class="fa fa-twitter"></span>
+<%- resource_class.omniauth_providers.each do |provider| %>
+  <%= link_to "Twitterアカウントでログイン", omniauth_authorize_path(resource_name, provider) %><br />
+<% end -%>
+</div>
+<div class="user-new">
+<%= link_to("初めての方は新規登録" , "/users/sign_up") %>
+</div>
