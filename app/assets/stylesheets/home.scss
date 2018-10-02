@@ -9,7 +9,10 @@ index.html.erb
   position: absolute;
   width: 100%;
   min-height: 100%;
-  margin: 60px 0;
+  padding: 60px 0;
+}
+.main-fc-content {
+  background-color: #849EC0;
 }
 .index-text-top {
   text-align: center;
@@ -281,7 +284,7 @@ fc_contents/index.html.erb
   position: relative;
   width: 100%;
   background-color: #849EC0;
-  padding: 45px 0 220px 0;
+  padding: 10px 0 220px 0;
 }
 
 .orner-timeline {

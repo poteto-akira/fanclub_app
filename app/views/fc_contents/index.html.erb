@@ -1,4 +1,4 @@
-<!-- <div class="main"> -->
+<div class="main main-fc-content">
 <header class="site-header flex flex--bet">
   <nav class="gnav">
     <ul class="gnav__menu flex flex--bet">
@@ -60,6 +60,7 @@
     <!-- メニューの部分 -->
     <div class="member-timeline-container">
       <!-- 現在のpostのコンテンツって意味 -->
+
       <% @post.contents.each do |content| %>
         <% if @post.user_id != content.user_id %>
         <li class="member-timeline">
@@ -87,11 +88,14 @@
   <a href="#" id="open-right"></a>
   <!-- コンテンツ部分 -->
 </div>
+
+</div>
 <script type="text/javascript">
 // 基本的な記述です。コンテンツ部分のID名を書いておきましょう。
 var snapper = new Snap({
   element: document.getElementById('content')
 });
+
 
 // 以下はフリックやドラッグだけでなく、ボタンでも開いたり閉じたりできるようにする記述です。
 var addEvent = function addEvent(element, eventName, func) {

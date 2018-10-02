@@ -8,8 +8,8 @@
     </tr>
     <tr>
       <td><%= link_to '作成済ファンクラブ', "/#{current_user.id}/enters" %></td>
-      <td>お問い合わせ</td>
-      <td>その他</td> <!-- ここに利用規約、個人情報保護方針、特商法に基づく表記、退会とかを書く -->
+      <td><%= link_to 'プロフィール', "/home/profile/#{current_user.id}" %></td>
+      <td></td> <!-- ここに利用規約、個人情報保護方針、特商法に基づく表記、退会とかを書く -->
     </tr>
   </table>
 </div>
