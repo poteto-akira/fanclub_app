@@ -37,7 +37,7 @@ class HomeController < ApplicationController
 
 
       redirect_to(root_path)
-      flash[:notice] = "ファンクラブを作成しました！これから素晴らしいファンクラブにしていってくださいね♡"
+      # flash[:notice] = "ファンクラブを作成しました！これから素晴らしいファンクラブにしていってくださいね♡"
     else
       render("new_fc")
 
