@@ -26,8 +26,9 @@
 
 html {
   font-size: 62.5%;
-  /* padding-bottom: 70px; */
+  padding: 70px 0;
   max-width: 500px;
+  margin: 0 auto;
 }
 
 ul, li {
@@ -178,7 +179,7 @@ table td {
   color: #fff;
   font-size: 1.3rem;
   text-align: center;
-  padding-top: 8px;
+  padding-top: 10px;
 }
 
 .btn-social {
@@ -276,6 +277,8 @@ table td {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 80%;
+  margin: 0 auto;
   > :first-child {
     position: absolute;
     left: 0;

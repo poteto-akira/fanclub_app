@@ -6,10 +6,10 @@
 index.html.erb
 --------------------------- */
 .main {
-  position: absolute;
+  // position: absolute;
   width: 100%;
   min-height: 100%;
-  padding: 60px 0;
+  // padding: 60px 0;
 }
 .main-fc-content {
   background-color: #849EC0;
@@ -148,10 +148,11 @@ table {
   width: 100px;
   height: 85px;
   position: fixed;
-  bottom: 50px;
-  right: 10px;
+  bottom: 2%;
+  right: 5%;
   border-radius: 50%;
   z-index: 1000;
+  margin: 0 10px 0 255px;
 }
 
 .new-content-btn a {
@@ -233,7 +234,10 @@ edit_fc.html.erb
   width: 100%;
   height: 350px;
   padding: 15px 10px 50px 10px;
-  box-shadow: 0 0 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24);
+  -moz-box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
+  -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+  box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
+
   color: #333333;
   line-height: 3.0rem;
 }
@@ -245,10 +249,11 @@ edit_fc.html.erb
   padding: 0 10px;
   align-items: center;
   line-height: 4.0rem;
-  box-shadow: 0 0 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24);
+  -moz-box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
+  -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+  box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
   color: #333333;
 }
-
 
 input .btn {
   border: 0;
@@ -277,14 +282,17 @@ fc_contents/index.html.erb
   width: 100%;
   background-color: rgba(102,102,102,0.7);
   z-index: 4;
+  padding-bottom: 80px;
 }
 .orner-container {
   overflow: scroll;
   height: 100%;
-  position: relative;
+  position: absolute;
+  top: 0;
   width: 100%;
+  max-width: 500px;
   background-color: #849EC0;
-  padding: 10px 0 220px 0;
+  padding: 65px 0 220px 0;
 }
 
 .orner-timeline {
@@ -524,36 +532,41 @@ show_fc.html.erb
 	width: 70%;
   margin: 0 auto;
 }
-body {
-  width: 380px;
-}
+
 
 }
 
 /* ===========================================
 ここから横幅の広いデスクトップに適用したいスタイル
 ============================================== */
-@media screen and (min-width:1281px) {
+@media screen and (min-width:769px) {
 /* ---------------------------
 show_fc.html.erb
 --------------------------- */
-.btn-large{
-	font-size: 16px;
-	padding-top: 40px;
-	padding-bottom: 40px;
-	width: 70%;
-  margin: 0 auto;
-}
+  .btn-large{
+  	font-size: 16px;
+  	padding-top: 40px;
+  	padding-bottom: 40px;
+  	width: 70%;
+    margin: 0 auto;
+  }
+  html {
 
-body {
-  width: 500px;
-  margin: 0 auto!important;
-}
+  }
+  body {
+    width: 500px;
+    margin: 0 auto!important;
+  }
 
-header {
-  width: 500px!important;
-  margin: 0 auto!important;
-}
+  header {
+    width: 500px!important;
+    margin: 0 auto!important;
+  }
+
+  main {
+    width: 500px;
+    position: static!important;
+  }
 
 }
 
@@ -625,12 +638,12 @@ input[name="tab_item"] {
 
 .snap-content {
   position: fixed;
-  top: 50%;
+  top: 65%;
   right: 0;
   bottom: 0;
   left: 0;
-  width: 90px;
-  height: 48%;
+  width: 100%;
+  height: 35%;
   z-index: 100;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -647,7 +660,9 @@ input[name="tab_item"] {
   right: 0;
   bottom: 0;
   left: 0;
-  width: auto;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
   height: auto;
   // z-index: -12;
 }
@@ -659,6 +674,8 @@ input[name="tab_item"] {
   bottom: 0;
   left: 0;
   width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
   height: auto;
   border-radius: 50px 0 0 0;
   z-index: 10000000000000000;
@@ -694,4 +711,11 @@ input[name="tab_item"] {
 
 .snap-content a {
   line-height: 25px;
+}
+
+.new-btn {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
 }

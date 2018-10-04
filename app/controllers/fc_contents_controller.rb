@@ -21,7 +21,6 @@ class FcContentsController < ApplicationController
   def new
     @content = FcContent.find_by(id: params[:id])
     @post = Post.find_by(id: params[:id])
-
   end
 
   def create

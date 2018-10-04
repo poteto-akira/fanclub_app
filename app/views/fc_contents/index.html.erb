@@ -53,10 +53,7 @@
 <!-- 会員のタイムライン -->
 <div class="snap-drawers">
   <div class="snap-drawer snap-drawer-right">
-    <div class="btn new-content-btn btn-color-blue">
-      <!-- リンクにファンクラブのidを入れている -->
-      <%= link_to("NEW", "/fc_contents/new/#{@post.id}") %>
-    </div>
+
     <!-- メニューの部分 -->
     <div class="member-timeline-container">
       <!-- 現在のpostのコンテンツって意味 -->
@@ -81,14 +78,20 @@
       <% end %>
     </div>
   </div>
+
 </div>
 
-<div id="content" class="snap-content">
+<!-- スワイプ機能はなしでいいんじゃ？ -->
+<!-- <div id="content" class="snap-content"> -->
   <!-- ドロワーメニューを開くボタン -->
-  <a href="#" id="open-right"></a>
+  <!-- <a href="#" id="open-right"></a> -->
   <!-- コンテンツ部分 -->
-</div>
+<!-- </div> -->
 
+<div class="btn new-content-btn btn-color-blue">
+  <!-- リンクにファンクラブのidを入れている -->
+  <%= link_to("NEW", "/fc_contents/new/#{@post.id}") %>
+</div>
 </div>
 <script type="text/javascript">
 // 基本的な記述です。コンテンツ部分のID名を書いておきましょう。
