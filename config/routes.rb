@@ -9,12 +9,12 @@ Rails.application.routes.draw do
   post "fc_content/create/:id" => "fc_contents#create"
 
   post "enter/:id/create" => "enters#create"
-  get ":id/enters" => "home#enters" 
-
+  get ":id/enters" => "home#enters"
   get ":post_id/fcshow" => "home#show"
   get ":id/edit_profile" => "home#edit_profile"
   get "account/:id/edit" => "home#edit_account"
   post "user/:id/update" => "home#update_user"
+  get "user/:id/fc_list" => "home#fc_list"
   get 'pay/payment'
 
   get "home/:id/likes" => "home#likes"

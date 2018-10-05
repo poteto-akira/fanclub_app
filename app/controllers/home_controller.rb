@@ -137,4 +137,8 @@ class HomeController < ApplicationController
     @user = User.find_by(id: params[:id])
     @enters = Enter.where(user_id: @user.id)
   end
+
+  def fc_list
+    @user = User.find_by(id: params[:id])
+  end
 end
