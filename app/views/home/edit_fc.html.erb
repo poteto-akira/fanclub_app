@@ -1,8 +1,7 @@
 <div class="main">
   <h3 class="title">ファンクラブを編集する</h3>
   <%= form_tag("/#{@post.id}/update_fc", {multipart: true}) do %>
-  <input type="submit" value="これで完成！" class="btn btn-color-blue btn-size-large">
-
+    <input class="btn btn-color-blue btn-size-large" type="submit" value="これで完成！">
     <% @post.errors.full_messages.each do |message| %>
       <p><%= message %></p>
     <% end %>

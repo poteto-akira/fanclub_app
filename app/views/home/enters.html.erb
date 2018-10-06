@@ -1,33 +1,34 @@
 <h3>加入しているファンクラブ</h3>
 <% @enters.each do |enter|%>
-  <% if enter %>
-    <% post = Post.find_by(id: enter.post_id)%>
-    <%= link_to ("/fc_contents/index/#{post.id}") do %>
-      <div class="enter-container">
-        <table>
-          <tr>
-            <td class="">
-              <section class="card-enter">
-                <div class="card-img-parent">
-                  <img class="card-img" src="<%= "/post_images/#{post.id}.jpg" %>" alt="">
-                </div>
-                <div class="card-title">
-                  <%= link_to(post.fc_name, "/fc_contents/index/#{post.id}") %>
-                </div>
-              </section>
-            </td>
-            <td class="enter-fc-content">
-              <div class="enter-fc-content">
-                <div class=""><%= post.content %></div>
+<% if enter %>
+  <%= link_to ("/fc_contents/index/#{post.id}") do %>
+  <% post = Post.find_by(id: enter.post_id)%>
+
+    <div class="enter-container">
+      <table>
+        <tr>
+          <td class="">
+            <section class="card-enter">
+              <div class="card-img-parent">
+                <img class="card-img" src="<%= "/post_images/#{post.id}.jpg" %>" alt="">
               </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-    <% end %>
-  <% else %>
-  まだ加入していません
+              <div class="card-title">
+                <%= link_to(post.fc_name, "/fc_contents/index/#{post.id}") %>
+              </div>
+            </section>
+          </td>
+          <td class="enter-fc-content">
+            <div class="enter-fc-content">
+              <div class=""><%= post.content %></div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
   <% end %>
+<% else %>
+まだ加入していません
+<% end %>
 
 <% end%>
 
