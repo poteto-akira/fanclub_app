@@ -2,7 +2,7 @@
 <!-- @post.idは現在のfc.idのこと -->
 <%= form_tag("/fc_content/create/#{@post.id}") do %>
 <!-- <button class="btn btn-color-blue btn-size-large"> -->
-  <input class="" type="submit" value="投稿する">
+
 <!-- </button> -->
 <!-- validatesを設定しているのにエラー文が表示されない -->
 <% if @post.errors.any? %>
@@ -15,5 +15,5 @@
 
   <input name="content_body" placeholder="ここでコメントを送ってみよう！" type="text" class="content-new"></input>
 
-
+  <input class="submit" type="submit" value="投稿">
 <% end %>
