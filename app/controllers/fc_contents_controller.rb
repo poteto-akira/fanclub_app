@@ -35,7 +35,7 @@ class FcContentsController < ApplicationController
     render("index")
 
     else
-      render("new")
+      render("index")
     end
   end
 

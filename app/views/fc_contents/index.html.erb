@@ -9,6 +9,7 @@
   </nav>
 </header>
 
+
 <script type="text/javascript">
   $(function() {
     var $win = $(window),
@@ -27,6 +28,7 @@
     });
   });
 </script>
+
 
 <!-- ファンクラブオーナーのタイムライン -->
 <div class="orner-container">
@@ -80,6 +82,7 @@
   </div>
 
 </div>
+</div>
 
 <!-- スワイプ機能はなしでいいんじゃ？ -->
 <!-- <div id="content" class="snap-content"> -->
@@ -88,10 +91,13 @@
   <!-- コンテンツ部分 -->
 <!-- </div> -->
 
-<div class="btn new-content-btn btn-color-blue">
-  <!-- リンクにファンクラブのidを入れている -->
+<!-- <div class="btn new-content-btn btn-color-blue">
+  リンクにファンクラブのidを入れている
   <%= link_to("NEW", "/fc_contents/new/#{@post.id}") %>
-</div>
+</div> -->
+<div class="new-content">
+<%= link_to("新規投稿","/fc_contents/new/#{@post.id}", remote: true) %>
+<div id="sampleRemote"></div>
 </div>
 <script type="text/javascript">
 // 基本的な記述です。コンテンツ部分のID名を書いておきましょう。
