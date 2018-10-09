@@ -97,12 +97,15 @@
 </div> -->
 
 <div class="new-content">
+  <!-- <%= link_to("新規投稿","/fc_contents/new/#{@post.id}", remote: true) %>
+  <div id="sampleRemote"></div> -->
+
   <!-- @post.idは現在のfc.idのこと -->
   <%= form_tag("/fc_content/create/#{@post.id}") do %>
     <input name="content_body" placeholder="ここでコメントを送ってみよう！" type="text" class="content-new" autocomplete="off"></input>
     <input class="submit" type="submit" value="投稿">
   <% end %>
-<!-- <div id="sampleRemote"></div> -->
+
 </div>
 
 
