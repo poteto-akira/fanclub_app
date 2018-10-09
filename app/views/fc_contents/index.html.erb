@@ -95,16 +95,22 @@
   リンクにファンクラブのidを入れている
   <%= link_to("NEW", "/fc_contents/new/#{@post.id}") %>
 </div> -->
+
 <div class="new-content">
-<%= link_to("新規投稿","/fc_contents/new/#{@post.id}", remote: true) %>
-<div id="sampleRemote"></div>
+  <!-- @post.idは現在のfc.idのこと -->
+  <%= form_tag("/fc_content/create/#{@post.id}") do %>
+    <input name="content_body" placeholder="ここでコメントを送ってみよう！" type="text" class="content-new" autocomplete="off"></input>
+    <input class="submit" type="submit" value="投稿">
+  <% end %>
+<!-- <div id="sampleRemote"></div> -->
 </div>
+
+
 <script type="text/javascript">
 // 基本的な記述です。コンテンツ部分のID名を書いておきましょう。
 var snapper = new Snap({
   element: document.getElementById('content')
 });
-
 
 // 以下はフリックやドラッグだけでなく、ボタンでも開いたり閉じたりできるようにする記述です。
 var addEvent = function addEvent(element, eventName, func) {
