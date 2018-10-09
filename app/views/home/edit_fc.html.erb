@@ -19,8 +19,16 @@
 <div class="header-bottom">
   <nav>
     <ul>
-      <li><%= link_to("ホーム" , "/")%></li>
-      <li><%= link_to("アカウント" , "/setting")%></li>
+      <li>
+        <%= link_to ("/") do %>
+          <%= image_tag 'home_aicon.png', :size =>'30x30'%>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to ("/setting") do %>
+          <%= image_tag 'setting_aicon.png', :size =>'30x30'%>
+        <% end %>
+      </li>
     </ul>
   </nav>
 </div>
