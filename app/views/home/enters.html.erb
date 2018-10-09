@@ -1,9 +1,7 @@
-<h3>加入しているファンクラブ</h3>
+<h3 class="">加入しているファンクラブ</h3>
 <% @enters.each do |enter|%>
-<% if enter %>
-  <%= link_to ("/fc_contents/index/#{post.id}") do %>
   <% post = Post.find_by(id: enter.post_id)%>
-
+  <%= link_to ("/fc_contents/index/#{post.id}") do %>
     <div class="enter-container">
       <table>
         <tr>
@@ -26,10 +24,6 @@
       </table>
     </div>
   <% end %>
-<% else %>
-まだ加入していません
-<% end %>
-
 <% end%>
 
 <div class="header-bottom">

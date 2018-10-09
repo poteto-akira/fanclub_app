@@ -4,7 +4,8 @@
     <tr>
       <td><%= link_to 'ファンクラブ作成', home_new_fc_path %></td>
       <td><%= link_to 'アカウント編集', "/account/#{current_user.id}/edit" %></td>
-      <td><%= link_to '加入ファンクラブ', "/#{current_user.id}/enters" %></td>
+      <td></td>
+      <!-- <td><%= link_to '加入ファンクラブ', "/#{current_user.id}/enters" %></td> -->
     </tr>
     <tr>
       <td><%= link_to '作成済ファンクラブ', "user/#{current_user.id}/fc_list" %></td>
