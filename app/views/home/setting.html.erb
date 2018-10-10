@@ -1,5 +1,33 @@
-<div class="setting main">
-  <h3>設定ページ</h3>
+<div class="main">
+  <header class="site-header flex flex--bet">
+    <nav class="gnav">
+      <ul class="gnav__menu flex flex--bet">
+        <li class="gnav__menu__item">
+          <h3 class="gnav__menu__item__link"><%= @page_name %></h3>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <script type="text/javascript">
+    $(function() {
+      var $win = $(window),
+        $header = $('header'),
+        headerHeight = $header.outerHeight(),
+        startPos = 0;
+
+      $win.on('load scroll', function() {
+        var value = $(this).scrollTop();
+          if ( value > startPos && value > headerHeight ) {
+            $header.css('top', '-' + headerHeight + 'px');
+          } else {
+            $header.css('top', '0');
+          }
+        startPos = value;
+      });
+    });
+  </script>
+
+<div class="setting">
   <table class="table-setting">
     <tr>
       <td><%= link_to 'ファンクラブ作成', home_new_fc_path %></td>
@@ -29,4 +57,5 @@
       </li>
     </ul>
   </nav>
+</div>
 </div>

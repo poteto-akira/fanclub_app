@@ -8,6 +8,7 @@ class FcContentsController < ApplicationController
     # @contents = FcContent.all.order(created_at: :desc)
     @content = FcContent.new
     # @contents = @post.content
+
   end
 
   def show

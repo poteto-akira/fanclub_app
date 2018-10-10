@@ -4,12 +4,14 @@ class HomeController < ApplicationController
 
 
   def index
+    @page_name = "HOME"
     @posts = Post.all.order(created_at: :desc)
     @users = User.all.order(created_at: :desc)
     @likes = Like.where(post_id: params[:post_id])
   end
 
   def new_fc
+    @page_name = "NEW FANCLUB"
   end
 
 
@@ -21,23 +23,21 @@ class HomeController < ApplicationController
                      post_image: "default_post.jpg")
 
     if @post.save
-    # ここから画像保存処理してるんだけどPost.newでpost_iamge: params[:post_image]
-    # をしてるからpostテーブルに--.jpgの形で保存されていない。
-    if params[:post_image]
-      # 画像のリサイズをする
+      # ここから画像保存処理してるんだけどPost.newでpost_iamge: params[:post_image]
+      # をしてるからpostテーブルに--.jpgの形で保存されていない。
+      if params[:post_image]
+        # 画像のリサイズをする
 
-      # アップロードした画像を300x300のサイズに編集
-      image = MiniMagick::Image.read(params[:post_image])
-      image.resize "200x200"
-      @post.post_image = "#{@post.id}.jpg"
-      # image = params[:post_image]
-      # File.binwrite("public/post_images/#{@post.post_image}",image.read )
-      image.write "public/post_images/#{@post.post_image}"
-    end
-
-
-      redirect_to(root_path)
-      # flash[:notice] = "ファンクラブを作成しました！これから素晴らしいファンクラブにしていってくださいね♡"
+        # アップロードした画像を300x300のサイズに編集
+        image = MiniMagick::Image.read(params[:post_image])
+        image.resize "200x200"
+        @post.post_image = "#{@post.id}.jpg"
+        # image = params[:post_image]
+        # File.binwrite("public/post_images/#{@post.post_image}",image.read )
+        image.write "public/post_images/#{@post.post_image}"
+      end
+        redirect_to(root_path)
+        # flash[:notice] = "ファンクラブを作成しました！これから素晴らしいファンクラブにしていってくださいね♡"
     else
       render("new_fc")
 
@@ -46,6 +46,7 @@ class HomeController < ApplicationController
 
 
   def show_fc
+    @page_name = "ABOUT"
     @post = Post.find_by(id: params[:id])
     @user = @post.user
     @likes_count = Like.where(post_id: @post.id).count
@@ -53,6 +54,7 @@ class HomeController < ApplicationController
   end
 
   def edit_fc
+    @page_name = "EDIT FANCLUB"
     @post = Post.find_by(id: params[:id])
   end
 
@@ -72,8 +74,6 @@ class HomeController < ApplicationController
 
       # File.binwrite("public/post_images/#{@post.post_image}",image.read )
     end
-
-
     @post.post_image = "#{@post.id}.jpg"
 
     if @post.save
@@ -85,6 +85,7 @@ class HomeController < ApplicationController
   end
 
   def profile
+    @page_name = "PROFILE"
     @user = User.find_by(id: params[:id])
     @post = Post.find_by(id: params[:id])
     @likes = Like.where(user_id: @user.id)
@@ -120,6 +121,7 @@ class HomeController < ApplicationController
   end
 
   def setting
+    @page_name = "SETTING"
   end
 
   def edit_account
@@ -139,6 +141,7 @@ class HomeController < ApplicationController
   end
 
   def fc_list
+    @page_name = "LIST"
     @user = User.find_by(id: params[:id])
   end
 end

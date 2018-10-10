@@ -1,32 +1,5 @@
 <div class="main">
-  <header class="site-header flex flex--bet">
-    <nav class="gnav">
-      <ul class="gnav__menu flex flex--bet">
-        <li class="gnav__menu__item">
-          <h3 class="gnav__menu__item__link">HOME</h3>
-        </li>
-      </ul>
-    </nav>
-  </header>
-
-  <script type="text/javascript">
-    $(function() {
-      var $win = $(window),
-        $header = $('header'),
-        headerHeight = $header.outerHeight(),
-        startPos = 0;
-
-      $win.on('load scroll', function() {
-        var value = $(this).scrollTop();
-          if ( value > startPos && value > headerHeight ) {
-            $header.css('top', '-' + headerHeight + 'px');
-          } else {
-            $header.css('top', '0');
-          }
-        startPos = value;
-      });
-    });
-  </script>
+  
       <% @posts.each do |post| %>
         <!-- link_to ~ do で画像全体にリンクをかけている -->
         <%= link_to ("/#{post.id}/show_fc") do %>
