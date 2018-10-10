@@ -125,9 +125,13 @@ class HomeController < ApplicationController
   end
 
   def edit_account
+    @page_name = "EDIT ACCOUNT"
+
   end
 
   def edit_profile
+    @page_name = "EDIT PROFILE"
+
   end
 
   def show
