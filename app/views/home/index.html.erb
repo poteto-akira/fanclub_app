@@ -1,5 +1,35 @@
 <div class="main">
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+  <!-- Slider main container -->
+  <div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide" data-swiper-autoplay="3000">Slide 1</div>
+      <div class="swiper-slide" data-swiper-autoplay="3000">Slide 2</div>
+      <div class="swiper-slide" data-swiper-autoplay="3000">Slide 3</div>
+      ...
+    </div>
+    <!-- ページネーション -->
+    <div class="swiper-pagination"></div>
+
+  </div>
+  <script>
+    var mySwiper = new Swiper ('.swiper-container', {
+      speed: 1000,
+      loop: true,
+      autoplay: {
+          delay: 1000,
+        },
+        autoplayDisableOnInteraction:false,
+      // ページネーション
+      pagination: '.swiper-pagination',
+
+
+    });
+  </script>
+
+
       <% @posts.each do |post| %>
         <!-- link_to ~ do で画像全体にリンクをかけている -->
         <%= link_to ("/#{post.id}/show_fc") do %>
