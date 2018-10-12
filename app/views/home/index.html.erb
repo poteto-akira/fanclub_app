@@ -2,51 +2,44 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
   <!-- Slider main container -->
   <div class="swiper-container">
-    <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
-      <div class="swiper-slide" data-swiper-autoplay="3000">Slide 1</div>
-      <div class="swiper-slide" data-swiper-autoplay="3000">Slide 2</div>
-      <div class="swiper-slide" data-swiper-autoplay="3000">Slide 3</div>
-      ...
+      <div class="swiper-slide" data-swiper-autoplay="3000"><%= image_tag("/post_images/index.jpg") %></div>
+      <div class="swiper-slide" data-swiper-autoplay="3000"><%= image_tag("/post_images/index2.jpg") %></div>
+      <div class="swiper-slide" data-swiper-autoplay="3000"><%= image_tag("/post_images/index3.jpg") %></div>
     </div>
     <!-- ページネーション -->
     <div class="swiper-pagination"></div>
-
   </div>
   <script>
     var mySwiper = new Swiper ('.swiper-container', {
       speed: 1000,
       loop: true,
       autoplay: {
-          delay: 1000,
-        },
+        delay: 1000,
+      },
         autoplayDisableOnInteraction:false,
       // ページネーション
       pagination: '.swiper-pagination',
-
-
     });
   </script>
 
+<!-- ファンクラブを表示 -->
+  <% @posts.each do |post| %>
+    <!-- link_to ~ do で画像全体にリンクをかけている -->
+    <%= link_to ("/#{post.id}/show_fc") do %>
+      <section class="card">
+        <!-- 画像のリサイズをする -->
+        <div class="card-img-parent">
+          <img class="card-img" src="<%= "/post_images/#{post.id}.jpg" %>" alt="">
+        </div>
+        <div class="card-title">
+          <%= link_to(post.fc_name, "/#{post.id}/show_fc") %>
+        </div>
+      </section>
+    <% end %>
+  <% end %>
 
-      <% @posts.each do |post| %>
-        <!-- link_to ~ do で画像全体にリンクをかけている -->
-        <%= link_to ("/#{post.id}/show_fc") do %>
-          <section class="card">
-
-            <!-- 画像のリサイズをする -->
-            <div class="card-img-parent">
-                <img class="card-img" src="<%= "/post_images/#{post.id}.jpg" %>" alt="">
-
-            </div>
-              <div class="card-title">
-                <%= link_to(post.fc_name, "/#{post.id}/show_fc") %>
-              </div>
-              <!-- <p class="card-text"><%= post.content %></p> -->
-          </section>
-        <% end %>
-      <% end %>
 </div>
 
 <div class="header-bottom">

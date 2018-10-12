@@ -767,6 +767,11 @@ background-color: rgba(102, 102, 102, 0.7);
  * Swiper スライダー関連css
  外部ファイルをどうやって読み込んだらいいのかわからないからとりあえずここに書いた
  **/
+
+.swiper-slide img {
+  width: 100%;
+  height: 120px;
+}
 .swiper-container {
   height: 120px;
   margin: 0 auto;
