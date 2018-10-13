@@ -1,31 +1,5 @@
 <div class="main">
-  <header class="site-header flex flex--bet">
-    <nav class="gnav">
-      <ul class="gnav__menu flex flex--bet">
-        <li class="gnav__menu__item">
-          <h3 class="gnav__menu__item__link"><%= @page_name %></h3>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <script type="text/javascript">
-    $(function() {
-      var $win = $(window),
-        $header = $('header'),
-        headerHeight = $header.outerHeight(),
-        startPos = 0;
 
-      $win.on('load scroll', function() {
-        var value = $(this).scrollTop();
-          if ( value > startPos && value > headerHeight ) {
-            $header.css('top', '-' + headerHeight + 'px');
-          } else {
-            $header.css('top', '0');
-          }
-        startPos = value;
-      });
-    });
-  </script>
 
 <div class="setting">
   <table class="table-setting">
@@ -42,6 +16,34 @@
     </tr>
   </table>
 </div>
+<h3 class="">加入しているファンクラブ</h3>
+<% @enters.each do |enter|%>
+  <% post = Post.find_by(id: enter.post_id)%>
+  <%= link_to ("/fc_contents/index/#{post.id}") do %>
+    <div class="enter-container">
+      <table>
+        <tr>
+          <td class="">
+            <section class="card-enter">
+              <div class="card-img-parent">
+                <img class="card-img" src="<%= "/post_images/#{post.id}.jpg" %>" alt="">
+              </div>
+              <div class="card-title">
+                <%= link_to(post.fc_name, "/fc_contents/index/#{post.id}") %>
+              </div>
+            </section>
+          </td>
+          <td class="enter-fc-content">
+            <div class="enter-fc-content">
+              <div class=""><%= post.content %></div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  <% end %>
+<% end%>
+
 <div class="header-bottom">
   <nav>
     <ul>
@@ -51,7 +53,7 @@
         <% end %>
       </li>
       <li>
-        <%= link_to ("/setting") do %>
+        <%= link_to ("#{current_user.id}/setting") do %>
           <%= image_tag 'setting_aicon.png', :size =>'30x30'%>
         <% end %>
       </li>

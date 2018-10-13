@@ -169,6 +169,16 @@ table td {
   min-height: 64px;
 }
 
+.site-header h3 {
+  position: absolute;
+}
+
+.site-header a {
+  position: absolute;
+  left: 300px;
+  width: 30px;
+}
+
 .site-header.hide{
     transform: translateY(-100%);
 }

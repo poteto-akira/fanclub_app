@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   get ":id/edit_fc" => "home#edit_fc"
   post ":id/update_fc" => "home#update_fc"
   post ":id/fc/destroy" => "home#destroy"
-  get "/setting" => "home#setting"
+  get ":id/setting" => "home#setting"
   get "pay" => "pay#payment"
   get "home/new_fc_content" => "home#new_fc_content"
   post "home/content_create" => "home#content_create"

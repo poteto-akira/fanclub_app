@@ -44,7 +44,7 @@
         <% end %>
       </li>
       <li>
-        <%= link_to ("/setting") do %>
+        <%= link_to ("/#{current_user.id}/setting") do %>
           <%= image_tag 'setting_aicon.png', :size =>'30x30'%>
         <% end %>
       </li>

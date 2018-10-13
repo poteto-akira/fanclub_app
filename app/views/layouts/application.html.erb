@@ -29,27 +29,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.jquery.min.js"></script> -->
-    <script language="JavaScript">
-      function openWindow(url,windowName){
-        info = 'toolbar=no,location=no,directories=no,status=no,menubar=no,' +
-         'scrollbars=yes,left=0,top=0,resizable=yes,width=1014,height=740,title=no';
-        var window1 = window.open(url,windowName,info);
-        window1.moveTo(0, 0);
-        window.opener = self;
-        window.close();
-      }
-    </script>
+
   </head>
 
 
-  <body onload="window.scrollTo(0,1);">
-    <script>
-    window.onload = funtion(){
-  setTimeout(function(){
-    window.scrollTo(0,1);
-  }, 1);
-}
-</script>
+  <body>
+
     <!-- <% if user_signed_in? %>
       <div class="header-logo">
         <%= link_to(current_user.name , "/home/profile/#{current_user.id}") %>
