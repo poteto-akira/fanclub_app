@@ -18,6 +18,7 @@
 </div>
 <!-- 入会しているファンクラブがある場合のみ表示 -->
 <% if @enters %>
+
   <h3 class="">入会しているファンクラブ</h3>
   <% @enters.each do |enter|%>
     <% post = Post.find_by(id: enter.post_id)%>
