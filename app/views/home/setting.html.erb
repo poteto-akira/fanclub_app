@@ -10,16 +10,19 @@
       <!-- <td><%= link_to '加入ファンクラブ', "/#{current_user.id}/enters" %></td> -->
     </tr>
     <tr>
-      <td><%= link_to '作成済ファンクラブ', "user/#{current_user.id}/fc_list" %></td>
+      <td><%= link_to '作成済ファンクラブ', "/user/#{current_user.id}/fc_list" %></td>
       <td><%= link_to 'プロフィール', "/home/profile/#{current_user.id}" %></td>
       <td></td> <!-- ここに利用規約、個人情報保護方針、特商法に基づく表記、退会とかを書く -->
     </tr>
   </table>
 </div>
-<h3 class="">加入しているファンクラブ</h3>
+<h3 class="">入会しているファンクラブ</h3>
 <% @enters.each do |enter|%>
   <% post = Post.find_by(id: enter.post_id)%>
+  <% if post != nil %>
+
   <%= link_to ("/fc_contents/index/#{post.id}") do %>
+  <% else %>
     <div class="enter-container">
       <table>
         <tr>
@@ -41,6 +44,7 @@
         </tr>
       </table>
     </div>
+    <% end %>
   <% end %>
 <% end%>
 
@@ -53,8 +57,14 @@
         <% end %>
       </li>
       <li>
-        <%= link_to ("#{current_user.id}/setting") do %>
-          <%= image_tag 'setting_aicon.png', :size =>'30x30'%>
+        <% if user_signed_in? %>
+          <%= link_to ("/#{current_user.id}/setting") do %>
+            <%= image_tag 'setting_aicon.png', :size =>'30x30'%>
+          <% end %>
+        <% else %>
+          <%= link_to ("/users/sign_in") do %>
+            <%= image_tag 'setting_aicon.png', :size =>'30x30'%>
+          <% end %>
         <% end %>
       </li>
     </ul>

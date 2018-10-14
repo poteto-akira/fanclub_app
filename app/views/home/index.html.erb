@@ -51,9 +51,16 @@
         <% end %>
       </li>
       <li>
-        <%= link_to ("#{current_user.id}/setting") do %>
-          <%= image_tag 'setting_aicon.png', :size =>'30x30'%>
+        <% if user_signed_in? %>
+          <%= link_to ("/#{current_user.id}/setting") do %>
+            <%= image_tag 'setting_aicon.png', :size =>'30x30'%>
+          <% end %>
+        <% else %>
+          <%= link_to ("/users/sign_in") do %>
+            <%= image_tag 'setting_aicon.png', :size =>'30x30'%>
+          <% end %>
         <% end %>
+
       </li>
     </ul>
   </nav>
