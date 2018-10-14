@@ -4,14 +4,14 @@ class HomeController < ApplicationController
 
 
   def index
-    @page_name = "ＨＯＭＥ"
+    @page_name = "HOME"
     @posts = Post.all.order(created_at: :desc)
     @users = User.all.order(created_at: :desc)
     @likes = Like.where(post_id: params[:post_id])
   end
 
   def new_fc
-    @page_name = "ＮＥＷ　ＦＡＮＣＬＵＢ"
+    @page_name = "NEW FANCLUB"
   end
 
 
@@ -46,7 +46,7 @@ class HomeController < ApplicationController
 
 
   def show_fc
-    @page_name = "ＡＢＯＵＴ"
+    @page_name = "ABOUT"
     @post = Post.find_by(id: params[:id])
     @user = @post.user
     @likes_count = Like.where(post_id: @post.id).count
@@ -54,7 +54,7 @@ class HomeController < ApplicationController
   end
 
   def edit_fc
-    @page_name = "ＥＤＩＴ　ＦＵＮＣＬＵＢ"
+    @page_name = "EDIT FANCLUB"
     @post = Post.find_by(id: params[:id])
   end
 
@@ -85,7 +85,7 @@ class HomeController < ApplicationController
   end
 
   def profile
-    @page_name = "ＰＲＯＦＩＬＥ"
+    @page_name = "PROFILE"
     @user = User.find_by(id: params[:id])
     @post = Post.find_by(id: params[:id])
     @likes = Like.where(user_id: @user.id)
@@ -121,20 +121,16 @@ class HomeController < ApplicationController
   end
 
   def setting
-    @page_name = "ＭＹ　ＰＡＧＥ"
-    @user = User.find_by(id: params[:id])
-    @post = Post.find_by(id: params[:id])
-    @enters = Enter.where(user_id: current_user.id)
-
+    @page_name = "SETTING"
   end
 
   def edit_account
-    @page_name = "ＥＤＩＴ　ＡＣＣＯＵＮＴ"
+    @page_name = "EDIT ACCOUNT"
 
   end
 
   def edit_profile
-    @page_name = "ＥＤＩＴ　ＰＲＯＦＩＬＥ"
+    @page_name = "EDIT PROFILE"
 
   end
 
@@ -145,11 +141,11 @@ class HomeController < ApplicationController
   # 加入しているファンクラブ一覧を表示
   def enters
     @user = User.find_by(id: params[:id])
-    @enters = Enter.where(user_id: current_user.id)
+    @enters = Enter.where(user_id: @user.id)
   end
 
   def fc_list
-    @page_name = "ＬＩＳＴ"
+    @page_name = "LIST"
     @user = User.find_by(id: params[:id])
   end
 end

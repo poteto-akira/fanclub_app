@@ -4,9 +4,13 @@
   <div class="swiper-container">
     <div class="swiper-wrapper">
       <!-- Slides -->
-      <div class="swiper-slide" data-swiper-autoplay="3000"><%= image_tag("/post_images/index.jpg") %></div>
+      <!-- スライダーにリンクをつけている -->
+      <div class="swiper-slide" data-swiper-autoplay="3000">
+        <%= link_to("/fc_contents/index/44") do %>
+          <%= image_tag("/post_images/poteto_akira.png") %>
+        <% end %>
+      </div>
       <div class="swiper-slide" data-swiper-autoplay="3000"><%= image_tag("/post_images/index2.jpg") %></div>
-      <div class="swiper-slide" data-swiper-autoplay="3000"><%= image_tag("/post_images/index3.jpg") %></div>
     </div>
     <!-- ページネーション -->
     <div class="swiper-pagination"></div>
@@ -26,20 +30,22 @@
 
 <!-- ファンクラブを表示 -->
   <% @posts.each do |post| %>
-    <!-- link_to ~ do で画像全体にリンクをかけている -->
-    <%= link_to ("/#{post.id}/show_fc") do %>
-      <section class="card">
-        <!-- 画像のリサイズをする -->
-        <div class="card-img-parent">
-          <img class="card-img" src="<%= "/post_images/#{post.id}.jpg" %>" alt="">
-        </div>
-        <div class="card-title">
-          <%= link_to(post.fc_name, "/#{post.id}/show_fc") %>
-        </div>
-      </section>
+    <!-- post.id=44は運営のファンクラブだから一覧には表示しないようにしている -->
+    <% if post.id != 44 %>
+      <!-- link_to ~ do で画像全体にリンクをかけている -->
+      <%= link_to ("/#{post.id}/show_fc") do %>
+        <section class="card">
+          <!-- 画像のリサイズをする -->
+          <div class="card-img-parent">
+            <img class="card-img" src="<%= "/post_images/#{post.id}.jpg" %>" alt="">
+          </div>
+          <div class="card-title">
+            <%= link_to(post.fc_name, "/#{post.id}/show_fc") %>
+          </div>
+        </section>
+      <% end %>
     <% end %>
   <% end %>
-
 </div>
 
 <div class="header-bottom">

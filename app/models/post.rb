@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   validates :fc_name, {presence: true , length: { maximum: 10 }}
   validates :content, {presence: true}
   validates :post_image, {presence: true}
-  # has_many :fc_contents, dependent: :destroy
+  has_many :fc_contents, dependent: :destroy
   default_scope -> { order(created_at: :desc) }
 
   def user
@@ -15,7 +15,7 @@ class Post < ApplicationRecord
   # end
 
   def contents
-    return FcContent.where(fc_id: self.id)
+    return FcContent.where(post_id: self.id)
   end
   # def like_user(user_id)
   #   likes.find_by(user_id: user_id)
