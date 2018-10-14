@@ -62,8 +62,11 @@
     <label class="tab_item" for="design">管理者</label>
     <div class="tab_content" id="fc_content">
       <div class="show-fc-img parent">
+      <% if @post.fc_name == "芋あきらの部屋" %>
+        <img class="card-img" src="<%= "/post_images/poteto_akira.png" %>" alt="">
+      <% else %>
         <img class="card-img" src="<%= "/post_images/#{@post.id}.jpg" %>" alt="">
-
+      <% end %>
         <% if false %>
         <!-- いいね機能はvue.jsを勉強してから -->
         <div class="triangle">
