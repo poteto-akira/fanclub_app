@@ -1,6 +1,8 @@
 
 <div class="main main-fc-content">
-  <% if @post.id != 44 %>
+  <!-- 現在のpathを取得して/fc_contents/index/44(運営)の場合はelseで返す -->
+  <% current_path = request.path %>
+  <% if current_path != "/fc_contents/index/44" %>
     <header class="site-header flex flex--bet">
     <nav class="gnav">
       <ul class="gnav__menu flex flex--bet">
