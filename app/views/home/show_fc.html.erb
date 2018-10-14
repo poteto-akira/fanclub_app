@@ -62,7 +62,7 @@
     <label class="tab_item" for="design">管理者</label>
     <div class="tab_content" id="fc_content">
       <div class="show-fc-img parent">
-        <img class="card-img" src="<%= "/post_images/#{@post.id}.jpg" %>" alt="">
+        <img class="" src="<%= "/post_images/#{@post.id}.jpg" %>" alt="">
 
         <% if false %>
         <!-- いいね機能はvue.jsを勉強してから -->
@@ -106,7 +106,7 @@
           <% else %>
             <td><%= link_to(@user.username, "/home/profile/#{@user.id}") %></td>
           <% end %>
-          <td>¥100</td>
+          <td>¥0</td>
           <td><%= @member_count %></td>
         </tr>
       </table>
