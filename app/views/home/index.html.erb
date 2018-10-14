@@ -7,7 +7,7 @@
       <!-- スライダーにリンクをつけている -->
       <div class="swiper-slide" data-swiper-autoplay="3000">
         <% @posts.each do |post| %>
-          <% if post.id == 44 %>
+          <% if post.fc_name == "芋あきらの部屋" %>
             <%= link_to ("/#{post.id}/show_fc") do %>
               <%= image_tag("/post_images/poteto_akira.png") %>
             <% end %>
