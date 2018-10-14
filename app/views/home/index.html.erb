@@ -34,7 +34,8 @@
 
 <!-- ファンクラブを表示 -->
   <% @posts.each do |post| %>
-    <!-- post.id=44は運営のファンクラブだから一覧には表示しないようにしている -->
+    <!-- 芋あきらの部屋は運営のファンクラブだから一覧には表示しないようにしている -->
+    <% if post.fc_name != "芋あきらの部屋" %>
       <!-- link_to ~ do で画像全体にリンクをかけている -->
       <%= link_to ("/#{post.id}/show_fc") do %>
         <section class="card">
@@ -48,6 +49,7 @@
         </section>
       <% end %>
     <% end %>
+  <% end %>
 </div>
 
 <div class="header-bottom">
