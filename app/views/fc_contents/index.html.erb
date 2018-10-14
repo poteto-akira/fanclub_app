@@ -1,16 +1,26 @@
 
 <div class="main main-fc-content">
-<header class="site-header flex flex--bet">
-<nav class="gnav">
-  <ul class="gnav__menu flex flex--bet">
-    <li class="gnav__menu__item">
-      <h3 class="gnav__menu__item__link"><%= @post.fc_name %><%= link_to '戻る', :back %></h3>
-    </li>
-  </ul>
-</nav>
-</header>
-
-
+  <% if @post.id != 44 %>
+    <header class="site-header flex flex--bet">
+    <nav class="gnav">
+      <ul class="gnav__menu flex flex--bet">
+        <li class="gnav__menu__item">
+          <h3 class="gnav__menu__item__link"><%= @post.fc_name %><%= link_to '戻る', :back %></h3>
+        </li>
+      </ul>
+    </nav>
+    </header>
+  <% else %>
+    <header class="site-header flex flex--bet">
+    <nav class="gnav">
+      <ul class="gnav__menu flex flex--bet">
+        <li class="gnav__menu__item">
+          <h3 class="gnav__menu__item__link">芋あきらの部屋<%= link_to '戻る', :back %></h3>
+        </li>
+      </ul>
+    </nav>
+    </header>
+  <% end %>
 <script type="text/javascript">
 $(function() {
   var $win = $(window),
