@@ -104,13 +104,15 @@
           <th>会員数</th>
         </tr>
         <tr>
-          <% if @user.name %>
+          <% if @post.fc_name == "芋あきらの部屋" %>
+            <td><%= link_to("芋あきら", "/home/profile/#{@user.id}") %></td>
+          <% elsif @user.name %>
             <td><%= link_to(@user.name, "/home/profile/#{@user.id}") %></td>
-          <% else %>
+          <% elsif @user.username%>
             <td><%= link_to(@user.username, "/home/profile/#{@user.id}") %></td>
           <% end %>
-          <td>¥0</td>
-          <td><%= @member_count %></td>
+            <td>¥0</td>
+            <td><%= @member_count %></td>
         </tr>
       </table>
 
