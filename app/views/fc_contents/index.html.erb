@@ -23,24 +23,24 @@
     </nav>
     </header>
   <% end %>
-<script type="text/javascript">
-$(function() {
-  var $win = $(window),
-    $header = $('header'),
-    headerHeight = $header.outerHeight(),
-    startPos = 0;
+  <script type="text/javascript">
+    $(function() {
+      var $win = $(window),
+        $header = $('header'),
+        headerHeight = $header.outerHeight(),
+        startPos = 0;
 
-  $win.on('load scroll', function() {
-    var value = $(this).scrollTop();
-      if ( value > startPos && value > headerHeight ) {
-        $header.css('top', '-' + headerHeight + 'px');
-      } else {
-        $header.css('top', '0');
-      }
-    startPos = value;
-  });
-});
-</script>
+      $win.on('load scroll', function() {
+        var value = $(this).scrollTop();
+          if ( value > startPos && value > headerHeight ) {
+            $header.css('top', '-' + headerHeight + 'px');
+          } else {
+            $header.css('top', '0');
+          }
+        startPos = value;
+      });
+    });
+  </script>
 
 
 
@@ -67,14 +67,13 @@ $(function() {
     <% end %>
   <% end %>
 </div>
+
 <!-- 会員のタイムライン -->
 <div class="snap-drawers">
   <div class="snap-drawer snap-drawer-right">
-
     <!-- メニューの部分 -->
     <div class="member-timeline-container">
       <!-- 現在のpostのコンテンツって意味 -->
-
       <% @post.contents.each do |content| %>
         <% if @post.user_id != content.user_id %>
         <li class="member-timeline">
@@ -87,7 +86,6 @@ $(function() {
           </div>
           <span class="created-at"><%= time_ago_in_words(content.created_at)%></span>
           <div class="member-timeline-body">
-            <!-- <%= link_to(content.content_body, "/fc_content/#{content.id}") %> -->
             <%= content.content_body %>
           </div>
         </li>
@@ -96,9 +94,6 @@ $(function() {
     </div>
   </div>
   <div class="new-content">
-    <!-- <%= link_to("新規投稿","/fc_contents/new/#{@post.id}", remote: true) %>
-    <div id="sampleRemote"></div> -->
-
     <!-- @post.idは現在のfc.idのこと -->
     <%= form_tag("/fc_content/create/#{@post.id}") do %>
       <input name="content_body" placeholder="ここでコメントを送ってみよう！" type="text" class="content-new" id="input1" autocomplete="off"></input>

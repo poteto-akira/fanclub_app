@@ -33,7 +33,7 @@ class FcContentsController < ApplicationController
     if @content.save
     # リダイレクトの後にpost.idがついたurlに戻る
     # redirect_to("/fc_contents/index/#{@post.id}")
-      render("index")
+      redirect_to("/fc_contents/index/#{@post.id}")
     else
       render("index")
     end
