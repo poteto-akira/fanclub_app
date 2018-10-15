@@ -148,4 +148,10 @@ class HomeController < ApplicationController
     @page_name = "LIST"
     @user = User.find_by(id: params[:id])
   end
+
+  def others
+  end
+
+  def policy_law
+  end
 end

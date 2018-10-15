@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get "account/:id/edit" => "home#edit_account"
   post "user/:id/update" => "home#update_user"
   get "user/:id/fc_list" => "home#fc_list"
+  get "others" => "home#others"
+  get "policy_law" => "home#policy_law"
   get 'pay/payment'
 
   get "home/:id/likes" => "home#likes"
