@@ -10,10 +10,10 @@
   <div class="profile-image">
     <% if @user.name == "芋あきら" %>
       <img src="<%= "/user_images/akira.png" %>">
+    <% elsif @user.image_name == "default_image.jpg" %>
+      <img src="<%= "/user_images/default_image.jpg" %>">
     <% elsif @user.image_name %>
-    <img src="<%= "/user_images/#{@user.id}.jpg" %>">
-     <% else %>
-     <img src="/user_images/default_image.jpg">
+     <img src="<%= "/user_images/#{@user.id}.jpg" %>">
     <% end %>
   </div>
 
@@ -22,29 +22,34 @@
   <div class="my-fc">
     <h3 class="who-make-fc"><%= @user.name %>さんが作ったファンクラブ</h3>
     <% @user.posts.each do |post|%>
-      <% if post.fc_name == "芋あきらの部屋" %>
-        <%= link_to ("/#{post.id}/show_fc") do %>
-          <section class="card">
-            <div class="card-img-parent">
-              <img class="card-img" src="<%= "/post_images/poteto_akira.png" %>" alt="">
-            </div>
-            <div class="card-title">
-              <%= link_to("芋あきらの部屋", "/#{post.id}/show_fc") %>
-            </div>
-          </section>
-        <% end %>
-      <% else %>
-        <%= link_to ("/#{post.id}/show_fc") do %>
-          <section class="card">
-            <div class="card-img-parent">
-              <img class="card-img" src="<%= "/post_images/#{post.id}.jpg" %>" alt="">
-            </div>
-            <div class="card-title">
-              <%= link_to(post.fc_name, "/#{post.id}/show_fc") %>
-            </div>
-          </section>
-        <% end %>
+      <%= link_to ("/#{post.id}/show_fc") do %>
+        <div class="enter-container">
+          <table>
+            <tr>
+              <td>
+                <section class="card-enter">
+                  <div class="card-img-parent">
+                    <% if post.fc_name == "芋あきらの部屋" %>
+                      <img class="card-img" src="<%= "/post_images/poteto_akira.png" %>" alt="">
+                    <% else %>
+                      <img class="card-img" src="<%= "/post_images/#{post.id}.jpg" %>" alt="">
+                    <% end %>
+                  </div>
+                  <div class="card-title">
+                    <%= link_to(post.fc_name, "/fc_contents/index/#{post.id}") %>
+                  </div>
+                </section>
+              </td>
+              <td class="enter-fc-content">
+                <div class="enter-fc-content">
+                  <div class=""><%= post.content %></div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
       <% end %>
+      </div>
     <% end %>
   </div>
 <!-- ここまでユーザーが作ったファンクラブを表示するエリア =================================-->
