@@ -10,10 +10,10 @@
   <div class="profile-image">
     <% if @user.name == "芋あきら" %>
       <img src="<%= "/user_images/akira.png" %>">
-    <% elsif @user.image_name  %>
-      <img src="<%= "/user_images/#{@user.id}.jpg" %>">
-    <% elsif @user.image_name == "default_image.jpg" %>
-     <img src="<%= "/user_images/default_image.jpg" %>">
+    <% elsif @user.image_name == nil  %>
+      <img src="<%= "/user_images/default_image.jpg" %>">
+    <% elsif @user.image_name%>
+     <img src="<%= "/user_images/#{@user.id}.jpg" %>">
     <% end %>
   </div>
 

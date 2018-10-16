@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  mount_uploader :image_name, ImagesUploader
+  # 画像をアップロードできるようにしている
+  # mount_uploader :image_name, ImagesUploader
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:twitter]
   validates :name, {presence: true}
