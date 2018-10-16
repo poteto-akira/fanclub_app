@@ -6,12 +6,12 @@
 
   <div class="field">
     <%= f.label :name , "ユーザー名"%><br />
-    <%= f.text_field :name, class: "textbox-short" , autofocus: true  %>
+    <%= f.text_field :name, class: "textbox-short" , autofocus: true , placeholder: "山田太郎" %>
   </div>
 
   <div class="field">
     <%= f.label :email , "メールアドレス"%><br />
-    <%= f.email_field :email,  class: "textbox-short" , autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email,  class: "textbox-short" , autofocus: true, autocomplete: "email", placeholder: "example@poteto.com" %>
   </div>
 
   <div class="field">
@@ -19,12 +19,12 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> 字以上のパスワードにしてね！)</em>
     <% end %><br />
-    <%= f.password_field :password,  class: "textbox-short" , autocomplete: "off" %>
+    <%= f.password_field :password,  class: "textbox-short" , autocomplete: "off", placeholder: "6文字以上のパスワードにしてね！" %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation , "同じパスワード"%><br />
-    <%= f.password_field :password_confirmation,  class: "textbox-short" , autocomplete: "off" %>
+    <%= f.password_field :password_confirmation,  class: "textbox-short" , autocomplete: "off" , placeholder: "同じパスワードを入力してね！"%>
   </div>
 
   <div class="actions">
@@ -37,4 +37,7 @@
 <%- resource_class.omniauth_providers.each do |provider| %>
   <%= link_to "Twitterアカウントでログイン", omniauth_authorize_path(resource_name, provider) %><br />
 <% end -%>
+</div>
+<div class="user-new">
+<%= link_to("すでに登録している方はこちら" , "/users/sign_in") %>
 </div>

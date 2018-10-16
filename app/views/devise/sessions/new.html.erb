@@ -4,12 +4,12 @@
 
   <div class="field">
     <%= f.label :email , "メールアドレス"%><br />
-    <%= f.email_field :email,  class: "textbox-short" , autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email,  class: "textbox-short" ,  autocomplete: "email", placeholder: "メールアドレスを入力してね！" %>
   </div>
 
   <div class="field">
     <%= f.label :password , "パスワード"%><br />
-    <%= f.password_field :password,  class: "textbox-short" , autocomplete: "off" %>
+    <%= f.password_field :password,  class: "textbox-short" , autocomplete: "off", placeholder: "8文字以上でパスワードを入力してね！" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
@@ -32,5 +32,5 @@
 </div>
 
 <div class="user-new">
-<%= link_to("初めての方は新規登録" , "/users/sign_up") %>
+<%= link_to("初めての方はこちらで新規登録" , "/users/sign_up") %>
 </div>

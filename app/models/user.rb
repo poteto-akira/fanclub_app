@@ -4,6 +4,7 @@ class User < ApplicationRecord
   mount_uploader :image_name, ImagesUploader
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:twitter]
+  validates :name, {presence: true}
 
   has_many :posts, dependent: :destroy
   has_many :fc_contents, dependent: :destroy
