@@ -75,6 +75,7 @@
     <div class="member-timeline-container">
       <!-- 現在のpostのコンテンツって意味 -->
       <% @post.contents.each do |content| %>
+      <!-- ファンクラブオーナー以外のユーザー -->
         <% if @post.user_id != content.user_id %>
         <li class="member-timeline">
           <div class="content-member-img">
@@ -83,6 +84,8 @@
             <% else %>
               <img src="<%= "/default_image.jpg" %>">
             <% end %>
+
+
           </div>
           <span class="created-at"><%= time_ago_in_words(content.created_at)%></span>
           <div class="member-timeline-body">
