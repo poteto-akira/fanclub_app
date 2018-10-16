@@ -81,7 +81,9 @@
         <% if @post.user_id != content.user_id %>
         <li class="member-timeline">
           <div class="content-member-img">
-            <% if content.user_id %>
+            <% if content.username == "芋あきら" %>
+              <%= link_to image_tag("/user_images/akira.png"), "/home/profile/#{content.user_id}" %>
+            <% elsif content.user_id %>
               <%= link_to image_tag("/user_images/default_image.jpg"), "/home/profile/#{content.user_id}" %>
             <% else %>
               <img src="<%= "/default_image.jpg" %>">
