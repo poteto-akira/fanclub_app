@@ -2,7 +2,7 @@
   <% if @user.name %>
     <!-- アカウント登録時のユーザー名 -->
     <h2 class="title"><%= @user.name %></h2>
-  <% else %>
+  <% elsif @user.username %>
     <!-- twitterのアカウント名 -->
     <h2 class="title"><%= @user.username %></h2>
   <% end %>

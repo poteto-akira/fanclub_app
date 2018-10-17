@@ -101,7 +101,7 @@
   </div>
   <div class="new-content">
     <!-- @post.idは現在のfc.idのこと -->
-    <%= form_tag("/fc_content/create/#{@post.id}") do  %>
+    <%= form_tag("/fc_content/create/#{@post.id}", :remote => true) do  %>
       <input name="content_body" placeholder="ここでコメントを送ってみよう！" type="text" class="content-new" id="input1" autocomplete="off"></input>
       <input class="submit" id="submit1" type="submit" value="送る">
     <% end %>
