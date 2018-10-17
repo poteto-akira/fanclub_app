@@ -2,7 +2,7 @@ class FcContent < ApplicationRecord
   # validates :fc_id,{presence: true}
   validates :content_body, {presence: true}
   # controllerでdescできなかったからここで新着順に並び替えている
-  default_scope -> { order(created_at: :desc) }
+  default_scope -> { order(created_at: :asc) }
   belongs_to :user
   # belongs_to :post
 
