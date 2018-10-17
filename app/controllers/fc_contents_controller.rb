@@ -32,9 +32,10 @@ class FcContentsController < ApplicationController
                              post_id: params[:id],
                              username: current_user.name)
     if @content.save
-    # リダイレクトの後にpost.idがついたurlに戻る
-    # redirect_to("/fc_contents/index/#{@post.id}")
+    # saveの後にpost.idがついたurlに戻る
       redirect_to("/fc_contents/index/#{@post.id}")
+      # render("index")
+
     else
       render("index")
     end

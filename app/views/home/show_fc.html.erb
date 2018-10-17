@@ -31,9 +31,9 @@
     <!-- ファンクラブのuser.idと現在のuser.idが同じ(ファンクラブの管理者)だったら入会するボタンを非表示にする -->
     <% if @user.id != current_user.id %>
       <button class="btn btn-color-blue btn-size-large">
-        <%= link_to("入会する", "/enter/#{@post.id}/create",{method:"post"}) %>
+        <%= link_to("無料で入会する", "/enter/#{@post.id}/create",{method:"post"}) %>
       </button>
-      <p class="text-caution pay-caution">このボタンをタップしてもまだ支払いは行われません</p>
+      <!-- <p class="text-caution pay-caution">このボタンをタップしてもまだ支払いは行われません</p> -->
       <% else %>
       <button class="btn btn-color-blue btn-size-large">
         <%= link_to("ファンクラブをみる", "/fc_contents/index/#{@post.id}") %>
@@ -47,9 +47,9 @@
 <!-- ログインしていない場合の処理 -->
 <% if !user_signed_in? %>
   <button class="btn btn-color-blue btn-size-large">
-    <%= link_to("入会する", "/enter/#{@post.id}/create",{method:"post"}) %>
+    <%= link_to("無料で入会する", "/enter/#{@post.id}/create",{method:"post"}) %>
   </button>
-  <p class="text-caution pay-caution">このボタンをタップしてもまだ支払いは行われません</p>
+  <!-- <p class="text-caution pay-caution">このボタンをタップしてもまだ支払いは行われません</p> -->
 <% end %>
 
 <!-- ここからタブバーエリア ===============================================-->
