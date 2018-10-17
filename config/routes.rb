@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  # get '/users', to: redirect("/users/sign_up")
 
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
+
 
   # ============fc_content.controller ==============
   get 'fc_contents/index/:id' => "fc_contents#index"
