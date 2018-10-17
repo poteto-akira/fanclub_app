@@ -42,63 +42,11 @@
     });
   </script>
 
-
-
-
-<!-- ファンクラブオーナーのタイムライン -->
-<div class="orner-container">
-  <!-- 現在のpostのコンテンツって意味 -->
-  <% @post.contents.each do |content| %>
-    <% if @post.user_id == content.user_id %>
-    <li class="orner-timeline">
-      <div class="content-member-img">
-        <% if content.username == "芋あきら" %>
-          <%= link_to image_tag("/user_images/akira.png"), "/home/profile/#{content.user_id}" %>
-        <% elsif content.user_id %>
-          <%= link_to image_tag("/user_images/default_image.jpg"), "/home/profile/#{content.user_id}" %>
-        <% else %>
-          <img src="<%= "/default_image.jpg" %>">
-        <% end %>
-      </div>
-      <span class="created-at"><%= time_ago_in_words(content.created_at)%></span>
-        <p class="orner-timeline-body">
-          <!-- <%= link_to(content.content_body, "/fc_content/#{content.id}") %> -->
-          <%= content.content_body %>
-        </p>
-      </li>
-    <% end %>
-  <% end %>
+<!-- _contents.html.erb -->
+<div id="contents">
+<%= render ("contents") %>
 </div>
 
-<!-- 会員のタイムライン -->
-<div class="snap-drawers">
-  <div class="snap-drawer snap-drawer-right">
-    <!-- メニューの部分 -->
-    <div class="member-timeline-container">
-      <!-- 現在のpostのコンテンツって意味 -->
-      <% @post.contents.each do |content| %>
-      <!-- ファンクラブオーナー以外のユーザー -->
-        <% if @post.user_id != content.user_id %>
-        <li class="member-timeline">
-          <div class="content-member-img">
-            <% if content.username == "芋あきら" %>
-              <%= link_to image_tag("/user_images/akira.png"), "/home/profile/#{content.user_id}" %>
-            <% elsif content.user_id %>
-              <%= link_to image_tag("/user_images/default_image.jpg"), "/home/profile/#{content.user_id}" %>
-            <% else %>
-              <img src="<%= "/default_image.jpg" %>">
-            <% end %>
-          </div>
-          <span class="created-at"><%= content.username %></span>
-          <span class="created-at"><%= time_ago_in_words(content.created_at)%></span>
-          <div class="member-timeline-body">
-            <%= content.content_body %>
-          </div>
-        </li>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
   <div class="new-content">
     <!-- @post.idは現在のfc.idのこと -->
     <%= form_tag("/fc_content/create/#{@post.id}", :remote => true) do  %>

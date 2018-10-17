@@ -31,14 +31,17 @@ class FcContentsController < ApplicationController
                              user_id: current_user.id,
                              post_id: params[:id],
                              username: current_user.name)
+    respond_to do |format|
     if @content.save
     # saveの後にpost.idがついたurlに戻る
-      redirect_to("/fc_contents/index/#{@post.id}")
+      # redirect_to("/fc_contents/index/#{@post.id}")
       # render("index")
-
+      format.html
+      format.js
     else
-      render("index")
+      format.js {render :index}
     end
+  end
   end
 
   private
