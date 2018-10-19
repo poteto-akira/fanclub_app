@@ -8,7 +8,11 @@ class FcContentsController < ApplicationController
     # @contents = FcContent.all.order(created_at: :desc)
     @content = FcContent.new
     # @contents = @post.content
-
+    # @contents = FcContent.all
+    # respond_to do |format|
+    #       format.html # html形式でアクセスがあった場合は特に何もなし(@messages = Message.allして終わり）
+    #       format.json { @new_content = FcContent.where('id > ?', params[:id]) } # json形式でアクセスがあった場合は、params[:message][:id]よりも大きいidがないかMessageから検索して、@new_messageに代入する
+    #     end
   end
 
   def show

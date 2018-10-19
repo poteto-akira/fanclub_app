@@ -286,13 +286,14 @@ fc_contents/index.html.erb
 // 会員のタイムラインを半分より下に表示
 
 .member-timeline-container {
-  position: relative;
+  position: absolute;
   bottom: 0;
   overflow: scroll;
   width: 100%;
   // background-color: rgba(102,102,102,0.7);
   z-index: 4;
-  padding-bottom: 80px;
+  padding-bottom: 50px;
+  height: 225px;
 }
 .orner-container {
   // overflow: scroll;

@@ -1,4 +1,17 @@
-
+<script>
+setInterval(function() {
+    $.ajax({
+      url: location.href.json,
+    })
+    .done(function(data) {
+    })
+    .fail(function(data) {
+    });
+  } else {
+    clearInterval(interval);
+   } , 5000 );
+});
+</script>
 <div class="main main-fc-content">
   <!-- 現在のpathを取得して/fc_contents/index/44(運営)の場合はelseで返す -->
   <% current_path = request.path %>
