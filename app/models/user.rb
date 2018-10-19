@@ -4,7 +4,8 @@ class User < ApplicationRecord
   # 画像をアップロードできるようにしている
   # mount_uploader :image_name, ImagesUploader
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:twitter]
+         :recoverable, :rememberable, :trackable, :validatable,:timeoutable, :omniauthable, omniauth_providers: [:twitter]
+
   validates :name, {presence: true}
 
   has_many :posts, dependent: :destroy

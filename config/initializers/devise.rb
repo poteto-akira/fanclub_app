@@ -175,7 +175,7 @@ Devise.setup do |config|
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again. Default is 30 minutes.
-  # config.timeout_in = 30.minutes
+  config.timeout_in = 1.year
 
   # ==> Configuration for :lockable
   # Defines which strategy will be used to lock an account.
@@ -282,6 +282,9 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
+# ログイン状態を保持する
+  config.extend_remember_period = true
 
   # config.omniauth :twitter, "K4QYxfNE4I1yK61xIx6KNOB3c", "MqQlrvF3uGwKFvFdyW2zXKqx6aNv3b3KdY7UVR7LQAKI9VKFPk"
   # config.omniauth :twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET'], display: 'popup'
