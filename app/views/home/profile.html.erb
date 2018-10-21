@@ -8,12 +8,12 @@
   <% end %>
 
   <div class="profile-image">
-    <% if @user.name == "芋あきら" %>
-      <img src="<%= "/user_images/akira.png" %>">
-    <% elsif @user.image_name == nil || @user.image_name == "default_image.jpg" %>
-      <img src="<%= "/user_images/default_image.jpg" %>">
-    <% elsif @user.image_name%>
-     <img src="<%= "/user_images/#{@user.id}.jpg" %>">
+    <% if @user.remote_image_name_url %>
+       <%= image_tag(@user.remote_image_name_url) %>
+    <% elsif @user.name == "芋あきら" %>
+        <%= image_tag("/user_images/akira.png") %>
+    <% else %>
+       <%= image_tag("/user_images/default_image.jpg") %>
     <% end %>
   </div>
 
