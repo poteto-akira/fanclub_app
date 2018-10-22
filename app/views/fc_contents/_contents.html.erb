@@ -3,14 +3,14 @@
   <!-- 現在のpostのコンテンツって意味 -->
   <% @post.contents.each do |content| %>
     <% if @post.user_id == content.user_id %>
+    <%  user = content.user_id %>
+    <% twitter_image = User.find_by(id: user) %>
     <li class="orner-timeline">
       <div class="content-member-img">
-        <% if content.username == "芋あきら" %>
-          <%= link_to image_tag("/user_images/akira.png"), "/home/profile/#{content.user_id}" %>
-        <% elsif content.user_id %>
-          <%= link_to image_tag("/user_images/default_image.jpg"), "/home/profile/#{content.user_id}" %>
+        <% if twitter_image.remote_image_name_url %>
+          <%= link_to image_tag(twitter_image.remote_image_name_url), "/home/profile/#{content.user_id}" %>
         <% else %>
-          <img src="<%= "/default_image.jpg" %>">
+          <%= link_to image_tag("/user_images/default_image.jpg"), "/home/profile/#{content.user_id}" %>
         <% end %>
       </div>
       <span class="created-at"><%= time_ago_in_words(content.created_at)%></span>
@@ -19,6 +19,10 @@
           <%= content.content_body %>
         </p>
       </li>
+
+
+
+
     <% end %>
   <% end %>
 </div>
@@ -32,22 +36,26 @@
       <% @post.contents.each do |content| %>
       <!-- ファンクラブオーナー以外のユーザー -->
         <% if @post.user_id != content.user_id %>
-        <li class="member-timeline">
-          <div class="content-member-img">
-            <% if content.username == "芋あきら" %>
-              <%= link_to image_tag("/user_images/akira.png"), "/home/profile/#{content.user_id}" %>
-            <% elsif content.user_id %>
-              <%= link_to image_tag("/user_images/default_image.jpg"), "/home/profile/#{content.user_id}" %>
-            <% else %>
-              <img src="<%= "/default_image.jpg" %>">
-            <% end %>
-          </div>
-          <span class="created-at"><%= content.username %></span>
-          <span class="created-at"><%= time_ago_in_words(content.created_at)%></span>
-          <div class="member-timeline-body">
-            <%= content.content_body %>
-          </div>
-        </li>
+        <!-- このif文で投稿のuser_idをuserに代入する -->
+          <%  user = content.user_id %>
+        <!-- 上でuser_idを代入されたuserをUserテーブルから探す -->
+          <% twitter_image = User.find_by(id: user) %>
+          <li class="member-timeline">
+            <div class="content-member-img">
+              <% if twitter_image.remote_image_name_url %>
+                <%= link_to image_tag(twitter_image.remote_image_name_url), "/home/profile/#{content.user_id}" %>
+              <% else %>
+                <%= link_to image_tag("/user_images/default_image.jpg"), "/home/profile/#{content.user_id}" %>
+              <% end %>
+            </div>
+            <span class="created-at"><%= content.username %></span>
+            <span class="created-at"><%= time_ago_in_words(content.created_at)%></span>
+            <div class="member-timeline-body">
+              <%= content.content_body %>
+            </div>
+          </li>
+
+
         <% end %>
       <% end %>
     </div>

@@ -10,8 +10,7 @@
   <div class="profile-image">
     <% if @user.remote_image_name_url %>
        <%= image_tag(@user.remote_image_name_url) %>
-    <% elsif @user.name == "芋あきら" %>
-        <%= image_tag("/user_images/akira.png") %>
+    
     <% else %>
        <%= image_tag("/user_images/default_image.jpg") %>
     <% end %>

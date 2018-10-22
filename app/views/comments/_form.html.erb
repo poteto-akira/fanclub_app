@@ -1,7 +1,0 @@
-<% @comment = Comment.new %>
-<%= simple_form_for comment_params, remote: true do |f| %>
-
-<%= f.button :submit,"投稿" %>
-
-<%= f.input :comment_content , class: "textbox-short"%>
-<% end %>

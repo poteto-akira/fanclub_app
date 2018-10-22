@@ -10,4 +10,11 @@ class FcContent < ApplicationRecord
   def post
     return Post.find_by(id: self.id)
   end
+
+# contentのuser_idからuser.remote_image_name_urlを取得したい
+  def content_user_remote_image_name_url
+    return User.find_by(id: self.user.id)
+  end
+
+
 end

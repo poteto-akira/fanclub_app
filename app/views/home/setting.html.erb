@@ -23,8 +23,7 @@
   <% @enters.each do |enter|%>
     <% post = Post.find_by(id: enter.post_id)%>
     <% if post != nil %>
-
-    <%= link_to ("/fc_contents/index/#{post.id}") do %>
+      <%= link_to ("/fc_contents/index/#{post.id}") do %>
     <% else %>
       <div class="enter-container">
         <table>

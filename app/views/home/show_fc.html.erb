@@ -34,7 +34,7 @@
         <%= link_to("無料で入会する", "/enter/#{@post.id}/create",{method:"post"}) %>
       </button>
       <!-- <p class="text-caution pay-caution">このボタンをタップしてもまだ支払いは行われません</p> -->
-      <% else %>
+    <% else %>
       <button class="btn btn-color-blue btn-size-large">
         <%= link_to("ファンクラブをみる", "/fc_contents/index/#{@post.id}") %>
       </button>
@@ -62,37 +62,10 @@
     <label class="tab_item" for="design">管理者</label>
     <div class="tab_content" id="fc_content">
       <div class="show-fc-img parent">
-      <% if @post.fc_name == "芋あきらの部屋" %>
-        <img class="card-img" src="<%= "/post_images/poteto_akira.png" %>" alt="">
-      <% else %>
-        <img class="card-img" src="<%= "/post_images/#{@post.id}.jpg" %>" alt="">
-      <% end %>
-        <% if false %>
-        <!-- いいね機能はvue.jsを勉強してから -->
-        <div class="triangle">
-          <div class="circle-button">
-            <button class="icobutton icobutton-7-grey-ffd715 once">
-              <span class="fa fa-heart"></span>
-            </button>
-          </div>
-        </div>
-        <% end %>
-
-        <!-- destroyができるまで非表示 -->
-        <% if false %>
-          <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
-            <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
-              <span class="fa fa-heart like-btn-unlike heart-child">
-                <%= @likes_count %>
-              </span>
-              <%end%>
-          <% else %>
-            <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do%>
-            <span class="fa fa-heart like-btn heart-child">
-              <%= @likes_count %>
-            </span>
-            <% end%>
-          <% end %>
+        <% if @post.fc_name == "芋あきらの部屋" %>
+          <img class="card-img" src="<%= "/post_images/poteto_akira.png" %>" alt="">
+        <% else %>
+          <img class="card-img" src="<%= "/post_images/#{@post.id}.jpg" %>" alt="">
         <% end %>
       </div>
 
