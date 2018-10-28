@@ -5,24 +5,19 @@
     <% if @post.user_id == content.user_id %>
     <%  user = content.user_id %>
     <% twitter_image = User.find_by(id: user) %>
-    <li class="orner-timeline">
-      <div class="content-member-img">
-        <% if twitter_image.remote_image_name_url %>
-          <%= link_to image_tag(twitter_image.remote_image_name_url), "/home/profile/#{content.user_id}" %>
-        <% else %>
-          <%= link_to image_tag("/user_images/default_image.jpg"), "/home/profile/#{content.user_id}" %>
-        <% end %>
-      </div>
-      <span class="created-at"><%= time_ago_in_words(content.created_at)%></span>
-        <p class="orner-timeline-body">
-          <!-- <%= link_to(content.content_body, "/fc_content/#{content.id}") %> -->
-          <%= content.content_body %>
-        </p>
+      <li class="orner-timeline">
+        <div class="content-member-img">
+          <% if twitter_image.remote_image_name_url %>
+            <%= link_to image_tag(twitter_image.remote_image_name_url), "/home/profile/#{content.user_id}" %>
+          <% else %>
+            <%= link_to image_tag("/user_images/default_image.jpg"), "/home/profile/#{content.user_id}" %>
+          <% end %>
+        </div>
+        <span class="created-at"><%= time_ago_in_words(content.created_at)%></span>
+          <p class="orner-timeline-body">
+            <%= content.content_body %>
+          </p>
       </li>
-
-
-
-
     <% end %>
   <% end %>
 </div>
@@ -54,13 +49,12 @@
               <%= content.content_body %>
             </div>
           </li>
-
-
         <% end %>
       <% end %>
     </div>
   </div>
 
+  <!-- 新規投稿フォーム -->
   <div class="new-content">
     <!-- @post.idは現在のfc.idのこと -->
     <%= form_tag("/fc_content/create/#{@post.id}", :remote => true) do  %>
@@ -83,30 +77,4 @@
       });
     </script>
   </div>
-
-  <!-- <tr class="contents" data-id=<%= @content.id %>>
-  <script>
-  $(function(){
-    $(function(){
-      setInterval(update, 10000);
-      //10000ミリ秒ごとにupdateという関数を実行する
-    });
-
-    function update(){
-      var content_id = $('.contents:last').data('id');//一番最後にある'contents'というクラスの'id'というデータ属性を取得し、'content_id'という変数に代入
-      $.ajax({ //ajax通信で以下のことを行う
-          url: location.href, //urlは現在のページを指定
-          type: 'GET', //メソッドを指定
-          data: { //railsに引き渡すデータは
-            content: { id: content_id } //このような形(paramsの形をしています)で、'id'には'content_id'を入れる
-          },
-          dataType: 'json' //データはjson形式
-      })
-      .always(function(data){ //通信したら、成功しようがしまいが受け取ったデータ（@new_message)を引数にとって以下のことを行う
-        $.each(data, function(i, data){ //'data'を'data'に代入してeachで回す
-          buildMESSAGE(data); //buildMESSAGEを呼び出す
-        });
-      });
-    }
-  });
-  </script> -->
+</div>
