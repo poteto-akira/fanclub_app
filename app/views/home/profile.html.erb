@@ -8,9 +8,9 @@
   <% end %>
 
   <div class="profile-image">
+    <!-- twitterのアイコン画像を表示 -->
     <% if @user.remote_image_name_url %>
        <%= image_tag(@user.remote_image_name_url) %>
-    
     <% else %>
        <%= image_tag("/user_images/default_image.jpg") %>
     <% end %>
@@ -48,7 +48,6 @@
           </table>
         </div>
       <% end %>
-      </div>
     <% end %>
   </div>
 <!-- ここまでユーザーが作ったファンクラブを表示するエリア =================================-->

@@ -1,21 +1,6 @@
-<script>
-setInterval(function() {
-    $.ajax({
-      url: location.href.json,
-    })
-    .done(function(data) {
-    })
-    .fail(function(data) {
-    });
-  } else {
-    clearInterval(interval);
-   } , 5000 );
-});
-</script>
 <div class="main main-fc-content">
-  <!-- 現在のpathを取得して/fc_contents/index/44(運営)の場合はelseで返す -->
-  <% current_path = request.path %>
-  <% if current_path != "/fc_contents/index/44" %>
+  <!-- request.pathで現在のpathを取得して/fc_contents/index/44(運営)の場合はelseで返す。 -->
+  <% if request.path != "/fc_contents/index/44" %>
     <header class="site-header flex flex--bet">
     <nav class="gnav">
       <ul class="gnav__menu flex flex--bet">
@@ -55,46 +40,10 @@ setInterval(function() {
     });
   </script>
 
-<!-- _contents.html.erb -->
-<div id="contents">
-<%= render ("contents") %>
-</div>
+  <!-- _contents.html.erbのデータを持ってきている -->
+  <div id="contents">
+    <%= render ("contents") %>
+  </div>
 
 
 </div>
-
-
-<!-- スワイプ機能はなしでいいんじゃ？ -->
-<!-- <div id="content" class="snap-content"> -->
-  <!-- ドロワーメニューを開くボタン -->
-  <!-- <a href="#" id="open-right"></a> -->
-  <!-- コンテンツ部分 -->
-<!-- </div> -->
-
-<!-- <div class="btn new-content-btn btn-color-blue">
-  リンクにファンクラブのidを入れている
-  <%= link_to("NEW", "/fc_contents/new/#{@post.id}") %>
-</div> -->
-
-
-<!--
-<script type="text/javascript">
-// 基本的な記述です。コンテンツ部分のID名を書いておきましょう。
-var snapper = new Snap({
-  element: document.getElementById('content')
-});
-
-// 以下はフリックやドラッグだけでなく、ボタンでも開いたり閉じたりできるようにする記述です。
-var addEvent = function addEvent(element, eventName, func) {
-  if (element.addEventListener) {
-      return element.addEventListener(eventName, func, false);
-  } else if (element.attachEvent) {
-      return element.attachEvent("on" + eventName, func);
-  }
-};
-
-// ボタンのID名と揃えておきましょう。
-addEvent(document.getElementById('open-right'), 'click', function(){
-  snapper.open('bottom');
-});
-</script> -->

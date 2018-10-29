@@ -6,14 +6,10 @@
 index.html.erb
 --------------------------- */
 .main {
-  // position: absolute;
   width: 100%;
   min-height: 100%;
-  // padding: 60px 0;
 }
-// .main-fc-content {
-//   background-color: #849EC0;
-// }
+
 .index-text-top {
   text-align: center;
   line-height: 4.5rem;
@@ -140,8 +136,6 @@ table {
 	text-decoration: none;
   box-shadow: 0 0 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24);
   border-radius: 20px;
-  // padding-top: 10px;
-  // padding-bottom: 10px;
 }
 
 .new-content-btn {
@@ -181,7 +175,6 @@ table {
 
 .btn input {
   display: block;
-  // line-height: 58px;
   padding: 10px;
   margin: 0 auto;
   color: #deebff;
@@ -218,12 +211,10 @@ table {
 }
 
 .btn-size-large{
-	// padding-top: 20px;
-	// padding-bottom: 20px;
 	width: 80%;
   text-align: center;
   margin: 20px auto 10px;
-      line-height: 50px;
+  line-height: 50px;
 }
 
 .btn-size-small {
@@ -249,7 +240,6 @@ edit_fc.html.erb
   -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
   box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
   color: #333333;
-  line-height: 3.0rem;
 }
 
 .textbox-short {
@@ -290,18 +280,15 @@ fc_contents/index.html.erb
   bottom: 0;
   overflow: scroll;
   width: 100%;
-  // background-color: rgba(102,102,102,0.7);
   z-index: 4;
   padding-bottom: 50px;
 }
 .orner-container {
-  // overflow: scroll;
   height: auto;
   position: absolute;
   top: 0;
   width: 100%;
   max-width: 500px;
-  // background-color: #849EC0;
   padding: 65px 0 220px 0;
 }
 
@@ -315,32 +302,26 @@ fc_contents/index.html.erb
   position: relative;
   background-color: #fff;
   box-shadow: 0px 3px 10px rgba(0,0,0,.2);
-
 }
 
 .orner-timeline-body {
   padding: 8px 5px 10px 50px;
 }
 
-
 .member-timeline {
   min-width: 55%;
-  // border-radius: 10px;
   width: 85%;
   margin: 2px auto;
   min-height: 55px;
-  // border: 1px solid #E9E9E9;
   padding: 5px;
   position: relative;
   color: #fff;
-  // box-shadow: 0px 3px 10px rgba(0,0,0,.2);
 }
 
 .content-member-img {
   width: 40px;
   height: 40px;
   float: left;
-
 }
 
 .content-member-img img {
@@ -437,6 +418,7 @@ setting.html.erb
   margin: 0;
   width: 100%;
 }
+
 .table-setting td {
   width: 30%;
   height: 120px;
@@ -458,7 +440,6 @@ setting.html.erb
 /* ---------------------------
 edit_account.html.erb
 --------------------------- */
-
 .edit-account li {
   border-bottom: 1px solid #E9E9E9;
   padding: 10px 0;
@@ -469,8 +450,6 @@ edit_account.html.erb
   line-height: 30px;
 }
 
-
-
 /* ---------------------------
 enter.html.erb
 --------------------------- */
@@ -480,7 +459,6 @@ enter.html.erb
 }
 
 .card-enter {
-  // float: none;
   background: #fff;
   border-radius: 5px;
   position: relative;
@@ -584,7 +562,6 @@ show_fc.html.erb
 .tabs {
   margin-top: 50px;
   padding-bottom: 40px;
-  // box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: 100%;
   margin: 0 auto;}
 
@@ -636,15 +613,6 @@ input[name="tab_item"] {
 }
 
 // ここからsnap.cssエリア  =========================
-// html, body {
-//   font-family: sans-serif;
-//   margin: 0;
-//   padding: 0;
-//   width: 100%;
-//   height: 100%;
-//   overflow: hidden;
-// }
-
 .snap-content {
   position: fixed;
   top: 65%;
@@ -656,11 +624,6 @@ input[name="tab_item"] {
   z-index: 100;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-  // -webkit-transform: translate3d(0, 0, 0);
-  //    -moz-transform: translate3d(0, 0, 0);
-  //     -ms-transform: translate3d(0, 0, 0);
-  //      -o-transform: translate3d(0, 0, 0);
-  //         transform: translate3d(0, 0, 0);
 }
 
 .snap-drawers {
@@ -673,7 +636,6 @@ input[name="tab_item"] {
   max-width: 500px;
   margin: 0 auto;
   height: auto;
-  // z-index: -12;
 }
 
 .snap-drawer {
@@ -691,11 +653,6 @@ input[name="tab_item"] {
 background-color: rgba(102, 102, 102, 0.7);
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-  // -webkit-transition: width 0.3s ease;
-  //    -moz-transition: width 0.3s ease;
-  //     -ms-transition: width 0.3s ease;
-  //      -o-transition: width 0.3s ease;
-  //         transition: width 0.3s ease;
 }
 
 .snap-drawer-left {
@@ -740,15 +697,12 @@ background-color: rgba(102, 102, 102, 0.7);
 }
 
 .new-content a {
-  // position: absolute;
   color: #fff;
 }
 
 .content-new {
   border: 1px solid #0747a6;
   width: 83%;
-  /* height: 350px; */
-  /* padding: 15px 10px 50px 10px; */
   -moz-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
   box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
@@ -780,7 +734,6 @@ background-color: rgba(102, 102, 102, 0.7);
   overflow: hidden;
   list-style: none;
   padding: 0;
-  /* Fix of Webkit flickering */
   z-index: 1;
 }
 .swiper-container-no-flexbox .swiper-slide {

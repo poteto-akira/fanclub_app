@@ -1,12 +1,9 @@
 <h3>プロフィール編集</h3>
 
-
 <%= form_tag("/user/#{current_user.id}/update", {multipart: true}) do %>
   <p>ユーザー名</p>
-  <input name="name" class="textbox-short" placeholder="<%= current_user.name %>"></input>
-  <!-- <li>プロフィール写真変更</li>
-  <input name="image" type="file"> -->
-    <input class="btn btn-color-blue btn-size-large" type="submit" value="これで完成！">
+  <input name="name" class="textbox-short" placeholder="<%= current_user.name %>">
+  <input class="btn btn-color-blue btn-size-large" type="submit" value="これで完成！">
 <% end %>
 
 <div class="header-bottom">

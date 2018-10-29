@@ -1,55 +1,54 @@
 <div class="main">
-
-
-<div class="setting">
-  <table class="table-setting">
-    <tr>
-      <td><%= link_to 'ファンクラブ作成', home_new_fc_path %></td>
-      <td><%= link_to 'アカウント編集', "/account/#{current_user.id}/edit" %></td>
-      <td></td>
-      <!-- <td><%= link_to '加入ファンクラブ', "/#{current_user.id}/enters" %></td> -->
-    </tr>
-    <tr>
-      <td><%= link_to '作成済ファンクラブ', "/user/#{current_user.id}/fc_list" %></td>
-      <td><%= link_to 'プロフィール', "/home/profile/#{current_user.id}" %></td>
-      <td><%= link_to 'その他', "/others" %></td> <!-- ここに利用規約、個人情報保護方針、特商法に基づく表記、退会とかを書く -->
-    </tr>
-  </table>
-</div>
-<!-- 入会しているファンクラブがある場合のみ表示 -->
-<% if @enters %>
-
-  <h3 class="">入会しているファンクラブ</h3>
-  <% @enters.each do |enter|%>
-    <% post = Post.find_by(id: enter.post_id)%>
-    <% if post != nil %>
-      <%= link_to ("/fc_contents/index/#{post.id}") do %>
-    <% else %>
-      <div class="enter-container">
-        <table>
-          <tr>
-            <td class="">
-              <section class="card-enter">
-                <div class="card-img-parent">
-                  <img class="card-img" src="<%= "/post_images/#{post.id}.jpg" %>" alt="">
+  <div class="setting">
+    <table class="table-setting">
+      <tr>
+        <td><%= link_to 'ファンクラブ作成', home_new_fc_path %></td>
+        <td><%= link_to 'アカウント編集', "/account/#{current_user.id}/edit" %></td>
+        <td></td>
+        <!-- <td><%= link_to '加入ファンクラブ', "/#{current_user.id}/enters" %></td> -->
+      </tr>
+      <tr>
+        <td><%= link_to '作成済ファンクラブ', "/user/#{current_user.id}/fc_list" %></td>
+        <td><%= link_to 'プロフィール', "/home/profile/#{current_user.id}" %></td>
+        <td><%= link_to 'その他', "/others" %></td> <!-- ここに利用規約、個人情報保護方針、特商法に基づく表記、退会とかを書く -->
+      </tr>
+    </table>
+  </div>
+  <!-- 入会しているファンクラブがある場合のみ表示 -->
+  <% if @enters %>
+    <h3 class="">入会しているファンクラブ</h3>
+    <% @enters.each do |enter|%>
+      <% post = Post.find_by(id: enter.post_id)%>
+      <% if post != nil %>
+        <%= link_to ("/fc_contents/index/#{post.id}") do %>
+      <% else %>
+        <div class="enter-container">
+          <table>
+            <tr>
+              <td class="">
+                <section class="card-enter">
+                  <div class="card-img-parent">
+                    <img class="card-img" src="<%= "/post_images/#{post.id}.jpg" %>" alt="">
+                  </div>
+                  <div class="card-title">
+                    <%= link_to(post.fc_name, "/fc_contents/index/#{post.id}") %>
+                  </div>
+                </section>
+              </td>
+              <td class="enter-fc-content">
+                <div class="enter-fc-content">
+                  <div class=""><%= post.content %></div>
                 </div>
-                <div class="card-title">
-                  <%= link_to(post.fc_name, "/fc_contents/index/#{post.id}") %>
-                </div>
-              </section>
-            </td>
-            <td class="enter-fc-content">
-              <div class="enter-fc-content">
-                <div class=""><%= post.content %></div>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <% end %>
       <% end %>
-    <% end %>
-  <% end%>
-<% end %>
+    <% end%>
+  <% end %>
+</div>
+
 <div class="header-bottom">
   <nav>
     <ul>
@@ -71,5 +70,4 @@
       </li>
     </ul>
   </nav>
-</div>
 </div>

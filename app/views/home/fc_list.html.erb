@@ -1,35 +1,33 @@
 <h3>あなたが作ったファンクラブです</h3>
-  <% @user.posts.each do |post|%>
+<% @user.posts.each do |post|%>
   <%= link_to ("/#{post.id}/show_fc") do %>
-
-  <div class="enter-container">
-    <table>
-      <tr>
-        <td class="">
-          <section class="card-enter">
-            <div class="card-img-parent">
-            <% if post.fc_name == "芋あきらの部屋" %>
-              <img class="card-img" src="<%= "/post_images/poteto_akira.png" %>" alt="">
-            <% else %>
-              <img class="card-img" src="<%= "/post_images/#{post.id}.jpg" %>" alt="">
-            <% end %>
+    <div class="enter-container">
+      <table>
+        <tr>
+          <td class="">
+            <section class="card-enter">
+              <div class="card-img-parent">
+              <% if post.fc_name == "芋あきらの部屋" %>
+                <img class="card-img" src="<%= "/post_images/poteto_akira.png" %>" alt="">
+              <% else %>
+                <img class="card-img" src="<%= "/post_images/#{post.id}.jpg" %>" alt="">
+              <% end %>
+              </div>
+              <div class="card-title">
+                <%= link_to(post.fc_name, "/fc_contents/index/#{post.id}") %>
+              </div>
+            </section>
+          </td>
+          <td class="enter-fc-content">
+            <div class="enter-fc-content">
+              <div class=""><%= post.content %></div>
             </div>
-            <div class="card-title">
-              <%= link_to(post.fc_name, "/fc_contents/index/#{post.id}") %>
-            </div>
-          </section>
-        </td>
-        <td class="enter-fc-content">
-          <div class="enter-fc-content">
-            <div class=""><%= post.content %></div>
-          </div>
-        </td>
-      </tr>
-    </table>
-  </div>
+          </td>
+        </tr>
+      </table>
+    </div>
   <% end %>
-  </div>
-  <% end %>
+<% end %>
 
   <div class="header-bottom">
     <nav>

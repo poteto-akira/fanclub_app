@@ -1,22 +1,27 @@
 <!-- ファンクラブオーナーのタイムライン -->
 <div class="orner-container">
-  <!-- 現在のpostのコンテンツって意味 -->
+  <!-- 現在閲覧中のファンクラブのコメント -->
   <% @post.contents.each do |content| %>
+  <!-- ファンクラブ管理者とコメントのuser_idが同じ場合の処理。
+  画面の半分より上にコメントを表示する -->
     <% if @post.user_id == content.user_id %>
-    <%  user = content.user_id %>
-    <% twitter_image = User.find_by(id: user) %>
+      <!-- ①コメントのuser_idをuserに代入する。
+      ②usersテーブルから①のuserを探してtwitter_imageに代入。
+      ③userのremote_image_name_ur(twitterのアイコン画像)を表示。 -->
+      <%  user = content.user_id %> <!-- ① -->
+      <% twitter_image = User.find_by(id: user) %> <!-- ② -->
       <li class="orner-timeline">
         <div class="content-member-img">
           <% if twitter_image.remote_image_name_url %>
-            <%= link_to image_tag(twitter_image.remote_image_name_url), "/home/profile/#{content.user_id}" %>
+            <%= link_to image_tag(twitter_image.remote_image_name_url), "/home/profile/#{content.user_id}" %> <!-- ③ -->
           <% else %>
             <%= link_to image_tag("/user_images/default_image.jpg"), "/home/profile/#{content.user_id}" %>
           <% end %>
         </div>
         <span class="created-at"><%= time_ago_in_words(content.created_at)%></span>
-          <p class="orner-timeline-body">
-            <%= content.content_body %>
-          </p>
+        <p class="orner-timeline-body">
+          <%= content.content_body %>
+        </p>
       </li>
     <% end %>
   <% end %>
@@ -27,18 +32,20 @@
   <div class="snap-drawer snap-drawer-right">
     <!-- メニューの部分 -->
     <div class="member-timeline-container">
-      <!-- 現在のpostのコンテンツって意味 -->
+      <!-- 現在閲覧中のファンクラブのコメント -->
       <% @post.contents.each do |content| %>
-      <!-- ファンクラブオーナー以外のユーザー -->
+      <!-- ファンクラブ管理者とコメントのuser_idが違う場合の処理。
+      画面の半分より下にコメントを表示する -->
         <% if @post.user_id != content.user_id %>
-        <!-- このif文で投稿のuser_idをuserに代入する -->
-          <%  user = content.user_id %>
-        <!-- 上でuser_idを代入されたuserをUserテーブルから探す -->
-          <% twitter_image = User.find_by(id: user) %>
+        <!-- ①コメントのuser_idをuserに代入する。
+        ②usersテーブルから①のuserを探してtwitter_imageに代入。
+        ③userのremote_image_name_ur(twitterのアイコン画像)を表示。 -->
+          <%  user = content.user_id %><!-- ① -->
+          <% twitter_image = User.find_by(id: user) %><!-- ② -->
           <li class="member-timeline">
             <div class="content-member-img">
               <% if twitter_image.remote_image_name_url %>
-                <%= link_to image_tag(twitter_image.remote_image_name_url), "/home/profile/#{content.user_id}" %>
+                <%= link_to image_tag(twitter_image.remote_image_name_url), "/home/profile/#{content.user_id}" %><!-- ③ -->
               <% else %>
                 <%= link_to image_tag("/user_images/default_image.jpg"), "/home/profile/#{content.user_id}" %>
               <% end %>
@@ -56,7 +63,8 @@
 
   <!-- 新規投稿フォーム -->
   <div class="new-content">
-    <!-- @post.idは現在のfc.idのこと -->
+    <!-- @post.idは現在閲覧中のファンクラブのid -->
+    <!-- :remote => trueで非同期通信 -->
     <%= form_tag("/fc_content/create/#{@post.id}", :remote => true) do  %>
       <input name="content_body" placeholder="ここでコメントを送ってみよう！" type="text" class="content-new" id="input1" autocomplete="off"></input>
       <input class="submit" id="submit1" type="submit" value="送る">
