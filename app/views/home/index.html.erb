@@ -1,12 +1,9 @@
 <div class="main">
-  <!-- スライダーのcdn -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <!-- スライダーの速度指定 -->
       <div class="swiper-slide" data-swiper-autoplay="3000">
         <% @posts.each do |post| %>
-          <!-- スライダーにリンクをつけている -->
           <% if post.fc_name == "芋あきらの部屋" %>
             <%= link_to ("/#{post.id}/show_fc") do %>
               <%= image_tag("/post_images/poteto_akira.png") %>
@@ -16,9 +13,9 @@
       </div>
       <div class="swiper-slide" data-swiper-autoplay="3000"><%= image_tag("/post_images/index2.jpg") %></div>
     </div>
-    <!-- ページネーション -->
     <div class="swiper-pagination"></div>
   </div>
+
   <script>
     var mySwiper = new Swiper ('.swiper-container', {
       speed: 1000,
@@ -27,19 +24,14 @@
         delay: 1000,
       },
         autoplayDisableOnInteraction:false,
-      // ページネーション
       pagination: '.swiper-pagination',
     });
   </script>
 
-<!-- ファンクラブを表示 -->
   <% @posts.each do |post| %>
-    <!-- 芋あきらの部屋は運営のファンクラブだから一覧には表示しないようにしている -->
     <% if post.fc_name != "芋あきらの部屋" %>
-      <!-- link_to ~ do で画像全体にリンクをかけている -->
       <%= link_to ("/#{post.id}/show_fc") do %>
         <section class="card">
-          <!-- 画像のリサイズをする -->
           <div class="card-img-parent">
             <img class="card-img" src="<%= "/post_images/#{post.id}.jpg" %>" alt="">
           </div>
@@ -70,7 +62,6 @@
             <%= image_tag 'setting_aicon.png', :size =>'30x30'%>
           <% end %>
         <% end %>
-
       </li>
     </ul>
   </nav>

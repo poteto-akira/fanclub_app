@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
-  before_action :authenticate_user!, only:[:new_fc, :create, :edit_fc, :setting,
-                                    :edit_account, :edit_profile]
-
+  before_action :authenticate_user!,
+                only:[:new_fc, :create, :edit_fc, :setting,:edit_account, :edit_profile]
 
   def index
     @page_name = "HOME"
@@ -14,37 +13,24 @@ class HomeController < ApplicationController
     @page_name = "NEW FANCLUB"
   end
 
-
   def create
     @post = Post.find_by(id: params[:id])
     @post = Post.new(content: params[:content],
                      user_id: current_user.id,
                      fc_name: params[:fc_name],
                      post_image: "default_post.jpg")
-
     if @post.save
-      # ここから画像保存処理してるんだけどPost.newでpost_iamge: params[:post_image]
-      # をしてるからpostテーブルに--.jpgの形で保存されていない。
       if params[:post_image]
-        # 画像のリサイズをする
-
-        # アップロードした画像を300x300のサイズに編集
         image = MiniMagick::Image.read(params[:post_image])
         image.resize "200x200"
         @post.post_image = "#{@post.id}.jpg"
-        # image = params[:post_image]
-        # File.binwrite("public/post_images/#{@post.post_image}",image.read )
         image.write "public/post_images/#{@post.post_image}"
       end
         redirect_to(root_path)
-        # flash[:notice] = "ファンクラブを作成しました！これから素晴らしいファンクラブにしていってくださいね♡"
     else
       render("new_fc")
-
     end
   end
-
-
   def show_fc
     @page_name = "ABOUT"
     @post = Post.find_by(id: params[:id])
@@ -62,20 +48,13 @@ class HomeController < ApplicationController
     @post = Post.find_by(id: params[:id])
     @post.content = params[:content]
     @post.fc_name = params[:fc_name]
-
     if params[:post_image]
-      # @post.post_image = "#{@post.id}.jpg"
-      # image = params[:post_image]
-      # リサイズしてから保存
       @post.post_image = "#{@post.id}.jpg"
       image = MiniMagick::Image.read(params[:post_image])
       image.resize "200x200"
       image.write "public/post_images/#{@post.post_image}"
-
-      # File.binwrite("public/post_images/#{@post.post_image}",image.read )
     end
     @post.post_image = "#{@post.id}.jpg"
-
     if @post.save
       flash[:notice] = "編集完了！！！"
       redirect_to("/#{@post.id}/show_fc")
@@ -94,7 +73,6 @@ class HomeController < ApplicationController
   def update_user
     @user = User.find_by(id: params[:id])
     @user.name = params[:name]
-    # @user.email = params[:email]
     if params[:image]
       @user.image_name = "#{@user.id}.jpg"
       image = params[:image]
@@ -103,10 +81,7 @@ class HomeController < ApplicationController
     @user.save
     flash[:notice] = "ユーザー情報を編集しました"
     redirect_to("/home/profile/#{@user.id}")
-
   end
-
-
 
   def likes
     @user = User.find_by(id: params[:id])
@@ -126,12 +101,10 @@ class HomeController < ApplicationController
 
   def edit_account
     @page_name = "EDIT ACCOUNT"
-
   end
 
   def edit_profile
     @page_name = "EDIT PROFILE"
-
   end
 
   def show
