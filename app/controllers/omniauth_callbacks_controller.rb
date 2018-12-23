@@ -1,8 +1,6 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
-  # twitter連携ログイン用のcontroller
   def all
-    # 認証データを元にデータベースでユーザーを探し、なければ作る。
     user = User.from_omniauth(request.env["omniauth.auth"])
     if user.persisted?  # ユーザーがデータベース上に存在している。
       sign_in_and_redirect user  # ユーザーをsign_inする
@@ -12,6 +10,5 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to new_user_registration_url(from_omniauth_callback: "１")  # ユーザーを新規登録ページに転送。
     end
   end
-
   alias_method :twitter, :all
 end

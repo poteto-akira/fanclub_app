@@ -2,7 +2,6 @@ class FcContentsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    # URLにあるPost.idを取得する
     @post = Post.find_by(id: params[:id])
   end
 
@@ -13,13 +12,10 @@ class FcContentsController < ApplicationController
   end
 
   def new
-    # @content = FcContent.find_by(id: params[:id])
-    # @post = Post.find_by(id: params[:id])
   end
 
   def create
     @post = Post.find_by(id: params[:id])
-    # form_tagに@post.idを含ませて現在閲覧中のfc.idを取得している
     @content = FcContent.new(content_body: params[:content_body],
                              user_id: current_user.id,
                              post_id: params[:id],
@@ -42,5 +38,4 @@ class FcContentsController < ApplicationController
     def fccontent_params
       params.require(:fc_content).permit(:content_body)
     end
-
 end
