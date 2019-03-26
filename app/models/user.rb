@@ -16,6 +16,7 @@ class User < ApplicationRecord
         user.name = auth.info.name
         user.username = auth.info.nickname
         user.remote_image_name_url = auth.info.image
+        user.twitter_url = auth.info.urls["Twitter"]
         user.email = auth.email.nil? ? auth.provider + auth.uid + "@login.function" : auth.email
       end
     end
