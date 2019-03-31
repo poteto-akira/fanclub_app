@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!, except: [:new, :create]
-  before_action :set_request_from
   after_action  :store_location
 
   def store_location
@@ -20,25 +19,6 @@ class ApplicationController < ActionController::Base
       super
     else
       session[:previous_url] || root_path
-    end
-  end
-
-  # どこのページからリクエストが来たか保存しておく
-  # 前のページに戻るためのメソッド
-  def set_request_from
-    if session[:request_from]
-      @request_from = session[:request_from]
-    end
-    # 現在のURLを保存しておく
-    session[:request_from] = request.original_url
-  end
-
-  # 前の画面に戻る
-  def return_back
-    if request.referer
-      redirect_to :back and return true
-    elsif @request_from
-      redirect_to @request_from and return true
     end
   end
 
