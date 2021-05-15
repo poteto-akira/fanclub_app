@@ -31,6 +31,7 @@ class HomeController < ApplicationController
       render("new_fc")
     end
   end
+
   def show_fc
     @page_name = "ABOUT"
     @post = Post.find_by(id: params[:id])
@@ -111,7 +112,6 @@ class HomeController < ApplicationController
     @post = Post.find_by(id: params[:id])
   end
 
-  # 加入しているファンクラブ一覧を表示
   def enters
     @user = User.find_by(id: params[:id])
     @enters = Enter.where(user_id: @user.id)
